@@ -1,0 +1,11 @@
+.faq {
+    border: black 1px solid;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.faq a {
+    color: black;
+    font-weight: bold;
+}
