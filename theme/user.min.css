@@ -3,9 +3,38 @@
     padding: 5px;
     border-radius: 5px;
     margin-bottom: 5px;
+    margin-right: 5px;
 }
 
 .faq a {
     color: black;
     font-weight: bold;
 }
+
+.messages {
+    /*background: white;*/
+}
+
+.q {
+    /*float: left;*/
+}
+
+.a {
+    float: right;
+}
+
+
+.bot-queens {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: start;
+    align-items: center;
+}
+
+/*.answer-wrap {*/
+/*    width: 500px;*/
+/*    height: 800px;*/
+/*    background: center / contain no-repeat url(../assets/img/iphone.png);*/
+/*}*/
