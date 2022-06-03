@@ -27,166 +27,266 @@
     <link href="theme/user.min.css" rel="stylesheet">
     <style>#bp_caption,#bp_container{bottom:0;left:0;right:0;position:fixed;opacity:0}#bp_container>*,#bp_loader{position:absolute;right:0;z-index:10}#bp_container,#bp_caption,#bp_container svg{pointer-events:none}#bp_container{top:0;z-index:9999;background:rgba(0,0,0,.7);opacity:0;transition:opacity .35s}#bp_loader{top:0;left:0;bottom:0;display:flex;align-items:center;cursor:wait;background:0;z-index:9}#bp_loader svg{width:50%;max-width:300px;max-height:50%;margin:auto;animation:bpturn 1s infinite linear}#bp_aud,#bp_container img,#bp_sv,#bp_vid{user-select:none;max-height:96%;max-width:96%;top:0;bottom:0;left:0;margin:auto;box-shadow:0 0 3em rgba(0,0,0,.4);z-index:-1}#bp_sv{background:#111}#bp_sv svg{width:66px}#bp_caption{font-size:.9em;padding:1.3em;background:rgba(15,15,15,.94);color:#fff;text-align:center;transition:opacity .3s}#bp_aud{width:650px;top:calc(50% - 20px);bottom:auto;box-shadow:none}#bp_count{left:0;right:auto;padding:14px;color:rgba(255,255,255,.7);font-size:22px;cursor:default}#bp_container button{position:absolute;border:0;outline:0;background:0;cursor:pointer;transition:all .1s}#bp_container>.bp-x{padding:0;height:41px;width:41px;border-radius:100%;top:8px;right:14px;opacity:.8;line-height:1}#bp_container>.bp-x:focus,#bp_container>.bp-x:hover{background:rgba(255,255,255,.2)}.bp-x svg,.bp-xc svg{height:21px;width:20px;fill:#fff;vertical-align:top;}.bp-xc svg{width:16px}#bp_container .bp-xc{left:2%;bottom:100%;padding:9px 20px 7px;background:#d04444;border-radius:2px 2px 0 0;opacity:.85}#bp_container .bp-xc:focus,#bp_container .bp-xc:hover{opacity:1}.bp-lr{top:50%;top:calc(50% - 130px);padding:99px 0;width:6%;background:0;border:0;opacity:.4;transition:opacity .1s}.bp-lr:focus,.bp-lr:hover{opacity:.8}@keyframes bpf{50%{transform:translatex(15px)}100%{transform:none}}@keyframes bpl{50%{transform:translatex(-15px)}100%{transform:none}}@keyframes bpfl{0%{opacity:0;transform:translatex(70px)}100%{opacity:1;transform:none}}@keyframes bpfr{0%{opacity:0;transform:translatex(-70px)}100%{opacity:1;transform:none}}@keyframes bpfol{0%{opacity:1;transform:none}100%{opacity:0;transform:translatex(-70px)}}@keyframes bpfor{0%{opacity:1;transform:none}100%{opacity:0;transform:translatex(70px)}}@keyframes bpturn{0%{transform:none}100%{transform:rotate(360deg)}}@media (max-width:600px){.bp-lr{font-size:15vw}}</style></head>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+
   <body class="overflow-hidden-x">
-
-<!--    <nav class="fancynavbar fancynavbar-expand-lg" data-zanim-lg="{&quot;from&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:70},&quot;to&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0},&quot;ease&quot;:&quot;CubicBezier&quot;,&quot;duration&quot;:0.8,&quot;delay&quot;:0.3}" data-zanim-xs="{&quot;from&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:-37},&quot;to&quot;:{&quot;opacity&quot;:1,&quot;y&quot;:0},&quot;ease&quot;:&quot;CubicBezier&quot;,&quot;duration&quot;:0.8,&quot;delay&quot;:0.3}" data-exclusive="true" style="transform: translate(0px, 0px); opacity: 1;">-->
-<!--      <div class="fancynavbar-togglerbar" data-onscroll-fade-in="data-onscroll-fade-in" style="background-color: rgb(0, 0, 0);">-->
-<!--        <div class="fancynavbar-toggler"><svg class="fancynavbar-toggler-icon" viewBox="0 0 70 70" xmlns="http://www.w3.org/2000/svg" data-zanim-lg="{&quot;from&quot;:{&quot;opacity&quot;:0,&quot;x&quot;:45},&quot;to&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0},&quot;ease&quot;:&quot;CubicBezier&quot;,&quot;duration&quot;:0.8,&quot;delay&quot;:0.5}" style="transform: translate(0px, 0px); opacity: 1;">-->
-<!--            <path id="path-top" d="M20,25c0,0,22,0,30,0c16,0,18.89,40.71-.15,21.75C38.7,35.65,19.9,16.8,19.9,16.8" style="stroke-dasharray: 30px, 88px; stroke-dashoffset: 0;"></path>-->
-<!--            <path id="path-middle" d="M20,32h30" style="stroke-dasharray: 30px, 30px; stroke-dashoffset: 0;"></path>-->
-<!--            <path id="path-bottom" d="M19.9,46.98c0,0,18.8-18.85,29.95-29.95C68.89-1.92,66,38.78,50,38.78c-8,0-30,0-30,0" style="stroke-dasharray: 30px, 88.1px; stroke-dashoffset: -88px;"></path>-->
-<!--          </svg></div>-->
-<!--        <div class="fancynavbar-addon" data-zanim-lg="{&quot;from&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:45},&quot;to&quot;:{&quot;opacity&quot;:1,&quot;x&quot;:0},&quot;ease&quot;:&quot;CubicBezier&quot;,&quot;duration&quot;:0.8,&quot;delay&quot;:0.4}" style="transform: translate(0px, 0px); opacity: 1;"><a class="fancynavbar-addon-item" href="https://prium.github.io/twbs-sparrow/v2.0.2/homes/default.html#languageModal" data-bs-toggle="modal"><span class="font-sans-serif ls fw-black fs&#45;&#45;1 d-block">EN</span></a></div>-->
-<!--      </div>-->
-<!--    </nav>-->
-
-
-    <!-- ===============================================-->
-    <!--    Main Content-->
-    <!-- ===============================================-->
     <main class="main min-vh-100" id="top">
-      <!-- <section> begin ============================-->
-      <section class="py-0">
-        <div class="container-fluid">
-          <div class="row h-100 border-bottom">
-            <div class="col-lg-6 px-0 order-lg-2" data-zanim-lg="{&quot;animation&quot;:&quot;slide-left&quot;,&quot;delay&quot;:0.4}" style="transform: translate(0px, 0px); opacity: 1;">
-              <div class="swiper-container theme-slider swiper-theme swiper-container-fade swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events" data-swiper="{&quot;autoplay&quot;:{&quot;delay&quot;:5000,&quot;disableOnInteraction&quot;:false},&quot;loop&quot;:true,&quot;effect&quot;:&quot;fade&quot;,&quot;pagination&quot;:{&quot;el&quot;:&quot;.swiper-pagination&quot;,&quot;clickable&quot;:true,&quot;type&quot;:&quot;bullets&quot;}}" data-zanim-lg="{&quot;animation&quot;:&quot;zoom-out&quot;,&quot;delay&quot;:0}" style="filter: blur(0px); opacity: 1; transform: translate(0px, 0px);">
-                <div class="swiper-wrapper" id="swiper-wrapper-f3a17dedbb1faaa1" aria-live="off" style="transition-duration: 0ms;"><div class="swiper-slide min-vh-lg-100 py-9 swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="2" style="width: 708px; transition-duration: 0ms; opacity: 1; transform: translate3d(0px, 0px, 0px);" role="group" aria-label="1 / 5">
-                    <div class="bg-holder" style="background-image:url(../assets/img/headers/header-12.jpg);"></div>
-                    <!--/.bg-holder-->
-                  </div>
-                  <div class="swiper-slide min-vh-lg-100 py-9 swiper-slide-prev" data-swiper-slide-index="0" style="width: 708px; transition-duration: 0ms; opacity: 1; transform: translate3d(-708px, 0px, 0px);" role="group" aria-label="2 / 5">
-                    <div class="bg-holder" style="background-image:url(assets/img/my_photo/4.jpeg);"></div>
-                    <!--/.bg-holder-->
-                  </div>
-                  <div class="swiper-slide min-vh-lg-100 py-9 swiper-slide-active" data-swiper-slide-index="1" style="width: 708px; transition-duration: 0ms; opacity: 1; transform: translate3d(-1416px, 0px, 0px);" role="group" aria-label="3 / 5">
-                    <div class="bg-holder" style="background-image:url(assets/img/my_photo/2.jpeg);"></div>
-                    <!--/.bg-holder-->
-                  </div>
-                  <div class="swiper-slide min-vh-lg-100 py-9 swiper-slide-next" data-swiper-slide-index="2" style="width: 708px; transition-duration: 0ms; opacity: 0; transform: translate3d(-2124px, 0px, 0px);" role="group" aria-label="4 / 5">
-                    <div class="bg-holder" style="background-image:url(assets/img/my_photo/1.jpeg);"></div>
-                    <!--/.bg-holder-->
-                  </div>
-                <div class="swiper-slide min-vh-lg-100 py-9 swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="0" style="width: 708px; transition-duration: 0ms; opacity: 0; transform: translate3d(-2832px, 0px, 0px);" role="group" aria-label="5 / 5">
-                    <div class="bg-holder" style="background-image:url(assets/img/my_photo/4.jpeg);"></div>
-                    <!--/.bg-holder-->
-                  </div></div>
-                <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span></div>
-                <div class="swiper-nav">
-                  <div class="swiper-button-next me-md-3" tabindex="0" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-f3a17dedbb1faaa1"></div>
-                  <div class="swiper-button-prev ms-md-3" tabindex="0" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-f3a17dedbb1faaa1"> </div>
-                </div>
-              <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
-            </div>
 
+      <figure class="position-absolute top-10 start-0 translate-middle-y ms-n7 d-none d-xxl-block">
+        <svg class="rotate-74 fill-danger opacity-1">
+          <circle cx="180.4" cy="15.5" r="7.7"></circle>
+          <path d="m159.9 22.4c-3.8 0-6.9-3.1-6.9-6.9s3.1-6.9 6.9-6.9 6.9 3.1 6.9 6.9-3.1 6.9-6.9 6.9z"></path>
+          <ellipse transform="matrix(.3862 -.9224 .9224 .3862 71.25 138.08)" cx="139.4" cy="15.5" rx="6.1" ry="6.1"></ellipse>
+          <circle cx="118.9" cy="15.5" r="5.4"></circle>
+          <path d="m98.4 20.1c-2.5 0-4.6-2.1-4.6-4.6s2.1-4.6 4.6-4.6 4.6 2.1 4.6 4.6-2.1 4.6-4.6 4.6z"></path>
+          <path d="m77.9 19.3c-2.1 0-3.8-1.7-3.8-3.8s1.7-3.8 3.8-3.8 3.8 1.7 3.8 3.8-1.7 3.8-3.8 3.8z"></path>
+          <path d="m57.3 18.6c-1.7 0-3.1-1.4-3.1-3.1s1.4-3.1 3.1-3.1 3.1 1.4 3.1 3.1-1.4 3.1-3.1 3.1z"></path>
+          <path d="m36.8 17.8c-1.3 0-2.3-1-2.3-2.3s1-2.3 2.3-2.3 2.3 1 2.3 2.3-1 2.3-2.3 2.3z"></path>
+          <circle cx="16.3" cy="15.5" r="1.6"></circle>
+          <circle cx="180.4" cy="38.5" r="7.7"></circle>
+          <path d="m159.9 45.3c-3.8 0-6.9-3.1-6.9-6.9s3.1-6.9 6.9-6.9 6.9 3.1 6.9 6.9-3.1 6.9-6.9 6.9z"></path>
+          <ellipse transform="matrix(.8486 -.5291 .5291 .8486 .7599 79.566)" cx="139.4" cy="38.5" rx="6.1" ry="6.1"></ellipse>
+          <circle cx="118.9" cy="38.5" r="5.4"></circle>
+          <path d="m98.4 43.1c-2.5 0-4.6-2.1-4.6-4.6s2.1-4.6 4.6-4.6 4.6 2.1 4.6 4.6-2.1 4.6-4.6 4.6z"></path>
+          <circle cx="77.9" cy="38.5" r="3.8"></circle>
+          <path d="m57.3 41.5c-1.7 0-3.1-1.4-3.1-3.1s1.4-3.1 3.1-3.1 3.1 1.4 3.1 3.1c0 1.8-1.4 3.1-3.1 3.1z"></path>
+          <path d="m36.8 40.8c-1.3 0-2.3-1-2.3-2.3s1-2.3 2.3-2.3 2.3 1 2.3 2.3-1 2.3-2.3 2.3z"></path>
+          <circle cx="16.3" cy="38.5" r="1.6"></circle>
+          <circle cx="180.4" cy="61.4" r="7.7"></circle>
+          <path d="m159.9 68.3c-3.8 0-6.9-3.1-6.9-6.9s3.1-6.9 6.9-6.9 6.9 3.1 6.9 6.9-3.1 6.9-6.9 6.9z"></path>
+          <ellipse transform="matrix(.3862 -.9224 .9224 .3862 28.902 166.26)" cx="139.4" cy="61.4" rx="6.1" ry="6.1"></ellipse>
+          <circle cx="118.9" cy="61.4" r="5.4"></circle>
+          <path d="m98.4 66c-2.5 0-4.6-2.1-4.6-4.6s2.1-4.6 4.6-4.6 4.6 2.1 4.6 4.6c0 2.6-2.1 4.6-4.6 4.6z"></path>
+          <path d="m77.9 65.2c-2.1 0-3.8-1.7-3.8-3.8s1.7-3.8 3.8-3.8 3.8 1.7 3.8 3.8-1.7 3.8-3.8 3.8z"></path>
+          <path d="m57.3 64.5c-1.7 0-3.1-1.4-3.1-3.1s1.4-3.1 3.1-3.1 3.1 1.4 3.1 3.1-1.4 3.1-3.1 3.1z"></path>
+          <path d="m36.8 63.7c-1.3 0-2.3-1-2.3-2.3s1-2.3 2.3-2.3 2.3 1 2.3 2.3-1 2.3-2.3 2.3z"></path>
+          <circle cx="16.3" cy="61.4" r="1.6"></circle>
+          <circle cx="180.4" cy="84.4" r="7.7"></circle>
+          <path d="m159.9 91.3c-3.8 0-6.9-3.1-6.9-6.9s3.1-6.9 6.9-6.9 6.9 3.1 6.9 6.9-3.1 6.9-6.9 6.9z"></path>
+          <path d="m139.4 90.5c-3.4 0-6.1-2.7-6.1-6.1s2.7-6.1 6.1-6.1 6.1 2.7 6.1 6.1c0 3.3-2.7 6.1-6.1 6.1z"></path>
+          <circle cx="118.9" cy="84.4" r="5.4"></circle>
+          <path d="m98.4 89c-2.5 0-4.6-2.1-4.6-4.6s2.1-4.6 4.6-4.6 4.6 2.1 4.6 4.6-2.1 4.6-4.6 4.6z"></path>
+          <path d="m77.9 88.2c-2.1 0-3.8-1.7-3.8-3.8s1.7-3.8 3.8-3.8 3.8 1.7 3.8 3.8-1.7 3.8-3.8 3.8z"></path>
+          <path d="m57.3 87.4c-1.7 0-3.1-1.4-3.1-3.1s1.4-3.1 3.1-3.1 3.1 1.4 3.1 3.1c0 1.8-1.4 3.1-3.1 3.1z"></path>
+          <path d="m36.8 86.7c-1.3 0-2.3-1-2.3-2.3s1-2.3 2.3-2.3 2.3 1 2.3 2.3-1 2.3-2.3 2.3z"></path>
+          <circle cx="16.3" cy="84.4" r="1.6"></circle>
+          <circle cx="180.4" cy="107.3" r="7.7"></circle>
+          <path d="m159.9 114.2c-3.8 0-6.9-3.1-6.9-6.9s3.1-6.9 6.9-6.9 6.9 3.1 6.9 6.9-3.1 6.9-6.9 6.9z"></path>
+          <path d="m139.4 113.4c-3.4 0-6.1-2.7-6.1-6.1s2.7-6.1 6.1-6.1 6.1 2.7 6.1 6.1-2.7 6.1-6.1 6.1z"></path>
+          <circle cx="118.9" cy="107.3" r="5.4"></circle>
+          <path d="m98.4 111.9c-2.5 0-4.6-2.1-4.6-4.6s2.1-4.6 4.6-4.6 4.6 2.1 4.6 4.6c0 2.6-2.1 4.6-4.6 4.6z"></path>
+          <path d="m77.9 111.2c-2.1 0-3.8-1.7-3.8-3.8s1.7-3.8 3.8-3.8 3.8 1.7 3.8 3.8-1.7 3.8-3.8 3.8z"></path>
+          <path d="m57.3 110.4c-1.7 0-3.1-1.4-3.1-3.1s1.4-3.1 3.1-3.1 3.1 1.4 3.1 3.1-1.4 3.1-3.1 3.1z"></path>
+          <path d="m36.8 109.6c-1.3 0-2.3-1-2.3-2.3s1-2.3 2.3-2.3 2.3 1 2.3 2.3c0.1 1.3-1 2.3-2.3 2.3z"></path>
+          <circle cx="16.3" cy="107.3" r="1.6"></circle>
+          <circle cx="180.4" cy="130.3" r="7.7"></circle>
+          <path d="m159.9 137.2c-3.8 0-6.9-3.1-6.9-6.9s3.1-6.9 6.9-6.9 6.9 3.1 6.9 6.9-3.1 6.9-6.9 6.9z"></path>
+          <ellipse transform="matrix(.3862 -.9224 .9224 .3862 -34.62 208.52)" cx="139.4" cy="130.3" rx="6.1" ry="6.1"></ellipse>
+          <circle cx="118.9" cy="130.3" r="5.4"></circle>
+          <path d="m98.4 134.9c-2.5 0-4.6-2.1-4.6-4.6s2.1-4.6 4.6-4.6 4.6 2.1 4.6 4.6-2.1 4.6-4.6 4.6z"></path>
+          <path d="m77.9 134.1c-2.1 0-3.8-1.7-3.8-3.8s1.7-3.8 3.8-3.8 3.8 1.7 3.8 3.8-1.7 3.8-3.8 3.8z"></path>
+          <path d="m57.3 133.4c-1.7 0-3.1-1.4-3.1-3.1s1.4-3.1 3.1-3.1 3.1 1.4 3.1 3.1-1.4 3.1-3.1 3.1z"></path>
+          <path d="m36.8 132.6c-1.3 0-2.3-1-2.3-2.3s1-2.3 2.3-2.3 2.3 1 2.3 2.3-1 2.3-2.3 2.3z"></path>
+          <circle cx="16.3" cy="130.3" r="1.6"></circle>
+          <circle cx="180.4" cy="153.2" r="7.7"></circle>
+          <path d="m159.9 160.1c-3.8 0-6.9-3.1-6.9-6.9s3.1-6.9 6.9-6.9 6.9 3.1 6.9 6.9-3.1 6.9-6.9 6.9z"></path>
+          <ellipse transform="matrix(.3862 -.9224 .9224 .3862 -55.794 222.61)" cx="139.4" cy="153.2" rx="6.1" ry="6.1"></ellipse>
+          <circle cx="118.9" cy="153.2" r="5.4"></circle>
+          <path d="m98.4 157.8c-2.5 0-4.6-2.1-4.6-4.6s2.1-4.6 4.6-4.6 4.6 2.1 4.6 4.6c0 2.6-2.1 4.6-4.6 4.6z"></path>
+          <circle cx="77.9" cy="153.2" r="3.8"></circle>
+          <path d="m57.3 156.3c-1.7 0-3.1-1.4-3.1-3.1s1.4-3.1 3.1-3.1 3.1 1.4 3.1 3.1-1.4 3.1-3.1 3.1z"></path>
+          <path d="m36.8 155.5c-1.3 0-2.3-1-2.3-2.3s1-2.3 2.3-2.3 2.3 1 2.3 2.3-1 2.3-2.3 2.3z"></path>
+          <circle cx="16.3" cy="153.2" r="1.6"></circle>
+          <circle cx="180.4" cy="176.2" r="7.7"></circle>
+          <path d="m159.9 183.1c-3.8 0-6.9-3.1-6.9-6.9s3.1-6.9 6.9-6.9 6.9 3.1 6.9 6.9-3.1 6.9-6.9 6.9z"></path>
+          <ellipse transform="matrix(.3862 -.9224 .9224 .3862 -76.968 236.7)" cx="139.4" cy="176.2" rx="6.1" ry="6.1"></ellipse>
+          <circle cx="118.9" cy="176.2" r="5.4"></circle>
+          <path d="m98.4 180.8c-2.5 0-4.6-2.1-4.6-4.6s2.1-4.6 4.6-4.6 4.6 2.1 4.6 4.6-2.1 4.6-4.6 4.6z"></path>
+          <path d="m77.9 180c-2.1 0-3.8-1.7-3.8-3.8s1.7-3.8 3.8-3.8 3.8 1.7 3.8 3.8-1.7 3.8-3.8 3.8z"></path>
+          <path d="m57.3 179.3c-1.7 0-3.1-1.4-3.1-3.1s1.4-3.1 3.1-3.1 3.1 1.4 3.1 3.1-1.4 3.1-3.1 3.1z"></path>
+          <path d="m36.8 178.5c-1.3 0-2.3-1-2.3-2.3s1-2.3 2.3-2.3 2.3 1 2.3 2.3-1 2.3-2.3 2.3z"></path>
+          <circle cx="16.3" cy="176.2" r="1.6"></circle>
+        </svg>
+      </figure>
 
-            <div class="col-lg-6 bg-white py-7 py-md-8">
-              <div class="row flex-center h-100">
-                <div class="col-lg-10 text-black text-center text-lg-start" data-zanim-timeline="{}">
-                  <div class="overflow-hidden">
-                    <h4 class="text-uppercase fw-normal ls text-white bg-dark p-1 rounded d-inline-block" data-zanim-xs="{&quot;delay&quot;:0.1}" style="transform: translate(0px, 0px); opacity: 1;">#Software_developer</h4>
-                  </div>
-                  <div class="overflow-hidden">
-                    <h1 class="display-3 fs-5 fs-sm-6"
-                        id="sc"
-                        data-zanim-xs="{&quot;delay&quot;:0.2}"
-                        style="transform: translate(0px, 0px); opacity: 1;">
-                      <span class="fw-light">Anthony</span>
-                      <br>
-                      <span class="text-decoration-underline">Pekhov</span>
-                    </h1>
-                  </div>
-                  <div class="overflow-hidden">
-                    <p class="text-900 fs-0 mt-3 mt-md-5"
-                       data-zanim-xs="{&quot;delay&quot;:0.3}"
-                       style="transform: translate(0px, 0px); opacity: 1;"
-                    >PHP backend developer.<br>
-                      Experienced in opencart and symfony.
-                    </p>
-                  </div>
-                  <div class="overflow-hidden">
-                    <div class="d-lg-flex align-items-center fw-bold ls mt-3 mt-md-5 text-uppercase" data-zanim-xs="{&quot;delay&quot;:0.4}" style="transform: translate(0px, 0px); opacity: 1;">
-                      <h6 class="mb-lg-0">Follow Us:</h6>
-                      <div class="overflow-hidden">
-                        <a class="me-1" href="https://www.linkedin.com/in/anton-pekhov">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="svg-inline--fa fa-facebook fa-w-16 text-dark me-2 ms-3 fs-0 bi bi-linkedin" focusable="false" viewBox="0 0 16 16">
-                            <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
-                          </svg>
-                        </a>
-                        <a class="me-1" href="https://github.com/Pekhov14">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="svg-inline--fa fa-facebook fa-w-16 text-dark me-2 ms-3 fs-0 bi bi-github text-dark" focusable="false" viewBox="0 0 16 16">
-                            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
-                          </svg>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div><!-- end of .container-->
-      </section><!-- <section> close ============================-->
-      <!-- ============================================-->
+      <figure class="position-absolute top-0 start-0 ms-5">
+        <svg class="fill-orange opacity-4" width="29px" height="29px">
+          <path d="M29.004,14.502 C29.004,22.512 22.511,29.004 14.502,29.004 C6.492,29.004 -0.001,22.512 -0.001,14.502 C-0.001,6.492 6.492,-0.001 14.502,-0.001 C22.511,-0.001 29.004,6.492 29.004,14.502 Z"></path>
+        </svg>
+      </figure>
 
-
-
-      <!-- ============================================-->
-      <!-- <section> begin ============================-->
-      <section class="py-6 py-md-8" id="defaultWhyUs">
+      <section class="position-relative overflow-hidden pt-5 pt-lg-3">
         <div class="container">
-          <div class="row flex-center">
-            <div class="col-12 mb-2 mb-lg-5 text-center">
-              <h2 class="fs-3 fs-sm-4">
-                <span class="text-decoration-underline"
-                      id="about"
-                      data-zanim-xs="{&quot;delay&quot;:0.3}"
-                      style="transform: translate(0px, 0px); opacity: 1;">
-                  Brief information about me
-                </span>
-              </h2>
+          <!-- Title -->
+          <div class="row align-items-center g-5">
+            <div class="col-lg-5 col-xl-6 position-relative z-index-1 text-center text-lg-start mb-5 mb-sm-0">
+              <!-- SVG -->
+              <figure class="fill-warning position-absolute bottom-0 end-0 me-5 d-none d-xl-block">
+                <svg width="42px" height="42px">
+                  <path d="M21.000,-0.001 L28.424,13.575 L41.999,20.999 L28.424,28.424 L21.000,41.998 L13.575,28.424 L-0.000,20.999 L13.575,13.575 L21.000,-0.001 Z"></path>
+                </svg>
+              </figure>
+              <!-- SVG -->
+              <figure class="fill-success position-absolute top-0 start-50 translate-middle-x mt-n5 ms-5">
+                <svg width="22px" height="21px">
+                  <path d="M10.717,4.757 L14.440,-0.001 L14.215,6.023 L20.142,4.757 L16.076,9.228 L21.435,12.046 L15.430,12.873 L17.713,18.457 L12.579,15.252 L10.717,20.988 L8.856,15.252 L3.722,18.457 L6.005,12.873 L-0.000,12.046 L5.359,9.228 L1.292,4.757 L7.220,6.023 L6.995,-0.001 L10.717,4.757 Z"></path>
+                </svg>
+              </figure>
+              <!-- Title -->
+              <h1 class="mb-0 display-6">Anthony
+                <span class="position-relative">Pekhov
+                  <!-- SVG START -->
+						<span class="position-absolute top-50 start-50 translate-middle ms-3 z-index-n1">
+							<svg width="300px" height="62.1px" enable-background="new 0 0 366 62.1" viewBox="0 0 366 62.1" xmlns="http://www.w3.org/2000/svg">
+								<path class="fill-warning" d="m322.5 25.3c0 1.4 2.9 0.8 3.1 1.6 0.8 1.1-1.1 1.3-0.6 2.4 13.3 0.9 26.9 1.7 40.2 4-2.5 0.7-4.9 1.6-7.3 1.1-4-0.9-8.2-1-12.2-1.2-8.5-0.5-16.9-1.9-25.5-1.7h-3.1c2.6 0.6 4.8 0.4 5.7 2.2-7.3 0.4-14.1-0.8-21.2-1.1-0.2 0.6-0.5 1.2-0.8 1.8 21.3 0.7 42.5 1.6 64.3 4.6-4.2 1.6-7.7 1-10.8 0.8-6.8-0.5-13.5-1.3-20.3-1.9-0.9-0.1-2.3-0.1-2.9 0.2-2.2 1.6-4.3 0.6-7 0.4 1.4-1 2.5 0.5 3.9-0.8-5.6-1-10.7 0.6-15.9 0s-10.5-0.6-16.6-0.8c2 1.6 4.6 1.3 6.2 1.4 4.9 0 9.9 0.8 14.8 0.7 5.3-0.1 10.4 0.5 15.5 0.9 3.2 0.3 6.7-0.1 9.9-0.4 1.1-0.1 0.5 0.3 0.6 0.6 0.5 0.9 2.2 0.8 3.6 0.8 5.1-0.1 10.1 0.6 14.8 1.5 0.8 0.1 1.5 0 1.7 0.7 0 0.7-0.8 0.6-1.5 0.8-3.9 1.2-7.4-0.2-11.1-0.2-2 0-4.3-1.5-6 0.5-0.3 0.4-1.4 0.1-2.2-0.1-4.5-0.8-9.1-0.5-13.8-1.5-2.3-0.5-5.6 0.1-8.4 0.5-4 0.5-8-0.7-12.1-0.9-3.4-0.2-7.1-0.5-10.5-0.7-7.1-0.3-14.2-1.2-22.3-0.4 4.9 1.1 9.4 1.2 13.8 1.2 9.7 0 19.2 2.3 28.9 1.6 7.3 3.2 15.9 1.5 23.8 2.9 4.9 0.8 10.1 0.8 15.2 1.2 0.5 0 0.8 0.3 1.1 0.9-20-2.1-40.2-1.4-60.8-3 4.9 2.1 10.8-0.3 15.3 2.7-8 1.9-15.8-0.9-23.5-0.1 2.8 1.4 7.1 1.1 9.3 3.3 0.5 0.5 0.2 1.1-1.2 1.3 2.3 1 3.4-2.1 5.7-0.4 0.2-0.6 0.2-1 0.3-1.5 0.8-0.3 2 0.8 1.5 1.5-0.2 0.1 0 0.3 0 0.5 18.7 0.4 37.3 1.7 56.2 3.6-1.7 1.1-2.8 1.2-4.2 1.1-7.1-0.5-14.1-0.9-21.2-1.4-3.1-0.2-6.3-0.4-9.4-0.4-7.6-0.2-15-0.7-22.4-1-9-0.4-17.9-0.1-26.9-0.1-1.2 0-2.9-0.4-3.9 1 14.8 0.3 29.7 0.6 44.4 1.1 14.8 0.6 29.9 1.3 44.2 4.2-4.3 1-8.8 0.9-13 0.5-5.3-0.5-10.5-1.1-15.8-1.2-11.4-0.3-22.9-0.9-34.3-1.2-17.6-0.4-35.4-0.3-53.1-0.4-10.8-0.1-21.7-0.2-32.5 0-17.8 0.4-35.7 0.2-53.5 0.5-13.1 0.3-26.3 0.1-39.4 0.5-11.1 0.3-22.4 0.6-33.6 1-13.1 0.6-26.1 0.2-39.3 0.4-3.9 0.1-7.6 0.2-11.8-0.2 0.9-1.2 2.3-1.3 3.9-1.3 8.4 0.2 16.6-0.4 24.9-0.9 3.9-0.2 7.9-0.4 11.9 0.2 2.5 0.4 5.3-0.3 8-0.4 7.3-0.4 14.7-0.7 22-0.9 11.9-0.5 23.7-1.2 35.6-0.8 7.7 0.2 15.3-0.6 22.9-0.1 2.3 0.2 4.3-0.5 6.5-1h-17.6c-9.6 0-19-0.1-28.6 0-8 0.1-16.1 0.3-24 0.8-2.6 0.2-5.4 0.1-8.2 0.1-10.1 0.3-20.1 0.6-30.2 0.5-5.4 0-10.7-0.1-15.9 0.6-2.3 0.3-4-1.3-6.5-0.6 0.2 0.4 0.5 0.9 0.6 1.5-1.9 0-4 0.4-4.9-0.1-4.2-2.2-9.4-1.5-14.1-2.3-1.7-0.3-3.7-0.1-4.3-1.5-0.5-1.3 1.9-1.5 2.6-2.6-4.2-1.4-4.6-5-8.5-7.2-1.5 0.2-0.9 2.8-4.2 1.3 0.3 2.4 4.5 3.9 2.8 6.4-2.3 0.3-3.2-0.8-4.2-1.7-2.5-4-5.1-8.4-5.1-12.7 0.2-6.8 0.2-13.8 3.6-20.4 0.3-0.5 0.3-1 0.8-1.4 0.9-0.9 1.2-2.4 3.6-2.1 2.2 0.2 2.5 1.5 2.6 2.6 0.2 1.4 1.5 1.8 3.2 2.5 0.9-1.4 0.5-2.9 2.6-3.7 0.2-0.1 0.3-0.4 0.3-0.4-3.1-2.2 1.2-2.2 2.3-3.3-3.1-1.8-4-4.3-3.7-7-1.5-0.3-3.1-0.4-4.5 0-1.7 0.6-2.2-0.5-2.9-1 0.6-0.5 0.8-1.1 2.2-1.3 7.6-0.9 15.2-1.7 22.9-2 20-0.7 39.9-0.9 59.9-1 11.9-0.1 23.8 0.4 35.6 1.1 3.6 0.2 7.1-0.9 10.7-0.5 7.9 0.9 15.8 0.3 23.8 0.5 7.3 0.1 14.4-0.6 21.7-0.1 12.2 0.9 24.4 0.3 36.7 0.6 9.4 0.3 18.9 0.4 28.2 1 11.9 0.7 23.8 1.3 35.6 2 11.1 0.6 22.4 0.5 33.3 2 7.1 1 14.4 1.1 21.3 2.4 4 0.7 8.2 1.6 12.4 1.9 2.2 0.2 0.9 1 1.5 1.5-4-0.8-8-0.8-12.1-1.4-4.3-0.7-8.5-1-12.8 0.4-2.9 1-6.3 0.2-9.3-0.1-10.2-1.1-20.6-1.6-30.8-2.4-12.1-0.9-24.3-1.4-36.4-2.1-9.9-0.6-20-0.5-29.9-1-11.4-0.6-22.7 0-34.2-0.5-6.3-0.3-12.3-0.3-18.5-0.4-4.2-0.1-8.4 1.3-12.8 0.3 0.6 0.2 1.2 0.7 1.9 0.7 10.5 0 20.9 1.9 31.6 1.7 6.5-0.1 13.1 0.2 19.8 0.8 3.2 0.3 6.3-0.4 9.7-0.1 7.6 0.7 15.5 0.5 23 0.8 12.4 0.5 24.7 0.4 37.1 1.1 13.3 0.7 26.8 2.1 39.9 4.1 6.2 0.9 12.7 1.5 19.2 1.7 0.6 0 1.1 0.1 1.5 0.5-4.6 0.1-9.3 0-13.9-0.5-0.6 1.1 1.4 0.9 1.5 1.9-9.7 1.6-19.6-1.4-29.4-0.1 2.2 1.4 5.1 1 7.4 1 7.3 0.1 14.1 1.3 21.2 1.9 2.8 0.3 5.9 0 8.5 0.8 1.5 0.5 4.6-1.1 4.9 1.3 4-0.7 7.3 1.5 11.1 1.2 4-0.3 7.7 0.6 11.6 1.1 0.8 0.1 2.2 0.3 2.3 1.1 0.2 1-1.1 1.2-2 1.5-3.4 1-6.7-0.4-10.1-0.4-0.9 0-2-0.2-2.9-0.2-9.4 0.1-18.8-1.3-28.3-1.8-6-0.4-12.1-0.9-18.1-1.3 0 0.2 0 0.4-0.2 0.6 6.1 0.5 12.1 1.4 18.3 0.7z"></path>
+							</svg>
+						</span>
+                  <!-- SVG END -->
+					</span>
+              </h1>
+
+              <!-- Content -->
+              <p class="my-4 lead">PHP Software Developer.<br>
+                Experienced in opencart &amp; symfony</p>
+
+              <!-- Info -->
+              <ul class="list-inline position-relative justify-content-center justify-content-lg-start mb-4">
+                <li class="list-inline-item">
+                  <a href="https://www.linkedin.com/in/anton-pekhov" target="_blank" class="fast-icon"><i class="bi bi-linkedin"></i> LinkedIn</a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="https://github.com/Pekhov14" target="_blank" class="fast-icon"><i class="bi bi-github"></i> GitHub</a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="mailto:pehovanton21@gmail.com" class="fast-icon"><i class="bi bi-envelope-fill"></i> Email Us</a>
+                </li>
+              </ul>
+
+              <a class="btn btn-outline-dark btn-sm mt-3"
+                 href="assets/cv/CV_Anton_Pekhov.pdf"
+                 download="CV_Anton_Pekhov_PHP_DEV"
+              >Download PDF CV</a>
+            </div>
+
+
+            <!-- Right content START -->
+            <div class="col-lg-7 col-xl-6 text-center position-relative">
+              <!-- SVG decoration -->
+
+              <!-- Icon logos START -->
+              <div class="p-2 bg-white shadow rounded-3 position-absolute top-50 start-0 translate-middle-y mt-n7 d-none d-sm-block">
+                <img src="assets/img/icons/symfony.png" alt="Icon" width="50">
+              </div>
+              <div class="p-2 bg-white shadow rounded-3 position-absolute top-0 end-0">
+                <img src="assets/img/icons/php.png" alt="Icon" width="50">
+              </div>
+              <div class="p-2 bg-white shadow rounded-3 position-absolute top-0 end-0 translate-middle-y mt-10 ms-5 d-none d-lg-block z-index-9">
+                <img src="assets/img/icons/postgresql.png" alt="Icon" width="50">
+              </div>
+              <div class="p-2 bg-white shadow rounded-3 position-absolute top-50 end-0 translate-middle-y mt-5 ms-5 d-none d-lg-block z-index-9">
+                <img src="assets/img/icons/react.png" alt="Icon" width="50">
+              </div>
+              <div class="p-2 bg-white shadow rounded-3 position-absolute top-50 start-0 translate-middle-y mt-7 ms-3 d-none d-lg-block z-index-9">
+                <img src="assets/img/icons/doctrine.png" alt="Icon" width="50">
+              </div>
+              <div class="p-2 bg-white shadow rounded-3 position-absolute top-0 start-0 translate-middle-y mt-4 ms-1 d-none d-lg-block z-index-9">
+                <img src="assets/img/icons/docker.png" alt="Icon" width="50">
+              </div>
+              <!-- Icon logos END -->
+
+              <!-- Image -->
+              <div class="position-relative">
+<!--                <img src="assets/img/my_photo/5.png" alt="">-->
+                <img src="assets/img/my_photo/4.jpeg" width="400" alt="" class="rounded-4">
+              </div>
+            </div>
+            <!-- Right content END -->
+          </div>
+        </div>
+      </section>
+
+
+
+      <section>
+        <div class="container">
+
+          <div class="row g-4">
+            <!-- Title and SVG START -->
+            <div class="col-10 text-center mx-auto position-relative">
+              <!-- SVG decoration -->
+              <figure class="position-absolute top-100 start-50 translate-middle mt-5 ms-n9 pt-5 d-none d-lg-block">
+                <svg>
+                  <path class="fill-success" d="m181.6 6.7c-0.1 0-0.2-0.1-0.3 0-2.5-0.3-4.9-1-7.3-1.4-2.7-0.4-5.5-0.7-8.2-0.8-1.4-0.1-2.8-0.1-4.1-0.1-0.5 0-0.9-0.1-1.4-0.2-0.9-0.3-1.9-0.1-2.8-0.1-5.4 0.2-10.8 0.6-16.1 1.4-2.7 0.3-5.3 0.8-7.9 1.3-0.6 0.1-1.1 0.3-1.8 0.3-0.4 0-0.7-0.1-1.1-0.1-1.5 0-3 0.7-4.3 1.2-3 1-6 2.4-8.8 3.9-2.1 1.1-4 2.4-5.9 3.9-1 0.7-1.8 1.5-2.7 2.2-0.5 0.4-1.1 0.5-1.5 0.9s-0.7 0.8-1.1 1.2c-1 1-1.9 2-2.9 2.9-0.4 0.3-0.8 0.5-1.2 0.5-1.3-0.1-2.7-0.4-3.9-0.6-0.7-0.1-1.2 0-1.8 0-3.1 0-6.4-0.1-9.5 0.4-1.7 0.3-3.4 0.5-5.1 0.7-5.3 0.7-10.7 1.4-15.8 3.1-4.6 1.6-8.9 3.8-13.1 6.3-2.1 1.2-4.2 2.5-6.2 3.9-0.9 0.6-1.7 0.9-2.6 1.2s-1.7 1-2.5 1.6c-1.5 1.1-3 2.1-4.6 3.2-1.2 0.9-2.7 1.7-3.9 2.7-1 0.8-2.2 1.5-3.2 2.2-1.1 0.7-2.2 1.5-3.3 2.3-0.8 0.5-1.7 0.9-2.5 1.5-0.9 0.8-1.9 1.5-2.9 2.2 0.1-0.6 0.3-1.2 0.4-1.9 0.3-1.7 0.2-3.6 0-5.3-0.1-0.9-0.3-1.7-0.8-2.4s-1.5-1.1-2.3-0.8c-0.2 0-0.3 0.1-0.4 0.3s-0.1 0.4-0.1 0.6c0.3 3.6 0.2 7.2-0.7 10.7-0.5 2.2-1.5 4.5-2.7 6.4-0.6 0.9-1.4 1.7-2 2.6s-1.5 1.6-2.3 2.3c-0.2 0.2-0.5 0.4-0.6 0.7s0 0.7 0.1 1.1c0.2 0.8 0.6 1.6 1.3 1.8 0.5 0.1 0.9-0.1 1.3-0.3 0.9-0.4 1.8-0.8 2.7-1.2 0.4-0.2 0.7-0.3 1.1-0.6 1.8-1 3.8-1.7 5.8-2.3 4.3-1.1 9-1.1 13.3 0.1 0.2 0.1 0.4 0.1 0.6 0.1 0.7-0.1 0.9-1 0.6-1.6-0.4-0.6-1-0.9-1.7-1.2-2.5-1.1-4.9-2.1-7.5-2.7-0.6-0.2-1.3-0.3-2-0.4-0.3-0.1-0.5 0-0.8-0.1s-0.9 0-1.1-0.1-0.3 0-0.3-0.2c0-0.4 0.7-0.7 1-0.8 0.5-0.3 1-0.7 1.5-1l5.4-3.6c0.4-0.2 0.6-0.6 1-0.9 1.2-0.9 2.8-1.3 4-2.2 0.4-0.3 0.9-0.6 1.3-0.9l2.7-1.8c1-0.6 2.2-1.2 3.2-1.8 0.9-0.5 1.9-0.8 2.7-1.6 0.9-0.8 2.2-1.4 3.2-2 1.2-0.7 2.3-1.4 3.5-2.1 4.1-2.5 8.2-4.9 12.7-6.6 5.2-1.9 10.6-3.4 16.2-4 5.4-0.6 10.8-0.3 16.2-0.5h0.5c1.4-0.1 2.3-0.1 1.7 1.7-1.4 4.5 1.3 7.5 4.3 10 3.4 2.9 7 5.7 11.3 7.1 4.8 1.6 9.6 3.8 14.9 2.7 3-0.6 6.5-4 6.8-6.4 0.2-1.7 0.1-3.3-0.3-4.9-0.4-1.4-1-3-2.2-3.9-0.9-0.6-1.6-1.6-2.4-2.4-0.9-0.8-1.9-1.7-2.9-2.3-2.1-1.4-4.2-2.6-6.5-3.5-3.2-1.3-6.6-2.2-10-3-0.8-0.2-1.6-0.4-2.5-0.5-0.2 0-1.3-0.1-1.3-0.3-0.1-0.2 0.3-0.4 0.5-0.6 0.9-0.8 1.8-1.5 2.7-2.2 1.9-1.4 3.8-2.8 5.8-3.9 2.1-1.2 4.3-2.3 6.6-3.2 1.2-0.4 2.3-0.8 3.6-1 0.6-0.2 1.2-0.2 1.8-0.4 0.4-0.1 0.7-0.3 1.1-0.5 1.2-0.5 2.7-0.5 3.9-0.8 1.3-0.2 2.7-0.4 4.1-0.7 2.7-0.4 5.5-0.8 8.2-1.1 3.3-0.4 6.7-0.7 10-1 7.7-0.6 15.3-0.3 23 1.3 4.2 0.9 8.3 1.9 12.3 3.6 1.2 0.5 2.3 1.1 3.5 1.5 0.7 0.2 1.3 0.7 1.8 1.1 0.7 0.6 1.5 1.1 2.3 1.7 0.2 0.2 0.6 0.3 0.8 0.2 0.1-0.1 0.1-0.2 0.2-0.4 0.1-0.9-0.2-1.7-0.7-2.4-0.4-0.6-1-1.4-1.6-1.9-0.8-0.7-2-1.1-2.9-1.6-1-0.5-2-0.9-3.1-1.3-2.5-1.1-5.2-2-7.8-2.8-1-0.8-2.4-1.2-3.7-1.4zm-64.4 25.8c4.7 1.3 10.3 3.3 14.6 7.9 0.9 1 2.4 1.8 1.8 3.5-0.6 1.6-2.2 1.5-3.6 1.7-4.9 0.8-9.4-1.2-13.6-2.9-4.5-1.7-8.8-4.3-11.9-8.3-0.5-0.6-1-1.4-1.1-2.2 0-0.3 0-0.6-0.1-0.9s-0.2-0.6 0.1-0.9c0.2-0.2 0.5-0.2 0.8-0.2 2.3-0.1 4.7 0 7.1 0.4 0.9 0.1 1.6 0.6 2.5 0.8 1.1 0.4 2.3 0.8 3.4 1.1z"></path>
+                </svg>
+              </figure>
+              <!-- SVG decoration -->
+              <figure class="position-absolute top-0 start-0 ms-n9">
+                <svg width="22px" height="22px" viewBox="0 0 22 22">
+                  <polygon class="fill-orange" points="22,8.3 13.7,8.3 13.7,0 8.3,0 8.3,8.3 0,8.3 0,13.7 8.3,13.7 8.3,22 13.7,22 13.7,13.7 22,13.7 "></polygon>
+                </svg>
+              </figure>
+              <!-- SVG decoration -->
+              <figure class="position-absolute top-100 start-100 translate-middle ms-5 d-none d-md-block">
+                <svg width="21.5px" height="21.5px" viewBox="0 0 21.5 21.5">
+                  <polygon class="fill-danger" points="21.5,14.3 14.4,9.9 18.9,2.8 14.3,0 9.9,7.1 2.8,2.6 0,7.2 7.1,11.6 2.6,18.7 7.2,21.5 11.6,14.4 18.7,18.9 "></polygon>
+                </svg>
+              </figure>
+              <!-- SVG decoration -->
+              <figure class="position-absolute top-0 start-100 translate-middle">
+                <svg width="27px" height="27px">
+                  <path class="fill-orange" d="M13.122,5.946 L17.679,-0.001 L17.404,7.528 L24.661,5.946 L19.683,11.533 L26.244,15.056 L18.891,16.089 L21.686,23.068 L15.400,19.062 L13.122,26.232 L10.843,19.062 L4.557,23.068 L7.352,16.089 L-0.000,15.056 L6.561,11.533 L1.582,5.946 L8.839,7.528 L8.565,-0.001 L13.122,5.946 Z"></path>
+                </svg>
+              </figure>
+
+              <!-- Title -->
+              <h2 class="position-relative fs-2">It`s me:)</h2>
+            </div>
+            <!-- Title and SVG END -->
+          </div>
+
+          <!-- Images START -->
+          <div class="row g-4 mt-0 mt-lg-5">
+
+            <!-- Left image -->
+            <div class="col-6 col-md-4">
+              <div class="row g-4">
+                <!-- Image -->
+                <div class="col-10 col-lg-6">
+                  <img class="rounded-4" src="assets/img/my_photo/1.jpeg" alt="">
+                </div>
+              </div>
+            </div>
+
+            <!-- Center image -->
+            <div class="col-6 col-md-4 position-relative">
+              <!-- SVG decoration -->
+              <figure class="position-absolute bottom-0 start-0 ms-n5">
+                <svg width="129px" height="133px">
+                  <path class="fill-blue" d="M127.581,25.993 C122.659,31.935 113.441,24.283 118.356,18.351 C123.278,12.408 132.496,20.060 127.581,25.993 ZM115.247,49.292 C106.977,59.275 91.492,46.420 99.748,36.454 C108.018,26.470 123.503,39.325 115.247,49.292 ZM86.935,2.378 C91.464,-3.089 99.944,3.951 95.423,9.409 C90.894,14.876 82.414,7.836 86.935,2.378 ZM93.501,43.010 C84.246,54.182 66.918,39.796 76.157,28.643 C85.411,17.471 102.740,31.856 93.501,43.010 ZM57.726,6.672 C63.633,-0.460 74.694,8.723 68.796,15.842 C62.889,22.973 51.828,13.791 57.726,6.672 ZM65.132,42.254 C65.414,45.250 64.407,48.520 62.488,50.836 C60.459,53.285 57.635,54.609 54.547,55.032 C51.448,55.456 48.387,54.215 45.962,52.383 C43.626,50.618 42.031,47.307 41.761,44.441 C41.479,41.444 42.486,38.175 44.406,35.858 C46.434,33.410 49.258,32.085 52.346,31.662 C55.446,31.238 58.507,32.479 60.931,34.312 C63.267,36.076 64.862,39.387 65.132,42.254 ZM48.502,101.257 C42.496,108.507 31.251,99.172 37.247,91.934 C43.252,84.684 54.497,94.019 48.502,101.257 ZM23.966,17.251 C29.774,10.238 40.651,19.267 34.852,26.269 C29.043,33.281 18.167,24.251 23.966,17.251 ZM9.378,26.952 C15.088,20.059 25.780,28.935 20.079,35.817 C14.369,42.711 3.677,33.835 9.378,26.952 ZM10.074,49.315 C5.742,54.545 -2.369,47.811 1.955,42.590 C6.287,37.361 14.399,44.094 10.074,49.315 ZM10.889,68.408 C13.679,70.517 13.903,74.910 11.746,77.514 C9.434,80.305 5.439,80.481 2.640,78.366 C-0.150,76.258 -0.375,71.865 1.783,69.260 C4.095,66.469 8.090,66.293 10.889,68.408 ZM9.881,114.513 C5.450,119.861 -2.845,112.974 1.578,107.635 C6.008,102.287 14.304,109.173 9.881,114.513 ZM12.758,94.899 C14.381,91.994 16.764,89.898 20.208,89.575 C22.532,89.358 25.068,90.140 26.866,91.630 C28.766,93.203 29.795,95.394 30.124,97.789 C30.589,101.171 28.744,104.038 26.279,106.100 C26.173,106.189 26.066,106.278 25.960,106.367 C24.381,107.689 21.309,108.287 19.326,107.873 C17.757,107.545 16.312,106.882 15.033,105.915 C13.453,104.722 12.479,102.811 12.056,100.935 C11.657,99.164 11.627,96.924 12.555,95.263 C12.622,95.142 12.690,95.021 12.758,94.899 ZM23.787,69.054 C28.020,63.943 35.947,70.523 31.721,75.626 C27.487,80.736 19.560,74.156 23.787,69.054 ZM23.899,47.361 C28.822,41.418 38.039,49.070 33.125,55.003 C28.202,60.945 18.985,53.293 23.899,47.361 ZM51.663,129.014 C42.901,139.591 26.494,125.972 35.242,115.411 C44.004,104.833 60.411,118.454 51.663,129.014 ZM69.137,67.525 C69.381,67.564 69.626,67.602 69.871,67.641 C77.305,68.819 80.658,77.977 75.894,83.728 C71.131,89.478 61.508,87.888 58.968,80.803 C58.884,80.570 58.800,80.337 58.717,80.104 C56.311,73.396 62.098,66.410 69.137,67.525 Z"></path>
+                </svg>
+              </figure>
+              <!-- Image -->
+              <img class="rounded-4" src="assets/img/my_photo/3.jpeg" alt="">
+            </div>
+
+            <!-- Right image -->
+            <div class="col-md-4">
+              <div class="row g-4">
+                <div class="col-sm-6 col-md-12 col-lg-6">
+                  <img class="rounded-4" src="assets/img/my_photo/2.jpeg" alt="">
+                </div>
+              </div>
             </div>
           </div>
-          <div class="row flex-center">
-            <div class="col-sm-8 col-lg-4 text-lg-end mt-5 mt-lg-0 pe-lg-3 pe-xl-4">
-              <div class="overflow-hidden">
-                <p class="fst-italic lead" data-zanim-xs="{&quot;delay&quot;:0.2}">
-                  <b>Location:</b> <br> Ukraine
-                </p>
-                <p class="fst-italic lead" data-zanim-xs="{&quot;delay&quot;:0.2}">
-                  <b>Email:</b> <br> <a href="mailto:pehovanton21@gmail.com">pehovanton21@gmail.com</a>
-                </p>
-                <p class="fst-italic lead" data-zanim-xs="{&quot;delay&quot;:0.2}">
-                  <b>LinkedIn:</b> <br> <a href="https://www.linkedin.com/in/anton-pekhov/" target="_blank">/in/anton-pekhov</a>
-                </p>
-                <p class="fst-italic lead" data-zanim-xs="{&quot;delay&quot;:0.2}">
-                  <b>Telephone:</b> <br> <a href="tel:+380665686929">+380 (66) 568 69 29</a>
-                </p>
-              </div>
-              <div class="overflow-hidden">
-                <a class="btn btn-outline-dark btn-sm mt-3"
-                   href="assets/cv/CV_Anton_Pekhov.pdf"
-                   download="CV_Anton_Pekhov_PHP_DEV"
-                >Download PDF CV</a>
-              </div>
-            </div>
-            <div class="col-sm-8 col-lg-4 mt-4 mt-lg-0 px-lg-4">
-              <img class="w-100 rounded"
-                   src="assets/img/my_photo/3.jpeg"
-                   alt="Anthony Pekhov"
-                   data-zanim-xs="{&quot;animation&quot;:&quot;zoom-out&quot;,&quot;delay&quot;:0.1}"
-                   style="filter: blur(0px); opacity: 1; transform: translate(0px, 0px);">
-            </div>
-          </div>
-        </div><!-- end of .container-->
-      </section><!-- <section> close ============================-->
-      <!-- ============================================-->
+          <!-- Images END -->
+        </div>
+      </section>
 
       <section id="promotionFooter">
         <div class="container">
           <div class="row">
             <div class="col-12">
-              <h4>What do I know or where do I develop</h4>
+              <h4><i class="bi bi-tag"></i> Tags by my skills</h4>
               <hr>
             </div>
             <div class="col-12 mt-4 font-sans-serif">
@@ -234,15 +334,12 @@
         </div><!-- end of .container-->
       </section>
 
-<!--   My way   -->
-
-      <!-- ============================================-->
-      <!-- <section> begin ============================-->
+      <!--   My way   -->
       <section class="border-top" id="defaultProcess">
         <div class="container">
           <div class="row justify-content-center text-center mb-6">
             <div class="col-lg-6">
-              <h2 class="fs-3 fs-sm-4 text-decoration-underline mb-3">My study and work path</h2>
+              <h2 class="fs-3 fs-sm-4 text-decoration-underline mb-3">Work experience and training</h2>
               <hr class="hr-short mt-5">
             </div>
           </div>
@@ -296,110 +393,132 @@
       </section><!-- <section> close ============================-->
       <!-- ============================================-->
 
-      <section style="width: 100%; background: rgb(255, 178, 110);">
+      <section>
         <div class="container">
-          <div class="row justify-content-center text-center">
-            <div class="col-lg-8" style="margin-bottom: 70px;">
-              <h4 style="font-size: 2.369rem;">FAQ</h4>
-            </div>
+          <div class="row g-4">
+            <div class="col-lg-8  mx-auto">
+            <!-- Title -->
+            <h3 class="mb-4">Frequently Asked Questions</h3>
 
-            <div class="row">
-              <div class="col-4">
-                <ul class="list-group">
-                  <li class="list-group-item d-flex justify-content-between align-items-center faq">
-                    <a class="list-group-item list-group-item-action active"
-                       id="list-home-list"
-                       data-bs-toggle="list"
-                       href="#list-home"
-                       role="tab"
-                       aria-controls="list-home">Education</a>
-                    <span class="badge bg-dark rounded-pill">4</span>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center faq">
-                    <a class="list-group-item list-group-item-action"
-                       id="list-profile-list"
-                       data-bs-toggle="list"
-                       href="#list-profile"
-                       role="tab"
-                       aria-controls="list-profile">Hobby's</a>
-                    <span class="badge bg-dark rounded-pill">2</span>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center faq">
-                    <a class="list-group-item list-group-item-action"
-                       id="list-messages-list"
-                       data-bs-toggle="list"
-                       href="#list-messages"
-                       role="tab"
-                       aria-controls="list-messages">Experience</a>
-                    <span class="badge bg-dark rounded-pill">1</span>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center faq">
-                    <a class="list-group-item list-group-item-action"
-                       id="list-about-list"
-                       data-bs-toggle="list"
-                       href="#list-about"
-                       role="tab"
-                       aria-controls="list-messages">About me</a>
-                    <span class="badge bg-dark rounded-pill">1</span>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center faq">
-                    <a class="list-group-item list-group-item-action"
-                       id="list-general-issues-list"
-                       data-bs-toggle="list"
-                       href="#list-general-issues"
-                       role="tab"
-                       aria-controls="list-messages">General issues</a>
-                    <span class="badge bg-dark rounded-pill">1</span>
-                  </li>
-                </ul>
+            <p class="fw-bold mb-2">To save you time on typical questions, I collected them for you and answered them.</p>
+
+            <!-- FAQ START -->
+            <div class="accordion accordion-icon accordion-bg-light" id="accordionExample2">
+              <!-- Item -->
+              <div class="accordion-item mb-3">
+                <h6 class="accordion-header font-base" id="heading-1">
+                  <button class="accordion-button fw-bold rounded d-inline-block collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1" aria-expanded="false" aria-controls="collapse-1">
+                    How old are you?
+                  </button>
+                </h6>
+                <!-- Body -->
+                <div id="collapse-1" class="accordion-collapse collapse" aria-labelledby="heading-1" data-bs-parent="#accordionExample2" style="">
+                  <div class="accordion-body mt-3">
+                    <p>Soon I'm 23, but for now 22 <i class="bi bi-emoji-smile-upside-down"></i></p>
+                  </div>
+                </div>
               </div>
-              <div class="col-8">
-                <div class="tab-content" id="nav-tabContent">
-                  <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">1</div>
-                  <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">2</div>
-                  <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">3</div>
-                  <div class="tab-pane fade" id="list-general-issues" role="tabpanel" aria-labelledby="list-messages-list">general issues</div>
-                  <div class="tab-pane fade" id="list-about" role="tabpanel" aria-labelledby="list-messages-list">
 
-                    
-                    <div class="row">
-                      <div class="col-12">
-                        <ul class="list-group list-group-horizontal bot-queens">
-                          <li class="list-group-item d-flex justify-content-between align-items-center faq">
-                            <a class="list-group-item list-group-item-action active"
-                               id="about-1"
-                               data-bs-toggle="list"
-                               href="#about-bot-1"
-                               role="tab"
-                               aria-controls="list-home">Can you tell me about yourself?</a>
-                          </li>
-                          <li class="list-group-item d-flex justify-content-between align-items-center faq">
-                            <a class="list-group-item list-group-item-action"
-                               id="about-2"
-                               data-bs-toggle="list"
-                               href="#about-bot-2"
-                               role="tab"
-                               aria-controls="list-profile">Hobby's</a>
-                          </li>
-                          <li class="list-group-item d-flex justify-content-between align-items-center faq">
-                            <a class="list-group-item list-group-item-action"
-                               id="about-3"
-                               data-bs-toggle="list"
-                               href="#about-bot-3"
-                               role="tab"
-                               aria-controls="list-messages">Experience</a>
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="col-12">
-                        <div class="tab-content" id="nav-tabContent">
-                          <div class="tab-pane fade show active" id="about-bot-1" role="tabpanel" aria-labelledby="list-home-list">about 1</div>
-                          <div class="tab-pane fade" id="about-bot-2" role="tabpanel" aria-labelledby="list-profile-list">about 2</div>
-                          <div class="tab-pane fade" id="about-bot-3" role="tabpanel" aria-labelledby="list-messages-list">about 3</div>
-                        </div>
-                      </div>
+<!--              &lt;!&ndash; Item &ndash;&gt;-->
+<!--              <div class="accordion-item mb-3">-->
+<!--                <h6 class="accordion-header font-base" id="heading-2">-->
+<!--                  <button class="accordion-button fw-bold rounded d-inline-block d-block pe-5 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-2" aria-expanded="false" aria-controls="collapse-2">-->
+<!--                    How to edit my Profile?-->
+<!--                  </button>-->
+<!--                </h6>-->
+<!--                &lt;!&ndash; Body &ndash;&gt;-->
+<!--                <div id="collapse-2" class="accordion-collapse collapse" aria-labelledby="heading-2" data-bs-parent="#accordionExample2" style="">-->
+<!--                  <div class="accordion-body mt-3">-->
+<!--                    What deal evil rent by real in. But her ready least set lived spite solid. September how men saw tolerably two behavior arranging. She offices for highest and replied one venture pasture. Applauded no discovery in newspaper allowance am northward. Frequently partiality possession resolution at or appearance unaffected me. Engaged its was the evident pleased husband. Ye goodness felicity do disposal dwelling no. First am plate jokes to began to cause a scale. Subjects he prospect elegance followed no overcame possible it on. Improved own provided blessing may peculiar domestic. Sight house has sex never. No visited raising gravity outward subject my cottage Mr be.-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+
+<!--              &lt;!&ndash; Item &ndash;&gt;-->
+<!--              <div class="accordion-item">-->
+<!--                <h6 class="accordion-header font-base" id="heading-6">-->
+<!--                  <button class="accordion-button fw-bold rounded d-block pe-5 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-6" aria-expanded="false" aria-controls="collapse-6">-->
+<!--                    What's are the difference between a college and a university?-->
+<!--                  </button>-->
+<!--                </h6>-->
+<!--                &lt;!&ndash; Body &ndash;&gt;-->
+<!--                <div id="collapse-6" class="accordion-collapse collapse" aria-labelledby="heading-6" data-bs-parent="#accordionExample2" style="">-->
+<!--                  <div class="accordion-body mt-3">-->
+<!--                    Post no so what deal evil rent by real in. But her ready least set lived spite solid. September how men saw tolerably two behavior arranging. She offices for highest and replied one venture pasture. Applauded no discovery in newspaper allowance am northward. Frequently partiality possession resolution at or appearance unaffected me. Engaged its was the evident pleased husband. Ye goodness felicity do disposal dwelling no. First am plate jokes to began to cause a scale. Subjects he prospect elegance followed no overcame possible it on. Improved own provided blessing may peculiar domestic. Sight house has sex never. No visited raising gravity outward subject my cottage Mr be. Hold do at tore in park feet near my case. Invitation at understood occasional sentiments insipidity inhabiting in. Off melancholy alteration principles old. Is do speedily kindness properly oh. Respect article painted cottage he is offices parlors.-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+            </div>
+            <!-- FAQ END -->
+          </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact-form" class="position-relative overflow-hidden pt-0 pt-md-5">
+
+        <!-- SVG decoration -->
+        <figure class="position-absolute top-0 start-0 ms-n7 d-none d-xl-block">
+          <svg enable-background="new 0 0 253.7 138">
+            <path class="fill-info" d="m96.5 118.2c0 0.2 0.1 0.4 0.1 0.5l3-0.9c0-0.1-0.1-0.3-0.1-0.4-1 0.3-2 0.5-3 0.8m112-114v-0.4c-5.4-0.3-10.7-0.5-16.1-0.8v0.5c5.4 0.2 10.8 0.5 16.1 0.7m-87.7 89.2c23.1-3.7 45.7-8.8 67.4-17.7-22 7.6-44.5 13.4-67.4 17.7m-7.5-7.7c0 0.2 0.1 0.3 0.1 0.5 5.3-1 10.6-1.9 15.8-3 13.9-2.8 27.8-5.8 41.4-9.7 5.5-1.6 11-3.4 16.4-5.2 2.8-0.9 5.5-2 8.2-3 1.1-0.4 2.1-0.7 3.2-1.1-0.1-0.2-0.1-0.4-0.2-0.6-27.5 9.9-56 16.8-84.9 22.1m74.2-0.4c-0.1-0.2-0.2-0.3-0.3-0.5-2.1 1.1-4.2 2.4-6.3 3.4-5 2.4-10 4.7-15.1 6.9-6.1 2.6-12.2 5-18.3 7.3-1 0.4-2 1.5-3.2 0.3 0 0-0.4 0.3-0.6 0.4-0.7 0.5-1.3 1.2-2 1.4-11.5 3.6-23.1 7.2-34.6 10.8l-5.1 1.5c1 0.1 1.9 0 2.8-0.3 12.3-3.7 24.6-7.4 36.9-11.2 1.2-0.4 1.8-0.3 1.6 1.2-0.1 0.5 0.3 1 0.4 1.5 0.3-0.5 0.6-0.9 0.8-1.4 0.5-1.1 0.3-2.4 1.9-3 6.2-2.3 12.4-4.7 18.5-7.2 4.1-1.7 8-3.6 12-5.5 2.6-1.2 5.2-2.4 7.7-3.7 0.9-0.4 1.9-1.2 2.9-1.9m-162.4-10.9c0.1 0.1 0.1 0.3 0.2 0.4 2.3-1.5 4.7-3.1 7-4.5 8.5-5.1 17.2-9.6 26.5-13.1 8.1-3.1 16.3-6.2 24.6-8.5 10.5-2.9 21.2-5.2 31.8-7.4 4.5-1 9.1-1.2 13.6-1.8 2.7-0.3 5.3-0.6 8-0.9s5.4-0.5 8.1-0.8c-2.1-0.2-4.2-0.4-6.2-0.2-6.2 0.7-12.3 1.6-18.5 2.5-16.1 2.4-32 5.7-47.3 11.2-9.1 3.2-18 6.9-26.9 10.7-7.5 3.1-14.5 7.2-20.9 12.4m135.8-71.8c-24.3-0.3-62.8 5.2-107 27.8-11.3 5.6-21.9 12.4-31.7 20.4 41.8-29.7 88.1-46.3 138.7-48.2m64.4 8.6c-0.3 0.3-0.6 0.8-0.8 0.8-2.4-0.3-4.7-0.7-7.1-1.1-0.4-0.1-0.9 0-1.4 0 0.3 0.3 0.5 0.7 0.9 1 2.1 1.4 4.3 2.6 6.3 4.1 6.9 4.9 11.1 11.5 12.3 19.8 0.3 2.3 0 4.6 0 7.4 5-3.7 9-7.5 11.4-12.8 1.1-2.6 1.3-5.4-0.5-7.9-3.8-5-9.4-6.7-14.9-8.8-2.1-0.8-4.7-0.4-6.2-2.5m-98.8 33.2c0.3-0.4 0.6-0.8 1-1.2-0.5-0.1-0.8-0.2-1.1-0.1-0.7 0.2-1.3 0.5-2 0.7 0.8 0.2 1.5 0.4 2.1 0.6-0.4 0.3-0.8 0.8-1.3 0.9-0.9 0.1-1.9-0.3-2.7-0.1-1.3 0.3-2.4 1-3.7 1.3-9.6 2-19.3 3.8-29 6-3.8 0.9-7.5 2.3-11.1 3.7-6.1 2.3-12.7 3.6-18.7 6.6-0.5 0.3-1.2 0.2-1.7 0.4-1.9 0.9-3.9 1.8-5.8 2.7-1.8 0.9-3.4 2-5.2 2.8-1.7 0.8-3.6 1.4-5.3 2.1-4.7 2-8.5 5.4-12.4 8.5-2.2 1.7-4 3.9-5.9 6-1 1.1-1.7 2.4-2.5 3.7-0.8 1.4-0.1 2.1 1.3 2.3 4.1 0.5 8.1 1.2 12.2 1.2 19.1 0 38-2.7 56.9-5.5 10.6-1.6 21-3.5 31.5-5.5 17.3-3.3 34.6-7.1 51.5-12.1 11.9-3.5 23.7-7.4 35.2-12.1 1.5-0.6 1.3-1.2 0.4-2.1-2.9-3.2-6.6-5.2-10.5-6.6-4.9-1.8-10.2-2.6-15.3-3.8-0.4-0.1-0.6-0.6-0.9-0.9-0.4-0.3-0.9-0.6-1.3-0.9-0.2 0.2-0.3 0.4-0.5 0.6 0.5 0.1 0.9 0.2 1.4 0.3-0.1 0.1-0.2 0.3-0.3 0.4-0.9-0.2-1.9-0.6-2.7-0.4-2.7 0.4-5.4-0.5-8.1-0.5-4.6 0-9.2-0.4-13.8-0.7l-3.6-0.3c-1.1 0-2.2 0.2-3.2 0.2-0.8 0.1-1.6 0.1-2.4 0.2s-1.7 0.5-2.2 0.2c-1.5-0.9-2.8-0.3-4.2 0-1.2 0.3-2.3 0.8-3-0.7-0.1-0.3-0.7-0.3-1-0.4 0 0-0.3 0.3-0.3 0.4 0.7 1.4-0.5 0.8-0.9 0.9-0.6 0.2-1.2 0.2-1.8 0.3-1 0.2-2 0.3-3 0.4-1.2 0.2-2.6 0-3.6 0.5-1.1 0.9-1.7 0.5-2.5 0m-77.3 0.7c-2 0.9-4.2 1.7-6.1 2.8-9 4.9-17.2 11-24.5 18.1-2.5 2.5-4.5 5.6-6.7 8.4-2.8 3.4-4.3 7.3-4.5 11.6-0.1 1.3 0.2 2.9 1 3.8 1.8 2 4.2 3.2 7.1 3.9-2-3.6-2.8-7.1-0.7-10.6 1.4-2.4 3.2-4.7 5.2-6.6 6.1-5.9 13.4-10 20.9-13.9 11.7-6.1 24-10.8 36.5-14.7 16.3-5.1 32.9-8.8 49.8-10.6 5.9-0.6 11.8-1.1 17.7-1.5 12-0.8 23.9-0.3 35.8 1.5 6.5 1 12.8 2.3 19 4.7 6.3 2.5 11.9 5.4 15 11.8 0.4 0.8 0.8 1 1.7 0.6 2-1.1 4.1-2 6.1-3.1 1.6-0.9 3.5-1.7 4.7-3 2.6-3 4.2-6.6 4.5-10.7 0.2-3.2-0.3-6.4-2.2-8.9-2.2-3-4.5-6.2-8-7.8-1.7-0.8-2.4-3.1-4.6-2.9-0.2 0-0.4-0.6-0.6-0.9-0.7-0.9-2.3-0.6-2.7-1.8-0.1 0-0.2 0.1-0.3 0.1-0.5 0.1-1 0.3-1.4 0.2-4.9-1.7-9.8-3.6-15-4.6-4.7-1-9.4-1.5-14.3-1.2-3 0.2-6.1 1.2-9.2 0.1-0.6-0.2-1.5 0.7-2.3 0.8-5.3 0.7-10.6 1.4-15.9 1.8-5.2 0.4-10.2 2.4-15.5 1.8-1.2-0.1-2.9-0.2-4 1.3-0.5 0.6-2-0.2-3.2 0.4-1.3 0.7-3.1 0.4-4.6 0.6-0.1 0-0.1 0.1-0.2 0.1-3.4 0.8-6.8 2.1-10.1 3-12.8 3.6-25.5 7.4-37.9 12.2-2.8 1.1-5.5 2.3-8.4 3.2-3.8 1.2-7.7 1.9-11.1 4.3-1.3 0.9-2.9 1.2-4.4 1.9-0.6 0.2-1 0.7-1.6 1-1.9 1-3.4 1.9-5 2.8m114 46c-0.5 0.3-0.9 0.7-1.4 0.9-8.8 2.1-17.5 4.5-26.4 6.2-11.3 2.2-22.7 3.9-34 5.7-2.9 0.5-5.8 0.5-8.7 0.8-1.8 0.2-3.6 0.7-5.5 0.9-4.8 0.5-9.6 0.9-14.3 1.3-0.8 0.1-1.7-0.3-2.5-0.3-0.5 0-1 0.6-1.5 0.6-4.5 0.1-9 0.3-13.5 0.3-6.1-0.1-12.2 0-18.3-0.6-9.3-0.8-18.5-2.3-26.3-7.8-5.3-3.6-9.8-7.7-10.6-14.6-0.6-4.9 0.7-9.4 3.3-13.4 2-3 4.4-5.8 6.5-8.8 0.6-0.8 0.8-1.9 1.4-2.7 0.9-1.3 1.7-2.7 2.8-3.8 6.3-6 13.3-11.2 20.6-15.8 5.4-3.4 11-6.8 16.7-9.8 18.2-9.6 37.1-17.4 57.1-22.4 13.4-3.3 26.9-5.8 40.7-6.6 8.3-0.5 16.7-0.1 25-0.1 6.7 0 13.5 0.2 20.2 0.2 12.4 0.1 24.6 1.5 36.5 5.1 5.9 1.8 11.5 4.4 15.9 9 5.1 5.3 6.7 14.6 3.4 21.2-2.7 5.3-6.5 9.7-11.4 13.2-2.6 1.8-5.3 3.5-7.7 5.5-2 1.7-3.6 4-5.7 5.7-3.2 2.7-6.6 5.2-9.7 7.9-1 0.9-1.6 2.2-2.5 3.2-2.5 2.8-4.8 5.8-7.6 8.1-4.4 3.5-9.1 6.6-13.8 9.8-2.5 1.7-5.2 3.1-7.8 4.6-1.9 0.1-3.5 0.8-4.6 2.4-3 1.4-6.1 2.8-9.1 4.1-0.7 0.3-1.4 0.5-2 0.7-2.4 1-4.9 2-7.4 2.9-0.8 0.5-1.6 1.3-2.4 1.6-17.9 6.8-36.1 12.5-54.8 17-11.7 2.8-23.4 5.8-35.3 8.2-10.4 2.1-20.9 3.3-31.4 4.9-1.7 0.3-3.4 0.1-5.1 0.2-2 0.1-3.6-0.5-5.1-1.8-0.2-0.2-0.4-0.3-0.6-0.4-0.5-0.3-1.1-0.5-1.6-0.8 0.5-0.3 0.9-0.7 1.5-1.1-0.1-0.1-0.2-0.2-0.4-0.3-0.5-0.3-1.1-0.5-1.6-0.8 0.6-0.4 1.2-1 1.8-1 21-1.4 41.2-6.9 61.4-12 23.7-6 47-13 69.8-21.9 5.2-2 10.4-4.3 15.6-6.6 3.7-1.7 7.4-3.7 10.9-5.9-1.8 0.6-3.7 1.3-5.5 1.9-3.9 1.2-7.8 2.4-11.7 3.7-0.5 0.2-1 0.6-1.4 0.9-0.8 0.3-1.3 0.5-1.9 0.6"></path>
+          </svg>
+        </figure>
+
+        <!-- SVG decoration -->
+        <figure class="position-absolute top-0 start-100 mt-n5 ms-n7">
+          <svg enable-background="new 0 0 167 107">
+            <path class="fill-danger" d="m87.1 1c-0.4 0.5-0.8 1-1.3 1.5l-3 2.7c-2.6 2.3-5.1 4.7-7.8 6.8-13.4 10.5-26.8 21-40.1 31.5l-25.8 20.4c-0.4 0.3-0.8 0.6-1.1 0.9-0.7 0.6-1.5 1-2.4 0.2-0.8-0.7-0.6-1.7-0.1-2.4 0.6-1 1.4-2 2.2-2.8 0.5-0.4 1-0.9 1.5-1.3 2.8-2.6 5.7-5.2 8.6-7.5 21.6-16.6 43.3-33.1 65.8-48.5 1.2-0.9 2.5-1.7 3.8-2.5 0 0 0.1 0.1 0.4 0.2-0.2 0.3-0.5 0.6-0.7 0.8zm78.9 20.9c-0.4 0.2-0.7 0.4-1.1 0.6-0.3 0.2-0.7 0.5-1.1 0.7-14.6 8.6-29 17.5-43.1 27-21.6 14.4-43 29.2-63.4 45.2-3.8 3-7.5 6-11.2 9-0.6 0.5-1.1 0.9-1.7 1.3-0.8 0.6-1.6 0.9-2.4 0.2s-0.6-1.7-0.1-2.4c0.6-1 1.3-2 2.2-2.8l0.1-0.1c2.5-2.3 5-4.6 7.7-6.6 30.4-23 61.6-44.5 94.9-63 3.8-2.1 7.7-4.1 11.6-6 1.9-1 3.9-2 5.8-3 0.5-0.2 1-0.4 1.4-0.6 0.2 0.1 0.3 0.3 0.4 0.5zm-66.1-13.4c0.7-0.5 1.3-1.1 1.9-1.7-0.1-0.1-0.2-0.2-0.5-0.3-0.7 0.5-1.4 1-2.1 1.6-0.7 0.5-1.4 1.1-2.1 1.6-4 2.9-8.1 5.8-12.1 8.7-19.3 13.8-38.6 27.7-57.8 41.8-5.4 3.9-10.5 8.1-15.6 12.3-2.1 1.7-4.2 3.5-6.3 5.2-1.5 1.2-2.8 2.6-4.1 4-0.5 0.5-1 1.1-1.2 1.8-0.1 0.5 0.1 1.2 0.4 1.5s1.1 0.4 1.5 0.2c0.8-0.4 1.5-0.9 2.2-1.5l7.2-6c4.2-3.6 8.5-7.1 12.8-10.5 10.6-8.2 21.3-16.4 31.9-24.5l23.4-18c6.9-5.4 13.7-10.8 20.5-16.2zm0.5 13.5c-1.1 1-2.2 2-3.4 2.9-3.3 2.6-6.7 5.2-10 7.8-11 8.5-22 17-32.9 25.6-6.4 5.1-12.8 10.3-19.1 15.4-3.5 2.8-7 5.7-10.5 8.5-0.8 0.7-1.6 1.4-2.5 1.9-0.5 0.3-1.6 0.3-1.9 0-0.4-0.4-0.5-1.4-0.2-1.9 0.4-0.8 1-1.6 1.7-2.3 0.7-0.6 1.4-1.3 2.1-1.9 1.7-1.6 3.4-3.2 5.2-4.7 20-15.8 40.2-31.3 61.3-45.6 2.3-1.6 4.7-3.1 7.1-4.6 0.5-0.3 1-0.7 1.5-1 0.4-0.2 0.8-0.4 1.2-0.7 0.1 0.1 0.1 0.2 0.2 0.3s0.2 0.2 0.2 0.3zm7 13.4 0.6-0.6c-0.3-0.2-0.4-0.3-0.4-0.3-1.5 1.1-3 2.2-4.5 3.2-16.7 11.1-32.8 23-48.7 35.1-4.7 3.5-9.3 7.1-13.9 10.7-0.9 0.7-1.7 1.5-2.4 2.3-0.6 0.7-0.9 1.6-0.2 2.4 0.7 0.9 1.6 0.8 2.4 0.3 1.1-0.6 2.2-1.3 3.2-2.1 1.8-1.4 3.5-2.8 5.2-4.3 1.7-1.4 3.5-2.8 5.2-4.3 12.1-9.5 24.3-19 36.5-28.4l15-12c0.6-0.4 1.3-1.2 2-2z"></path>
+          </svg>
+        </figure>
+
+        <div class="container">
+          <div class="row g-4">
+            <div class="col-lg-6 mx-auto">
+              <h4>My contacts</h4>
+
+              <div class="row mt-5">
+                <div class="col-sm-6 col-lg-12 col-xl-6 mb-5">
+                  <div class="card card-body shadow">
+                    <div class="icon-lg bg-warning text-white rounded-circle position-absolute top-0 start-100 translate-middle ms-n6">
+                      <i class="fas fa-envelope"></i>
                     </div>
+                    <h6>Email</h6>
+                    <p class="mb-0">pehovanton21@gmail.com</p>
+                  </div>
+                </div>
 
+                <div class="col-sm-6 col-lg-12 col-xl-6 mb-5 mb-xl-0">
+                  <div class="card card-body shadow">
+                    <div class="icon-lg bg-purple text-white rounded-circle position-absolute top-0 start-100 translate-middle ms-n6">
+                      <i class="bi bi-telegram"></i>
+                    </div>
+                    <h6>Telegram</h6>
+                    <p class="mb-0"><a href="https://t.me/anthony_1654" target="_blank" class="h6 mb-0 fw-light stretched-link">@Anthony_1654</a></p>
+                  </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-12 col-xl-6 mb-5 mb-xl-0">
+                  <div class="card card-body shadow">
+                    <div class="icon-lg bg-orange text-white rounded-circle position-absolute top-0 start-100 translate-middle ms-n6">
+                      <i class="bi bi-linkedin"></i>
+                    </div>
+                    <h6>LinkedIn</h6>
+                    <p class="mb-0">
+                      <a href="https://www.linkedin.com/in/anton-pekhov" target="_blank" class="fast-icon">in/anton-pekhov</a></p>
+                  </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-12 col-xl-6 mb-5">
+                  <div class="card card-body shadow">
+                    <div class="icon-lg bg-success text-white rounded-circle position-absolute top-0 start-100 translate-middle ms-n6">
+                      <i class="bi bi-filetype-pdf"></i>
+                    </div>
+                    <p class="mb-0">
+                      <a class="btn btn-outline-dark btn-sm mt-2"
+                         href="assets/cv/CV_Anton_Pekhov.pdf"
+                         download="CV_Anton_Pekhov_PHP_DEV"
+                      >Download PDF CV</a>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -408,31 +527,8 @@
         </div>
       </section>
 
-      <section>
-        <div class="container">
-          <div class="row justify-content-center text-center">
-            <div class="col-lg-8">
-              <h2>If you are interested in me - act</h2>
-              <a class="btn btn-outline-dark rounded-pill mt-4"
-                 href="#about">
-                I want to contact
-              </a>
+    </main>
 
-
-            </div>
-          </div>
-        </div><!-- end of .container-->
-      </section>
-
-    </main><!-- ===============================================-->
-    <!--    End of Main Content-->
-    <!-- ===============================================-->
-
-
-
-    <!--===============================================-->
-    <!--    Footer-->
-    <!--===============================================-->
     <footer class="footer bg-black text-600 py-4 font-sans-serif text-center overflow-hidden" data-zanim-timeline="{}">
       <div class="container">
         <div class="row align-items-center">
@@ -441,30 +537,7 @@
       </div>
     </footer>
 
-    <!--===============================================-->
-    <!--    Modal for language selection-->
-    <!--===============================================-->
-    <!-- Modal-->
-<!--    <div class="overflow-hidden">-->
-<!--      <div class="modal fade fade-in" id="languageModal" tabindex="-1" role="dialog" aria-hidden="true">-->
-<!--        <div class="modal-dialog modal-dialog-centered modal-xs mx-auto" role="document">-->
-<!--          <div class="modal-content bg-black">-->
-<!--            <div class="modal-body text-center p-0"><button class="btn-close text-white position-absolute top-0 end-0 times-icon mt-2 me-2 p-0" type="button" data-bs-dismiss="modal" aria-label="Close"></button>-->
-<!--              <ul class="list-unstyled my-0 py-4 font-sans-serif">-->
-<!--                <li><a class="text-white fw-bold pt-1 d-block" href="https://prium.github.io/twbs-sparrow/v2.0.2/homes/default.html">English</a></li>-->
-<!--&lt;!&ndash;                <li><a class="pt-1 d-block text-500" href="https://prium.github.io/twbs-sparrow/v2.0.2/homes/default.html#!">Français</a></li>&ndash;&gt;-->
-<!--&lt;!&ndash;                <li><a class="text-500 pt-1 d-block" href="https://prium.github.io/twbs-sparrow/v2.0.2/pages/rtl.html">عربى</a></li>&ndash;&gt;-->
-<!--&lt;!&ndash;                <li><a class="pt-1 d-block text-500" href="https://prium.github.io/twbs-sparrow/v2.0.2/homes/default.html#!">Deutsche</a></li>&ndash;&gt;-->
-<!--              </ul>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
 
-    <!-- ===============================================-->
-    <!--    JavaScripts-->
-    <!-- ===============================================-->
     <script src="theme/bootstrap.min.js"></script>
     <script src="theme/anchor.min.js"></script>
     <script src="theme/is.min.js"></script>
