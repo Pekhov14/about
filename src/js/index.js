@@ -4,6 +4,8 @@ import { preloader } from './preloader';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
+
+
 // preload the images
 preloader();
 
@@ -41,5 +43,4 @@ paths.forEach(el => {
         attr: { d: pathTo }
     });
 });
-
 

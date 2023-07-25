@@ -14,12 +14,8 @@
     "url": "git://github.com/codrops/OnScrollPathAnimations.git"
   },
   "keywords": [],
-  "author": "Codrops",
+  "author": "Antony Pekhov",
   "license": "MIT",
-  "homepage": "https://tympanus.net/codrops",
-  "bugs": {
-    "url": "https://github.com/codrops/OnScrollPathAnimations/issues"
-  },
   "devDependencies": {
     "parcel": "^2.6.0"
   },
