@@ -4,6 +4,8 @@ import { preloader } from './preloader';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
+console.log('Test');
+
 // preload the images
 preloader();
 
