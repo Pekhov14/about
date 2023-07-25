@@ -1,5 +1,5 @@
 {
-  "name": "onscrollpathanimations",
+  "name": "About",
   "version": "1.0.0",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "description": "",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/codrops/OnScrollPathAnimations.git"
+    "url": "git@github.com:Pekhov14/about.git"
   },
   "keywords": [],
   "author": "Antony Pekhov",
@@ -20,7 +20,7 @@
     "parcel": "^2.6.0"
   },
   "dependencies": {
-    "@studio-freight/lenis": "^0.1.2",
+    "@studio-freight/lenis": "^0.1.18",
     "gsap": "^3.10.4",
     "imagesloaded": "^5.0.0"
   }
