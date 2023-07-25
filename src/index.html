@@ -12,31 +12,46 @@
   <!-- Font -->
   <link rel="stylesheet" href="https://use.typekit.net/jvr3zeq.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-<!--  <script>-->
-<!--    (function(d) {-->
-<!--      var config = {-->
-<!--                kitId: 'ahb6vif',-->
-<!--                scriptTimeout: 3000,-->
-<!--                async: true-->
-<!--              },-->
-<!--              h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)-->
-<!--    })(document);-->
-<!--  </script>-->
+  <script>
+    (function (d) {
+      let config = {
+                kitId: 'ahb6vif',
+                scriptTimeout: 3000,
+                async: true
+              },
+              h = d.documentElement, t = setTimeout(function () {
+                h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
+              }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a;
+      h.className += " wf-loading";
+      tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+      tk.async = true;
+      tk.onload = tk.onreadystatechange = function () {
+        a = this.readyState;
+        if (f || a && a != "complete" && a != "loaded") return;
+        f = true;
+        clearTimeout(t);
+        try {
+          Typekit.load(config)
+        } catch (e) {
+        }
+      };
+      s.parentNode.insertBefore(tk, s)
+    })(document);
+  </script>
   <link rel="stylesheet" href="css/base.css">
-<!--  <script>-->
-<!--    document.documentElement.className = "js";-->
-<!--    var supportsCssVars = function() { var e, t = document.createElement("style"); return t.innerHTML = "root: { &#45;&#45;tmp-var: bold; }", document.head.appendChild(t), e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(&#45;&#45;tmp-var)")), t.parentNode.removeChild(t), e };-->
-<!--    supportsCssVars() || alert("Please view this demo in a modern browser");-->
-<!--  </script>-->
+  <script>
+    document.documentElement.className = "js";
+    var supportsCssVars = function() { var e, t = document.createElement("style"); return t.innerHTML = "root: { --tmp-var: bold; }", document.head.appendChild(t), e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)")), t.parentNode.removeChild(t), e };
+    supportsCssVars() || alert("Please view this demo in a modern browser");
+  </script>
 
-<!--  <script src="//tympanus.net/codrops/adpacks/analytics.js"></script>-->
   <!-- TODO: Install with parcel -->
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="loading">
 <main>
-<!--  <div class="frame"></div>-->
+  <div class="frame"></div>
   <section class="content content--centered">
     <div class="content__title">
       <span class="content__title-pre content__title-pre--offset">Anthony</span>
