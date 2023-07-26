@@ -431,6 +431,21 @@ img {
 	}
 }
 
+@media screen and (min-width: 850em) {
+	.content__sides {
+		grid-template-columns: 55% 1fr;
+	}
+	.content--grid {
+		grid-template-columns: repeat(2,1fr);
+	}
+	.content--grid .content__img:nth-child(2){
+		margin-top: 50vh;
+	}
+	.content--grid .content__img:nth-child(3){
+		margin-top: -50vh;
+	}
+}
+
 .accordion-content {
 	transition: max-height 0.3s ease-out, padding 0.3s ease;
 }
