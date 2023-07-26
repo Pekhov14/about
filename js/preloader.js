@@ -2,8 +2,6 @@ const imagesLoaded = require('imagesloaded');
 
 const body = document.body;
 
-console.log('Test 2');
-
 export const preloader = _ => {
     return new Promise(resolve => {
 

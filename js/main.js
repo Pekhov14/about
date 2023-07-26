@@ -1,10 +1,11 @@
 import Lenis from '@studio-freight/lenis'
 import { gsap } from 'gsap';
 import { preloader } from './preloader';
+import { faqData } from './faqData';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-gsap.registerPlugin(ScrollTrigger);
+import { generateAccordionElements, renderAccordionElements, toggleAccordion } from './accordionUtils.js';
 
-console.log('Test');
+gsap.registerPlugin(ScrollTrigger);
 
 // preload the images
 preloader();
@@ -24,8 +25,8 @@ const scrollFn = () => {
 requestAnimationFrame(scrollFn);
 
 // Animate the d attribute (path initial ) to the value in data-path-to;
-// start when the top of its SVG reaches the bottom of the viewport and 
-// end when the bottom of its SVG reaches the top of the viewport 
+// start when the top of its SVG reaches the bottom of the viewport and
+// end when the bottom of its SVG reaches the top of the viewport
 paths.forEach(el => {
     const svgEl = el.closest('svg');
     const pathTo = el.dataset.pathTo;
@@ -44,5 +45,7 @@ paths.forEach(el => {
     });
 });
 
+const generatedElements = generateAccordionElements(faqData);
 
-
+renderAccordionElements(generatedElements, 'faq');
+toggleAccordion();
