@@ -6,7 +6,6 @@ export function generateAccordionElements(data) {
             const question = data[key].question;
             const answer = data[key].answer;
 
-            // TODO: Можно вынести константу
             const accordionElement = `
                 <div class="transition hover:bg-indigo-50">
                     <div class="accordion-header cursor-pointer transition flex space-x-5 px-5 items-center h-16">
