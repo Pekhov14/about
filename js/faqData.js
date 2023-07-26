@@ -30,5 +30,9 @@ export const faqData = {
     8: {
         question: "What kind of people do you dislike working with?",
         answer: "I don't like it when people dismiss ideas without explaining their reasons. I also prefer not to discuss politics and religion in the workplace."
+    },
+    9: {
+        question: "What operating system are you using?",
+        answer: "Now I'm working on macOS 💻 with a m1 processor"
     }
 };
