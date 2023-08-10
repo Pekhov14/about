@@ -125,7 +125,6 @@
                       vector-effect="non-scaling-stroke" d="M 0 0 C 40 0 60 0 100 0 L 100 10 H 0 Z"/>
             </svg>
             <div class="content__title text-light content__title--right">
-                <span class="content__title-pre">Professional</span>
                 <h2 class="content__title-main">Experience</h2>
             </div>
         </div>
@@ -262,12 +261,13 @@
 
     <section id="promotionFooter" class="bg-gray-100 py-8">
         <div class="container mx-auto">
-            <div class="w-full md:w-1/4">
+            <div class="w-full">
                 <h4 class="text-xl font-bold mb-4"><i class="bi bi-tag"></i> Tags of used tools</h4>
             </div>
             <div class="flex flex-wrap">
-                <div class="w-full md:w-1/4">
-                    <ul class="list-none">
+                <div class="w-full sm:w-1/2 ">
+                    <div class="flex flex-col">
+                        <ul class="list-none">
                         <li class="flex items-center mb-2">
                             <img src="assets/img/icons/php.png" alt="Icon" class="w-5 mr-2">
                             PHP
@@ -293,9 +293,11 @@
                             TWiG
                         </li>
                     </ul>
+                    </div>
                 </div>
-                <div class="w-full md:w-1/4">
-                    <ul class="list-none">
+                <div class="w-full sm:w-1/2 ">
+                    <div class="flex flex-col">
+                        <ul class="w-full list-none">
                         <li class="flex items-center mb-2">
                             <img src="assets/img/icons/opencart.png" alt="Icon" class="w-5 mr-2">
                             Opencart
@@ -309,9 +311,11 @@
                             React
                         </li>
                     </ul>
+                    </div>
                 </div>
-                <div class="w-full md:w-1/4">
-                    <ul class="list-none">
+                <div class="w-full sm:w-1/2 lg:w-1/4">
+                    <div class="flex flex-col">
+                        <ul class="list-none">
                         <li class="flex items-center mb-2">
                             <img src="assets/img/icons/git.png" alt="Icon" class="w-5 mr-2">
                             GIT
@@ -333,9 +337,11 @@
                             Webpack
                         </li>
                     </ul>
+                    </div>
                 </div>
-                <div class="w-full md:w-1/4">
-                    <ul class="list-none">
+                <div class="w-full sm:w-1/2 lg:w-1/4">
+                    <div class="flex flex-col">
+                        <ul class="list-none">
                         <li class="flex items-center mb-2">
                             <img src="assets/img/icons/doctrine.png" alt="Icon" class="w-5 mr-2">
                             Doctrine
@@ -357,6 +363,7 @@
                             Mongodb
                         </li>
                     </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -461,36 +468,46 @@
     </section>
 
     <section class="content content--centered footer">
-        <div class="content__text content__text--left text-light p-20">
-            <h2>My contacts for questions and suggestions</h2>
+        <div class="container mx-auto">
+            <div class="content__text content__text--left text-light p-20">
+                <h2>My contacts for questions and suggestions</h2>
+            </div>
 
-            <div class="grid lg:grid-cols-2 md:grid-cols-1 gap-8 mt-20 w-full">
-                <div class="bg-white text-black p-8 text-xl rounded-lg">
-                    <span>Email <i class="bi bi-envelope-at"></i></span>
-                    <p>pehovanton21@gmail.com</p>
-                </div>
-                <div class="bg-white text-black p-8 md:text-xl rounded-lg">
-                    <span>Telegram <i class="bi bi-telegram"></i></i></span>
-                    <p>
-                        <a href="https://t.me/anthony_1654" target="_blank"
-                           class="h6 mb-0 fw-light stretched-link">@Anthony_1654</a>
-                    </p>
-                </div>
-                <div class="bg-white text-black p-8 text-xl rounded-lg">
-                    <span>Linkedin <i class="bi bi-linkedin"></i></span>
-                    <p><a href="https://www.linkedin.com/in/anton-pekhov" target="_blank" class="fast-icon">in/anton-pekhov</a>
-                    </p>
-                </div>
-                <div class="bg-white text-black p-8 text-xl rounded-lg">
-                    <div class="flex min-w-0 flex-1 gap-2">
-                        <span class="truncate font-medium">cv_anton_pekhov_backend_developer.pdf</span>
-                        <span class="flex-shrink-0 text-gray-400">239kb</span>
+            <div class="flex flex-wrap -mx-4 p-5">
+                <div class="w-full md:w-1/2 px-4 mb-4 md:mb-0 lg:pb-3 md:pb-3">
+                    <div class="bg-white text-black p-8 text-xl rounded-lg">
+                        <span>Email <i class="bi bi-envelope-at"></i></span>
+                        <p>pehovanton21@gmail.com</p>
                     </div>
-                    <a href="assets/cv/cv_anton_pekhov_backend_developer.pdf"
-                       download
-                       class="font-medium text-indigo-600 hover:text-indigo-500">Download <span
-                            aria-hidden="true">→</span>
-                    </a>
+                </div>
+                <div class="w-full md:w-1/2 px-4 mb-4 md:mb-0 lg:pb-3 md:pb-3">
+                    <div class="bg-white text-black p-8 text-xl rounded-lg">
+                        <span>Telegram <i class="bi bi-telegram"></i></span>
+                        <p>
+                            <a href="https://t.me/anthony_1654" target="_blank"
+                               class="h6 mb-0 fw-light stretched-link">@Anthony_1654</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 px-4 mb-4 md:mb-0">
+                    <div class="bg-white text-black p-8 text-xl rounded-lg">
+                        <span>Linkedin <i class="bi bi-linkedin"></i></span>
+                        <p><a href="https://www.linkedin.com/in/anton-pekhov" target="_blank" class="fast-icon">in/anton-pekhov</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 px-4 mb-4 md:mb-0">
+                    <div class="bg-white text-black p-8 text-xl rounded-lg">
+                        <div class="flex min-w-0 flex-1 gap-2">
+                            <span class="truncate font-medium">cv_anton_pekhov_backend_developer.pdf</span>
+                            <span class="flex-shrink-0 text-gray-400">239kb</span>
+                        </div>
+                        <a href="assets/cv/cv_anton_pekhov_backend_developer.pdf"
+                           download
+                           class="font-medium text-indigo-600 hover:text-indigo-500">Download <span
+                                aria-hidden="true">→</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -518,6 +535,7 @@
         </svg>
         <p class="credits">2023 - ANTHONY PEKHOV</p>
     </section>
+
 </main>
 <!--<script type="module" src="js/main.js"></script>-->
 <script type="module" src="dist/main.js"></script>
