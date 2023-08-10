@@ -1,27 +1,21 @@
 {
-  "name": "About",
-  "version": "1.0.0",
-  "browserslist": "> 0.5%, last 2 versions, not dead",
-  "description": "",
+  "name": "about_tamplate",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "start": "parcel index.html --open",
-    "clean": "rm -rf dist/*",
-    "build:parcel": "parcel build js/main.js --no-content-hash --no-source-maps --public-url ./",
-    "build": "npm run clean && npm run build:parcel"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:Pekhov14/about.git"
-  },
-  "keywords": [],
-  "author": "Antony Pekhov",
-  "license": "MIT",
-  "devDependencies": {
-    "parcel": "^2.6.0"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "@studio-freight/lenis": "^0.1.18",
-    "gsap": "^3.10.4",
-    "imagesloaded": "^5.0.0"
+    "autoprefixer": "10.4.14",
+    "eslint": "8.46.0",
+    "eslint-config-next": "13.4.13",
+    "next": "13.4.13",
+    "postcss": "8.4.27",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "tailwindcss": "3.3.3"
   }
 }
