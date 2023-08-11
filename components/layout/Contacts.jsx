@@ -61,11 +61,9 @@ const Contacts = () => {
                     </div>
                     <div className="w-full md:w-1/2 px-4 mb-4 md:mb-0">
                         <div className="bg-white text-black p-8 text-xl rounded-lg">
-                            <div className="flex justify-between">
-                                <div className="font-medium text-slate-900">
-                                    <span className="truncate font-medium">cv_anton_pekhov_backend_developer.pdf</span>
-                                </div>
-                                <p className="flex-shrink-0 text-gray-400">239kb</p>
+                            <div className="ml-4 flex min-w-0 flex-1 gap-2">
+                                <span className="truncate font-medium">cv_anton_pekhov_backend_developer.pdf</span>
+                                <span className="flex-shrink-0 text-gray-400">239kb</span>
                             </div>
 
                             <a href="/assets/cv/cv_anton_pekhov_backend_developer.pdf"

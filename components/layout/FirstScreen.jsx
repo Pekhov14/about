@@ -4,7 +4,6 @@ import {gsap} from "gsap";
 import preloader from "@/components/helpers/Preloader";
 import Lenis from "@studio-freight/lenis";
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
-import {generateAccordionElements, renderAccordionElements, toggleAccordion} from "@/components/helpers/accordionUtils";
 import {useEffect} from "react";
 
 
@@ -13,6 +12,7 @@ const FirstScreen = () => {
     if (process.browser) {
         gsap.registerPlugin(ScrollTrigger);
 
+        // eslint-disable-next-line react-hooks/rules-of-hooks
         useEffect(() => {
             // preload the images
             preloader()
@@ -51,20 +51,16 @@ const FirstScreen = () => {
         // const generatedElements = generateAccordionElements(faqData);
 
         // renderAccordionElements(generatedElements, 'faq');
-        // toggleAccordion();
     }
 
     return (
-        <>
-            <div className="frame"></div>
-            <section className="content content--centered">
-                <div className="content__title">
-                    <span className="content__title-pre content__title-pre--offset">Anthony</span>
-                    <h1 className="content__title-main">Pekhov</h1>
-                </div>
-                <div className="content__scroll">Scroll, if you wish</div>
-            </section>
-        </>
+        <section className="content content--centered">
+            <div className="content__title">
+                <span className="content__title-pre content__title-pre--offset">Anthony</span>
+                <h1 className="content__title-main">Pekhov</h1>
+            </div>
+            <div className="content__scroll">Scroll, if you wish</div>
+        </section>
     )
 }
 
