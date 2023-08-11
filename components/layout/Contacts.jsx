@@ -68,7 +68,7 @@ const Contacts = () => {
                                 <p className="flex-shrink-0 text-gray-400">239kb</p>
                             </div>
 
-                            <a href="/cv/cv_anton_pekhov_backend_developer.pdf"
+                            <a href="/assets/cv/cv_anton_pekhov_backend_developer.pdf"
                                download
                                className="font-medium text-indigo-600 hover:text-indigo-500"
                             >Download <span aria-hidden="true">→</span>

@@ -10,28 +10,28 @@ const UsedTools = () => {
                         <div className="flex flex-col">
                             <ul className="list-none">
                                 <li className="flex items-center mb-2">
-                                    {/*<img src="assets/img/icons/php.png" alt="Icon" className="w-5 mr-2">*/}
-                                        PHP
+                                    <img src="/assets/img/icons/php.png" alt="Icon" className="w-5 mr-2"/>
+                                        <span>PHP</span>
                                 </li>
                                 <li className="flex items-center mb-2">
-                                    {/*<img src="assets/img/icons/js.png" alt="Icon" className="w-5 mr-2">*/}
-                                        JS
+                                    <img src="/assets/img/icons/js.png" alt="Icon" className="w-5 mr-2"/>
+                                        <span>JS</span>
                                 </li>
                                 <li className="flex items-center mb-2">
-                                    {/*<img src="assets/img/icons/sql.png" alt="Icon" className="w-5 mr-2">*/}
-                                        SQL
+                                    <img src="/assets/img/icons/sql.png" alt="Icon" className="w-5 mr-2"/>
+                                        <span>SQL</span>
                                 </li>
                                 <li className="flex items-center mb-2">
-                                    {/*<img src="assets/img/icons/html.png" alt="Icon" className="w-5 mr-2">*/}
-                                        HTML
+                                    <img src="/assets/img/icons/html.png" alt="Icon" className="w-5 mr-2"/>
+                                        <span>HTML</span>
                                 </li>
                                 <li className="flex items-center mb-2">
-                                    {/*<img src="assets/img/icons/css.png" alt="Icon" className="w-5 mr-2">*/}
-                                        CSS/SCSS
+                                    <img src="/assets/img/icons/css.png" alt="Icon" className="w-5 mr-2"/>
+                                        <span>CSS/SCSS</span>
                                 </li>
                                 <li className="flex items-center mb-2">
-                                    {/*<img src="assets/img/icons/twig.png" alt="Icon" className="w-5 mr-2">*/}
-                                        TWiG
+                                    <img src="/assets/img/icons/twig.png" alt="Icon" className="w-5 mr-2"/>
+                                        <span>TWiG</span>
                                 </li>
                             </ul>
                         </div>
@@ -40,16 +40,16 @@ const UsedTools = () => {
                         <div className="flex flex-col">
                             <ul className="w-full list-none">
                                 <li className="flex items-center mb-2">
-                                    {/*<img src="assets/img/icons/opencart.png" alt="Icon" className="w-5 mr-2">*/}
-                                        Opencart
+                                    <img src="/assets/img/icons/opencart.png" alt="Icon" className="w-5 mr-2"/>
+                                        <span>Opencart</span>
                                 </li>
                                 <li className="flex items-center mb-2">
-                                    {/*<img src="assets/img/icons/symfony.png" alt="Icon" className="w-5 mr-2">*/}
-                                        Symfony
+                                    <img src="/assets/img/icons/symfony.png" alt="Icon" className="w-5 mr-2"/>
+                                        <span>Symfony</span>
                                 </li>
                                 <li className="flex items-center mb-2">
-                                    {/*<img src="assets/img/icons/react.png" alt="Icon" className="w-5 mr-2">*/}
-                                        React
+                                    <img src="/assets/img/icons/react.png" alt="Icon" className="w-5 mr-2"/>
+                                        <span>React</span>
                                 </li>
                             </ul>
                         </div>
@@ -58,24 +58,24 @@ const UsedTools = () => {
                         <div className="flex flex-col">
                             <ul className="list-none">
                                 <li className="flex items-center mb-2">
-                                    {/*<img src="assets/img/icons/git.png" alt="Icon" className="w-5 mr-2">*/}
-                                        GIT
+                                    <img src="/assets/img/icons/git.png" alt="Icon" className="w-5 mr-2"/>
+                                        <span>GIT</span>
                                 </li>
                                 <li className="flex items-center mb-2">
-                                    {/*<img src="assets/img/icons/docker.png" alt="Icon" className="w-5 mr-2">*/}
+                                    <img src="/assets/img/icons/docker.png" alt="Icon" className="w-5 mr-2"/>
                                         Docker
                                 </li>
                                 <li className="flex items-center mb-2">
-                                    {/*<img src="assets/img/icons/nginx.png" alt="Icon" className="w-5 mr-2">*/}
-                                        Nginx / Apache2
+                                    <img src="/assets/img/icons/nginx.png" alt="Icon" className="w-5 mr-2"/>
+                                        <span>Nginx / Apache2</span>
                                 </li>
                                 <li className="flex items-center mb-2">
-                                    {/*<img src="assets/img/icons/composer.png" alt="Icon" className="w-5 mr-2">*/}
-                                        Composer / Npm / Yarn
+                                    <img src="/assets/img/icons/composer.png" alt="Icon" className="w-5 mr-2"/>
+                                        <span>Composer / Npm / Yarn</span>
                                 </li>
                                 <li className="flex items-center mb-2">
-                                    {/*<img src="assets/img/icons/webpack.png" alt="Icon" className="w-5 mr-2">*/}
-                                        Webpack
+                                    <img src="/assets/img/icons/webpack.png" alt="Icon" className="w-5 mr-2"/>
+                                        <span>Webpack</span>
                                 </li>
                             </ul>
                         </div>
@@ -84,24 +84,24 @@ const UsedTools = () => {
                         <div className="flex flex-col">
                             <ul className="list-none">
                                 <li className="flex items-center mb-2">
-                                    {/*<img src="assets/img/icons/doctrine.png" alt="Icon" className="w-5 mr-2">*/}
-                                        Doctrine
+                                    <img src="/assets/img/icons/doctrine.png" alt="Icon" className="w-5 mr-2"/>
+                                        <span>Doctrine</span>
                                 </li>
                                 <li className="flex items-center mb-2">
-                                    {/*<img src="assets/img/icons/mariadb.png" alt="Icon" className="w-5 mr-2">*/}
-                                        mysql/mariadb
+                                    <img src="/assets/img/icons/mariadb.png" alt="Icon" className="w-5 mr-2"/>
+                                        <span>mysql/mariadb</span>
                                 </li>
                                 <li className="flex items-center mb-2">
-                                    {/*<img src="assets/img/icons/postgresql.png" alt="Icon" className="w-5 mr-2">*/}
-                                        Postgresql
+                                    <img src="/assets/img/icons/postgresql.png" alt="Icon" className="w-5 mr-2"/>
+                                        <span>Postgresql</span>
                                 </li>
                                 <li className="flex items-center mb-2">
-                                    {/*<img src="assets/img/icons/redis.png" alt="Icon" className="w-5 mr-2">*/}
-                                        Redis
+                                    <img src="/assets/img/icons/redis.png" alt="Icon" className="w-5 mr-2"/>
+                                        <span>Redis</span>
                                 </li>
                                 <li className="flex items-center mb-2">
-                                    {/*<img src="assets/img/icons/mongodb.png" alt="Icon" className="w-5 mr-2">*/}
-                                        Mongodb
+                                    <img src="/assets/img/icons/mongodb.png" alt="Icon" className="w-5 mr-2"/>
+                                        <span>Mongodb</span>
                                 </li>
                             </ul>
                         </div>

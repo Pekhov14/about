@@ -1,8 +1,7 @@
 const Education = () => {
     return (
         <section className="content">
-            {/*style="background-image:url(assets/img/4.jpg);"*/}
-            <div className="content__bg content__bg--bottom">
+            <div className="content__bg content__bg--bottom" style={{ backgroundImage: 'url(/assets/img/4.jpg)' }}>
                 <svg className="separator separator--up" width="100%" height="100%" viewBox="0 0 100 10"
                      preserveAspectRatio="none">
                     <path className="separator__path path-anim"
