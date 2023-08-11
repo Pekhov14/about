@@ -1,3 +1,5 @@
+'use client'
+
 const Education = () => {
     return (
         <section className="content">

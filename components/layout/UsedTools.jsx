@@ -1,3 +1,5 @@
+'use client'
+
 const UsedTools = () => {
     return (
         <section id="promotionFooter" className="bg-gray-100 py-8">

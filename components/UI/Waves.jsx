@@ -1,3 +1,5 @@
+'use client'
+
 const Waves = () => {
     return (
         <svg className="separator separator--solo separator--line-light" viewBox="0 0 900 300" width="900"

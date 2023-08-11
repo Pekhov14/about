@@ -1,21 +1,25 @@
+'use client'
+
 const Experience = () => {
     return (
         <>
-            <div className="content__bg content__bg--bottom" style={{ backgroundImage: 'url(/assets/img/3.jpg)' }}>
-                <svg className="separator separator--up" width="100%" height="100%" viewBox="0 0 100 10"
-                     preserveAspectRatio="none">
-                    <path className="separator__path path-anim" data-path-to="M 0 0 C 40 10 60 10 100 0 L 0 0 Z"
-                          vectorEffect="non-scaling-stroke" d="M 0 0 C 40 0 60 0 100 0 L 0 0 Z"/>
-                </svg>
-                <svg className="separator separator--down" width="100%" height="100%" viewBox="0 0 100 10"
-                     preserveAspectRatio="none">
-                    <path className="separator__path path-anim" data-path-to="M 0 0 C 25 13 75 13 100 0 L 100 10 H 0 Z"
-                          vectorEffect="non-scaling-stroke" d="M 0 0 C 40 0 60 0 100 0 L 100 10 H 0 Z"/>
-                </svg>
-                <div className="content__title text-light content__title--right">
-                    <h2 className="content__title-main">Experience</h2>
+            <section className="content">
+                <div className="content__bg content__bg--bottom" style={{ backgroundImage: 'url(/assets/img/3.jpg)' }}>
+                    <svg className="separator separator--up" width="100%" height="100%" viewBox="0 0 100 10"
+                         preserveAspectRatio="none">
+                        <path className="separator__path path-anim" data-path-to="M 0 0 C 40 10 60 10 100 0 L 0 0 Z"
+                              vectorEffect="non-scaling-stroke" d="M 0 0 C 40 0 60 0 100 0 L 0 0 Z"/>
+                    </svg>
+                    <svg className="separator separator--down" width="100%" height="100%" viewBox="0 0 100 10"
+                         preserveAspectRatio="none">
+                        <path className="separator__path path-anim" data-path-to="M 0 0 C 25 13 75 13 100 0 L 100 10 H 0 Z"
+                              vectorEffect="non-scaling-stroke" d="M 0 0 C 40 0 60 0 100 0 L 100 10 H 0 Z"/>
+                    </svg>
+                    <div className="content__title text-light content__title--right">
+                        <h2 className="content__title-main">Experience</h2>
+                    </div>
                 </div>
-            </div>
+            </section>
             <section className="w-3/4 mx-auto">
                 <ul className="space-y-6">
                     <li>
