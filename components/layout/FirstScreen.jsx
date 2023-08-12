@@ -47,10 +47,6 @@ const FirstScreen = () => {
                     ease: 'none', attr: {d: pathTo}
                 });
         });
-
-        // const generatedElements = generateAccordionElements(faqData);
-
-        // renderAccordionElements(generatedElements, 'faq');
     }
 
     return (

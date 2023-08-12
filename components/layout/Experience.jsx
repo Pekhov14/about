@@ -80,7 +80,7 @@ const Experience = () => {
                                     SQL query optimization
                                     Resource Compression and Optimization (webp/webpack/Grunt/...)
                                     Implementing caching (redis)
-                                    Improving Google's score with various tasks from SEO specialists
+                                    Improving Google&#39;s score with various tasks from SEO specialists
 
                                     Writing scripts to run in cron
 

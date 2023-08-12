@@ -9,7 +9,6 @@ const Faq = () => {
             </div>
 
             <div className="grid place-items-center w-full">
-                {/*<Accordion/>*/}
                 <div className="w-6/12 mx-auto rounded">
                     <Accordion/>
                 </div>
