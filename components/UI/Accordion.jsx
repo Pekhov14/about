@@ -17,7 +17,9 @@ const Accordion = () => {
         },
         3: {
             question: "What do you not want to work with?",
-            answer: "Yes, I don't like working with a lot of HTML coding and scraping web pages."
+            answer: "I don't like doing a lot of HTML coding. Engage in web page parsing.\n" +
+                "I don’t like it when tasks need to be done yesterday.\n" +
+                "And work with outdated technologies without a plan to update at a certain time."
         },
         4: {
             question: "In what direction would you like to develop?",
