@@ -3,7 +3,7 @@ import Image from "next/image";
 const TabList = () => {
     return (
         <div className="flex flex-wrap">
-            <div className="w-full sm:w-1/2 lg:w-1/4">
+            <div className="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 xs:w-1/2">
                 <div className="flex flex-col">
                     <ul className="list-none">
                         <li className="flex items-center mb-2">
@@ -63,9 +63,9 @@ const TabList = () => {
                     </ul>
                 </div>
             </div>
-            <div className="w-full sm:w-1/2 lg:w-1/4">
+            <div className="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 xs:w-1/2">
                 <div className="flex flex-col">
-                    <ul className="w-full list-none">
+                    <ul className=" list-none">
                         <li className="flex items-center mb-2">
                             <Image src="/assets/img/icons/opencart.png"
                                    alt="Icon"
@@ -96,7 +96,7 @@ const TabList = () => {
                     </ul>
                 </div>
             </div>
-            <div className="w-full sm:w-1/2 lg:w-1/4">
+            <div className="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 xs:w-1/2">
                 <div className="flex flex-col">
                     <ul className="list-none">
                         <li className="flex items-center mb-2">
@@ -147,7 +147,7 @@ const TabList = () => {
                     </ul>
                 </div>
             </div>
-            <div className="w-full sm:w-1/2 lg:w-1/4">
+            <div className="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 xs:w-1/2">
                 <div className="flex flex-col">
                     <ul className="list-none">
                         <li className="flex items-center mb-2">
