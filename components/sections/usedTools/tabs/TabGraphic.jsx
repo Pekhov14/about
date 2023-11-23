@@ -96,10 +96,13 @@ const TabGraphic = () => {
     const [isSoundOn, setIsSoundOn] = useState(true);
     const [playSound, setPlaySound] = useState(false);
 
+    const volumeDefault = 0.3;
+    const volumeOff = 0;
+
     useEffect(() => {
         const audio = audioRef.current;
         if (audio) {
-            audio.volume = isSoundOn ? 0.3 : 0;
+            audio.volume = isSoundOn ? volumeDefault : volumeOff;
         }
     }, [isSoundOn]);
 
@@ -115,7 +118,7 @@ const TabGraphic = () => {
         // Create the color scale.
         const color = d3.scaleLinear()
             .domain([0, 5])
-            .range(["hsl(97,60%,37%)", "hsl(6,88%,83%)"])
+            .range(["hsl(101,61%,83%)", "hsl(221,56%,30%)"])
             .interpolate(d3.interpolateHcl);
 
         // Compute the layout.
