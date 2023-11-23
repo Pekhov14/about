@@ -14,6 +14,7 @@
 
 body {
     margin: 0;
+    padding: 0;
     --color-text: #211c19;
     --color-bg: #e3e0d8;
     --color-link: #744229;
