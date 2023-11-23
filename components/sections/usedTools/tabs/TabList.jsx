@@ -49,7 +49,7 @@ const TabList = () => {
                                    width={50}
                                    height={50}
                             />
-                            <span>CSS/SCSS</span>
+                            <span>CSS</span>
                         </li>
                         <li className="flex items-center mb-2">
                             <Image src="/assets/img/icons/twig.png"
@@ -83,6 +83,15 @@ const TabList = () => {
                                    height={50}
                             />
                             <span>Symfony</span>
+                        </li>
+                        <li className="flex items-center mb-2">
+                            <Image src="/assets/img/icons/doctrine.png"
+                                   alt="Icon"
+                                   className="w-5 mr-2"
+
+                                   width={50}
+                                   height={50}/>
+                            <span>Doctrine</span>
                         </li>
                         <li className="flex items-center mb-2">
                             <Image src="/assets/img/icons/react.png"
@@ -124,7 +133,7 @@ const TabList = () => {
                                    width={50}
                                    height={50}
                             />
-                            <span>Nginx / Apache2</span>
+                            <span>Nginx</span>
                         </li>
                         <li className="flex items-center mb-2">
                             <Image src="/assets/img/icons/composer.png"
@@ -151,22 +160,13 @@ const TabList = () => {
                 <div className="flex flex-col">
                     <ul className="list-none">
                         <li className="flex items-center mb-2">
-                            <Image src="/assets/img/icons/doctrine.png"
-                                   alt="Icon"
-                                   className="w-5 mr-2"
-
-                                   width={50}
-                                   height={50}/>
-                            <span>Doctrine</span>
-                        </li>
-                        <li className="flex items-center mb-2">
                             <Image src="/assets/img/icons/mariadb.png"
                                    alt="Icon"
                                    className="w-5 mr-2"
 
                                    width={50}
                                    height={50}/>
-                            <span>mysql/mariadb</span>
+                            <span>Mysql/Mariadb</span>
                         </li>
                         <li className="flex items-center mb-2">
                             <Image src="/assets/img/icons/postgresql.png"
