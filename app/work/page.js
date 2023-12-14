@@ -1,17 +1,5 @@
 export default function Work() {
     const workData = [
-        // {
-        //     company: 'Self employer',
-        //     date: '2021-01-01',
-        //     positions: [
-        //         {
-        //             title: 'Full Stack Developer',
-        //             endDate: '2022-01-01',
-        //             description: 'For project with cars tracking. I helped created Excel reports in symfony 3.4. ',
-        //             technologies: ['Symfony', 'Express', 'MongoDB', 'React'],
-        //         },
-        //     ],
-        // },
         {
             company: 'Corefy',
             date: 'May 2023 - July 2023 (3 months)',
@@ -51,17 +39,6 @@ export default function Work() {
                     title: 'Web developer',
                     description: 'Worked on both frontend and backend development.',
                     technologies: ['Wordpres', 'PHP'],
-                },
-            ],
-        },
-        {
-            company: 'Internship in Asper (Local Web Studio)',
-            date: 'May 2019 - June 2019',
-            positions: [
-                {
-                    title: 'Web developer',
-                    description: 'Worked on improving the google speed score of a wordpress site. Building and optimizing resources Gulp, CDN Cloudflare, Cache.',
-                    technologies: ['Wordpres', 'PHP', 'HTML', 'CSS', 'JS'],
                 },
             ],
         },
