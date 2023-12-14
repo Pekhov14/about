@@ -3,21 +3,6 @@
 const About = () => {
     return (
         <section className="content">
-            <div className="content__bg content__bg--bottom" style={{backgroundImage: 'url(assets/img/1.jpeg)' }}>
-                <svg className="separator separator--up" width="100%" height="100%" viewBox="0 0 100 10"
-                     preserveAspectRatio="none">
-                    <path className="separator__path path-anim" data-path-to="M 0 0 C 35 21 70 0 100 0 L 0 0 Z"
-                          vectorEffect="non-scaling-stroke" d="M 0 0 C 37 0 70 0 100 0 L 0 0 Z"/>
-                </svg>
-                <svg className="separator separator--down" width="100%" height="100%" viewBox="0 0 100 10"
-                     preserveAspectRatio="none">
-                    <path className="separator__path path-anim" data-path-to="M 0 0 C 29 6 78 17 100 0 L 100 10 H 0 Z"
-                          vectorEffect="non-scaling-stroke" d="M 0 0 C 18 1 61 9 100 0 L 100 10 H 0 Z"/>
-                </svg>
-                <div className="content__title text-light content__title--right">
-                    <h2 className="content__title-main">About me</h2>
-                </div>
-            </div>
             <div className="content__sides">
                 <div className="content__text">
                     <h2>PHP Software Developer</h2>

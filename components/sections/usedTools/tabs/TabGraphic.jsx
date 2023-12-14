@@ -40,7 +40,7 @@ const data = {
             "name": "Js",
             "children": [
                 {"name": "React", "value": 1759},
-                {"name": "Native js", "value": 1759},
+                {"name": "Js", "value": 1759},
                 {"name": "TypeScript", "value": 1759},
             ]
         },
@@ -111,8 +111,7 @@ const TabGraphic = () => {
     };
 
     useEffect(() => {
-        // Specify the chart’s dimensions.
-        const width = 928;
+        const width = 1200; // 928
         const height = width;
 
         // Create the color scale.

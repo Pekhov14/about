@@ -3,26 +3,10 @@
 const Education = () => {
     return (
         <section className="content">
-            <div className="content__bg content__bg--bottom" style={{ backgroundImage: 'url(/assets/img/4.jpg)' }}>
-                <svg className="separator separator--up" width="100%" height="100%" viewBox="0 0 100 10"
-                     preserveAspectRatio="none">
-                    <path className="separator__path path-anim"
-                          data-path-to="M 0 0 C 17 21.6 35.2 1.2 50 1.4 C 65.2 1.5 83 21.6 100 0 L 0 0 Z"
-                          vectorEffect="non-scaling-stroke" d="M 0 0 C 23 0 35 0 50 0 C 65 0 74 0 100 0 L 0 0 Z"/>
-                </svg>
-                <svg className="separator separator--down" width="100%" height="100%" viewBox="0 0 100 10"
-                     preserveAspectRatio="none">
-                    <path className="separator__path path-anim"
-                          data-path-to="M 24 0 C 33 0 37 10 49 10 C 61 10 65 0.1 74 0 C 83 0 90 10 100 0 L 100 10 L 0 10 L 0 0 C 9 7 15 0.1 24 0 Z"
-                          vectorEffect="non-scaling-stroke"
-                          d="M 24 0 C 33 0 30 0 49 0 C 64 0 65 0.1 74 0 C 83 0 82 0 100 0 L 100 10 L 0 10 L 0 0 C 11 0 15 0.1 24 0 Z"/>
-                </svg>
-                <div className="content__title text-light content__title--right">
-                    <h2 className="content__title-main">Education</h2>
-                </div>
+            <div className="content__title content__stacked">
+                <h4 className="content__title-main">Education</h4>
             </div>
-
-            <div className="content--centered">
+            <div className="content--center pb-20">
                 {/* eslint-disable-next-line react/no-unescaped-entities */}
                 <h3 className="text-3xl font-bold pb-2">National Aerospace University - "Kharkiv Aviation Institute"</h3>
 

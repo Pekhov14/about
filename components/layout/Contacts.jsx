@@ -5,6 +5,8 @@ import {Waves} from "@/components/UI/Waves";
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 const Contacts = () => {
+    const currentYear = new Date().getFullYear();
+
     return (
         <section className="content content--centered footer">
             <div className="container mx-auto">
@@ -76,8 +78,7 @@ const Contacts = () => {
                 </div>
             </div>
 
-            <Waves/>
-            <p className="credits">2023 - ANTHONY PEKHOV</p>
+            <p className="credits">&copy; {currentYear} - Anthony Pekhov</p>
         </section>
     )
 }
