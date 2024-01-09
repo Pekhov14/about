@@ -117,7 +117,7 @@ const TabGraphic = () => {
         // Create the color scale.
         const color = d3.scaleLinear()
             .domain([0, 5])
-            .range(["hsl(101,61%,83%)", "hsl(221,56%,30%)"])
+            .range(["hsl(19,77%,79%)", "hsl(89,76%,42%)"])
             .interpolate(d3.interpolateHcl);
 
         // Compute the layout.
@@ -128,6 +128,12 @@ const TabGraphic = () => {
                 .sum(d => d.value)
                 .sort((a, b) => b.value - a.value));
         const root = pack(data);
+
+        // Очищаем содержимое контейнера перед добавлением нового графика
+        const container = d3.select("#circle-packing-container");
+        container.selectAll("*").remove();
+
+        // TODO: Разобраться почему дубль в circle-packing-container
 
         // Create the SVG container.
         const svg = d3.select("#circle-packing-container")

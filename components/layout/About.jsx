@@ -1,5 +1,7 @@
 'use client'
 
+import {DownloadCv} from "@/components/sections/cv/DownloadCv";
+
 const About = () => {
     return (
         <section className="content">
@@ -44,17 +46,7 @@ const About = () => {
                                           d="M15.621 4.379a3 3 0 00-4.242 0l-7 7a3 3 0 004.241 4.243h.001l.497-.5a.75.75 0 011.064 1.057l-.498.501-.002.002a4.5 4.5 0 01-6.364-6.364l7-7a4.5 4.5 0 016.368 6.36l-3.455 3.553A2.625 2.625 0 119.52 9.52l3.45-3.451a.75.75 0 111.061 1.06l-3.45 3.451a1.125 1.125 0 001.587 1.595l3.454-3.553a3 3 0 000-4.242z"
                                           clipRule="evenodd"/>
                                 </svg>
-                                <div className="ml-4 flex min-w-0 flex-1 gap-2">
-                                    <span className="truncate font-medium">cv_anton_pekhov_backend_developer.pdf</span>
-                                    <span className="flex-shrink-0 text-gray-400">239kb</span>
-                                </div>
-                                <div className="ml-4 flex-shrink-0">
-                                    <a href="/assets/cv/cv_anton_pekhov_backend_developer.pdf"
-                                       download
-                                       className="font-medium text-indigo-600 hover:text-indigo-500">Download <span
-                                        aria-hidden="true">→</span>
-                                    </a>
-                                </div>
+                                <DownloadCv />
                             </div>
                         </div>
                     </div>
@@ -68,7 +60,7 @@ const About = () => {
                                   d="M494.246 145.646c25 39 10.2 103.8-1.2 157.2-11.4 53.4-19.5 95.3-44.5 129.3-25 34-66.9 60.1-120.6 71.7-53.6 11.7-118.9 9-163.7-25-44.8-34-69.2-99.3-71.9-167.3-2.7-68 16.2-138.7 61-177.7 44.9-39 115.6-46.3 183.4-43.4 67.7 3 132.5 16.2 157.5 55.2"/>
                         </clipPath>
                     </defs>
-                    <image clipPath="url(#shape11)" xlinkHref="assets/img/2.jpeg" x="0" y="0" width="600"
+                    <image clipPath="url(#shape11)" xlinkHref="assets/img/pekhov_anton_php_developer.jpeg" x="0" y="0" width="600"
                            height="600"/>
                 </svg>
             </div>
