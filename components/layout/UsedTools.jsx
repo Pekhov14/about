@@ -17,10 +17,6 @@ const items = [
     },
 ];
 
-const onChange = (key) => {
-    console.log(key);
-};
-
 const UsedTools = () => {
     return (
         <section id="promotionFooter" className="bg-gray-100 py-8 px-8">
@@ -29,7 +25,7 @@ const UsedTools = () => {
                     <h4 className="text-xl font-bold mb-4"><i className="bi bi-tag"></i> Tags of used tools</h4>
                 </div>
 
-                <Tabs defaultActiveKey="2" items={items} onChange={onChange} />
+                <Tabs defaultActiveKey="2" items={items} />
             </div>
         </section>
     )

@@ -8,10 +8,8 @@ const Faq = () => {
                 <span className="content__title-min pt-10">To save you time on typical questions, I collected them for you and answered them.</span>
             </div>
 
-            <div className="grid place-items-center w-full">
-                <div className="p-5 mx-auto max-w-2xl rounded">
-                    <Accordion/>
-                </div>
+            <div className="w-full lg:w-1/2 text-xl">
+                <Accordion/>
             </div>
         </section>
     )
