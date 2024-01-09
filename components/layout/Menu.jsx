@@ -11,6 +11,9 @@ const Menu = () => {
                     <li>
                         <Link href="/work" className="text-white">Work</Link>
                     </li>
+                    <li>
+                        <Link href="/cv" className="text-white">Resume</Link>
+                    </li>
                 </ul>
             </div>
         </nav>
