@@ -1,9 +1,16 @@
 import Image from "next/image";
+import {DownloadCv} from "@/components/sections/cv/DownloadCv";
 
 export default function Cv() {
 
     return (
         <div className="bg-gray-100 p-8">
+            <div className="flex items-center justify-center">
+                <div className="flex items-center justify-center mb-5 w-6/12">
+                    <DownloadCv />
+                </div>
+            </div>
+
             <div id="cv-container"
                  className="max-w-4xl mx-auto bg-white rounded-md shadow-md p-8 grid grid-cols-2 gap-8">
                 <div className="col-span-1">
