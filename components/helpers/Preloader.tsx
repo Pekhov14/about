@@ -12,7 +12,7 @@ const preloader = () => {
 
     const imageLoad = imagesLoaded(imagesToPreload, { background: true });
 
-    return new Promise((resolve) => {
+    return new Promise<void>((resolve) => {
         imageLoad.on('done', () => {
             imgwrap.parentNode.removeChild(imgwrap);
             body.classList.remove('loading');

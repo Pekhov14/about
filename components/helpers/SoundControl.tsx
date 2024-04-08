@@ -12,9 +12,11 @@ const SoundControl = ({ audioRef, isSoundOn, toggleSound, playSound }) => {
     return (
         <>
             {isSoundOn ? (
-                <SoundTwoTone style={{ fontSize: '22px' }} onClick={toggleSound} />
+                <SoundTwoTone style={{fontSize: '22px'}} onClick={toggleSound} onPointerEnterCapture={undefined}
+                              onPointerLeaveCapture={undefined} />
             ) : (
-                <SoundOutlined style={{ fontSize: '22px' }} onClick={toggleSound} />
+                <SoundOutlined style={{fontSize: '22px'}} onClick={toggleSound} onPointerEnterCapture={undefined}
+                               onPointerLeaveCapture={undefined} />
             )}
         </>
     );

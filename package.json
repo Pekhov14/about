@@ -13,7 +13,6 @@
     "@ant-design/icons": "^5.2.6",
     "@studio-freight/lenis": "^0.1.18",
     "antd": "^5.8.3",
-    "autoprefixer": "10.4.14",
     "bootstrap-icons": "^1.10.5",
     "d3": "^7.8.5",
     "eslint": "8.46.0",
@@ -21,9 +20,15 @@
     "gsap": "^3.10.4",
     "imagesloaded": "^5.0.0",
     "next": "^14.0.4",
-    "postcss": "8.4.27",
     "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "tailwindcss": "3.3.3"
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.5",
+    "@types/react": "^18.2.75",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.3",
+    "typescript": "^5.4.4"
   }
 }
