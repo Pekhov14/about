@@ -1,4 +1,5 @@
-import Accordion from "@/components/UI/Accordion";
+// @ts-ignore
+import Accordion from "@/components/ui/Accordion";
 
 const Faq = () => {
     return (

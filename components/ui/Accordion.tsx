@@ -64,7 +64,9 @@ const Accordion = () => {
         <Collapse
             bordered={false}
             defaultActiveKey={['0']}
-            expandIcon={({ isActive }) => <CaretRightOutlined rotate={isActive ? 90 : 0} />}
+            expandIcon={({ isActive }) => <CaretRightOutlined rotate={isActive ? 90 : 0}
+                                                              onPointerEnterCapture={undefined}
+                                                              onPointerLeaveCapture={undefined} />}
             items={faqData}
             size="large"
         />
