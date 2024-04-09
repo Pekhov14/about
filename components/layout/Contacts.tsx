@@ -1,8 +1,6 @@
 'use client'
 
 import {CopyToClipboard} from "@/components/helpers/CopyToClipboard";
-import {Waves} from "@/components/UI/Waves";
-import 'bootstrap-icons/font/bootstrap-icons.css';
 
 const Contacts = () => {
     const currentYear = new Date().getFullYear();

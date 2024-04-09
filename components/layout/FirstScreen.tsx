@@ -19,6 +19,7 @@ const FirstScreen = () => {
         }, []);
 
 // All path elements in the page
+        // @ts-ignore
         const paths = [...document.querySelectorAll('path.path-anim')];
 
 // Smooth scrolling initialization (using Lenis https://github.com/studio-freight/lenis)
