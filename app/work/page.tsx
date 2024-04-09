@@ -1,3 +1,5 @@
+"use client";
+
 export default function Work() {
     const workData = [
         {
@@ -69,8 +71,8 @@ export default function Work() {
                                         <div className="text-gray-600">{position.description}</div>
                                         <div className="mt-2">
                                             {position.technologies.map((tech, techIndex) => (
-                                                <span key={techIndex} className="inline-block rounded-full px-2 py-1 text-sm font-semibold text-white mr-2 mb-2 gradient-bg">
-                                                #{tech}
+                                                <span key={techIndex} className="inline-block font-semibold mr-2 bg-black text-white rounded-full text-sm w-fit px-4 py-1 mb-4">
+                                                {tech}
                                               </span>
                                             ))}
                                         </div>

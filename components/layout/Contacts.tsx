@@ -17,7 +17,7 @@ const Contacts = () => {
                         <div className="bg-white text-black p-8 text-xl rounded-lg">
                             <div className="flex justify-between">
                                 <div className="font-medium text-slate-900">
-                                    <span>Email <i className="bi bi-envelope-fill"></i></span>
+                                    <span>Email</span>
                                 </div>
                                 <CopyToClipboard value="pehovanton21@gmail.com"/>
                             </div>
@@ -29,7 +29,7 @@ const Contacts = () => {
                         <div className="bg-white text-black p-8 text-xl rounded-lg">
                             <div className="flex justify-between">
                                 <div className="font-medium text-slate-900">
-                                    <span>Telegram <i className="bi bi-telegram"></i></span>
+                                    <span>Telegram</span>
                                 </div>
                                 <CopyToClipboard value="@Anthony_1654"/>
                             </div>
@@ -46,7 +46,7 @@ const Contacts = () => {
                         <div className="bg-white text-black p-8 text-xl rounded-lg">
                             <div className="flex justify-between">
                                 <div className="font-medium text-slate-900">
-                                    <span>Linkedin <i className="bi bi-linkedin"></i></span>
+                                    <span>Linkedin</span>
                                 </div>
                                 <CopyToClipboard value="in/anton-pekhov"/>
                             </div>

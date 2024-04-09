@@ -12,27 +12,24 @@ const About = () => {
 
                     <ul className="list-inline">
                         <li className="list-inline-item">
-                            <i className="bi bi-linkedin"></i>
                             <a href="https://www.linkedin.com/in/anton-pekhov"
                                target="_blank"
-                               className="fast-icon"> LinkedIn</a>
+                               className="hover:underline"> LinkedIn</a>
                         </li>
                         <li className="list-inline-item">
                             <i className="bi bi-medium"></i>
                             <a href="https://medium.com/@pehov21"
                                target="_blank"
-                               className="fast-icon"> Medium</a>
+                               className="hover:underline"> Medium</a>
                         </li>
                         <li className="list-inline-item">
-                            <i className="bi bi-github"></i>
                             <a href="https://github.com/Pekhov14"
                                target="_blank"
-                               className="fast-icon"> GitHub</a>
+                               className="hover:underline"> GitHub</a>
                         </li>
                         <li className="list-inline-item">
-                            <i className="bi bi-envelope-fill"></i>
                             <a href="mailto:pehovanton21@gmail.com"
-                               className="fast-icon"> Email Us</a>
+                               className="hover:underline"> Email Us</a>
                         </li>
                     </ul>
 

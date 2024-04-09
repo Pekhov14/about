@@ -58,11 +58,11 @@ export default function Home() {
                 <p className="text-lg text-center">To save you time ⏳ on typical questions, I collected them for you and
                     answered them.</p>
 
-                <Accordion type="single" collapsible className="w-1/2 p-5">
+                <Accordion type="single" collapsible className="w-full md:w-1/2 p-5">
                     {accordionData.map(item => (
                         <AccordionItem key={item.question} value={item.question}>
                             <AccordionTrigger>{item.question}</AccordionTrigger>
-                            <AccordionContent>{item.answer}</AccordionContent>
+                            <AccordionContent className="text-base">{item.answer}</AccordionContent>
                         </AccordionItem>
                     ))}
                 </Accordion>
