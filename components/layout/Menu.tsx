@@ -89,22 +89,22 @@ const Menu = () => {
                     {/*    </NavbarMenuItem>*/}
                     {/*))}*/}
                     <NavbarMenuItem key='home'>
-                        <Link href="/" aria-current="page">
+                        <Link href="/" aria-current="page" className="text-7xl">
                             Home
                         </Link>
                     </NavbarMenuItem>
                     <NavbarMenuItem key='work'>
-                        <Link href="work" aria-current="page">
+                        <Link href="work" aria-current="page" className="text-7xl">
                             Work
                         </Link>
                     </NavbarMenuItem>
                     <NavbarMenuItem key='home'>
-                        <Link href="cv" aria-current="page">
+                        <Link href="cv" aria-current="page" className="text-7xl">
                             Resume
                         </Link>
                     </NavbarMenuItem>
                     <NavbarMenuItem key='home'>
-                        <Link href="faq" aria-current="page">
+                        <Link href="faq" aria-current="page" className="text-7xl">
                             F.A.Q
                         </Link>
                     </NavbarMenuItem>
