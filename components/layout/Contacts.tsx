@@ -1,82 +1,74 @@
 'use client'
 
-import {CopyToClipboard} from "@/components/helpers/CopyToClipboard";
+import { BentoGrid, BentoGridItem } from "../ui/bento-grid";
+import { FaTelegram, FaLinkedin, FaFilePdf } from "react-icons/fa";
+import { FaSquareXTwitter } from "react-icons/fa6";
+import { IoMdMail } from "react-icons/io";
 
 const Contacts = () => {
-    const currentYear = new Date().getFullYear();
+    function BentoGridDemo() {
+        return (
+            <BentoGrid className="max-w-4xl mx-auto">
+                {items.map((item, i) => (
+                    <BentoGridItem
+                        key={i}
+                        title={item.title}
+                        description={item.description}
+                        header={item.header}
+                        icon={item.icon}
+                        className={i === 3 || i === 6 ? "md:col-span-2" : ""}
+                    />
+                ))}
+            </BentoGrid>
+        );
+    }
+
+    const items = [
+        {
+            title: <a href='https://t.me/anthony_1654'>Telegram</a>,
+            description: "@Anthony_1654",
+            header: '',
+            icon: <FaTelegram />,
+        },
+        {
+            title: <a href='https://www.linkedin.com/in/anton-pekhov/'>Linkedin</a>,
+            description: "/in/anton-pekhov",
+            header: '',
+            icon: <FaLinkedin />,
+        },
+        {
+            title: <a href='https://twitter.com/Pekhov_Anton'>X (twitter)</a>,
+            description: "/Pekhov_Anton",
+            header: '',
+            icon: <FaSquareXTwitter />,
+        },
+        {
+            title: "Cv in pdf = 239kb",
+            description:
+                <a href='https://anton-pekhov.vercel.app/assets/cv/cv_anton_pekhov_backend_developer.pdf'
+                   download
+                   className="font-medium text-indigo-600 hover:text-indigo-500"
+                >Download →</a>,
+            header: '',
+            icon: <FaFilePdf />,
+        },
+        {
+            title: "Email",
+            description: "pehovanton21@gmail.com",
+            header: '',
+            icon: <IoMdMail />,
+        },
+    ];
 
     return (
-        <section className="content content--centered footer">
-            <div className="container mx-auto">
-                <div className="content__text content__text--left text-light p-20">
-                    <h2>My contacts for questions and suggestions</h2>
-                </div>
-
-                <div className="flex flex-wrap -mx-4 p-5">
-                    <div className="w-full md:w-1/2 px-4 mb-4 md:mb-0 lg:pb-3 md:pb-3">
-                        <div className="bg-white text-black p-8 text-xl rounded-lg">
-                            <div className="flex justify-between">
-                                <div className="font-medium text-slate-900">
-                                    <span>Email</span>
-                                </div>
-                                <CopyToClipboard value="pehovanton21@gmail.com"/>
-                            </div>
-
-                            <p>pehovanton21@gmail.com</p>
-                        </div>
-                    </div>
-                    <div className="w-full md:w-1/2 px-4 mb-4 md:mb-0 lg:pb-3 md:pb-3">
-                        <div className="bg-white text-black p-8 text-xl rounded-lg">
-                            <div className="flex justify-between">
-                                <div className="font-medium text-slate-900">
-                                    <span>Telegram</span>
-                                </div>
-                                <CopyToClipboard value="@Anthony_1654"/>
-                            </div>
-
-                            <p>
-                                <a href="https://t.me/anthony_1654"
-                                   target="_blank"
-                                   className="h6 mb-0 fw-light stretched-link"
-                                >@Anthony_1654</a>
-                            </p>
-                        </div>
-                    </div>
-                    <div className="w-full md:w-1/2 px-4 mb-4 md:mb-0">
-                        <div className="bg-white text-black p-8 text-xl rounded-lg">
-                            <div className="flex justify-between">
-                                <div className="font-medium text-slate-900">
-                                    <span>Linkedin</span>
-                                </div>
-                                <CopyToClipboard value="in/anton-pekhov"/>
-                            </div>
-
-                            <p>
-                                <a href="https://www.linkedin.com/in/anton-pekhov"
-                                   target="_blank"
-                                   className="fast-icon"
-                                >in/anton-pekhov</a>
-                            </p>
-                        </div>
-                    </div>
-                    <div className="w-full md:w-1/2 px-4 mb-4 md:mb-0">
-                        <div className="bg-white text-black p-8 text-xl rounded-lg">
-                            <div className="ml-4 flex min-w-0 flex-1 gap-2">
-                                <span className="truncate font-medium">cv_anton_pekhov_backend_developer.pdf</span>
-                                <span className="flex-shrink-0 text-gray-400">239kb</span>
-                            </div>
-
-                            <a href="/assets/cv/cv_anton_pekhov_backend_developer.pdf"
-                               download
-                               className="font-medium text-indigo-600 hover:text-indigo-500"
-                            >Download <span aria-hidden="true">→</span>
-                            </a>
-                        </div>
+        <section className="bg-black p-5 text-xl pb-20">
+                <div className="container mx-auto">
+                    <div className="text-light p-20">
+                        <h2 className="text-white text-5xl text-center">My contacts</h2>
                     </div>
                 </div>
-            </div>
 
-            <p className="credits">&copy; {currentYear} - Anthony Pekhov</p>
+            <BentoGridDemo />
         </section>
     )
 }
