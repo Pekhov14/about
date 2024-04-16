@@ -110,6 +110,15 @@ const UsedTools = () => {
                                     />
                                     <span>React</span>
                                 </li>
+                                <li className="flex items-center mb-2">
+                                    <Image src="/assets/img/icons/laravel.png"
+                                           alt="Icon"
+                                           className="w-5 mr-2"
+                                           width={50}
+                                           height={50}
+                                    />
+                                    <span>Laravel (a little bit)</span>
+                                </li>
                             </ul>
                         </div>
                     </div>
