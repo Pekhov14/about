@@ -1,5 +1,6 @@
 import Image from "next/image";
 import {DownloadCv} from "@/components/sections/cv/DownloadCv";
+import { CiCoffeeCup } from "react-icons/ci";
 
 export default function Cv() {
 
@@ -41,7 +42,7 @@ export default function Cv() {
                     <div className="mt-8">
                         <h2 className="text-xl font-semibold mb-2">Languages</h2>
                         <ul className="list-disc list-inside">
-                            <li>English (correspond)</li>
+                            <li><div style={{display: "inline-flex"}}>English (starbucks <CiCoffeeCup style={{fontSize: "larger"}} />)</div></li>
                             <li>Ukrainian</li>
                             <li>Russian</li>
                         </ul>
@@ -74,6 +75,11 @@ export default function Cv() {
                 <div className="col-span-1">
                     <div className="mt-8">
                         <h2 className="text-xl font-semibold mb-2">Work Experience</h2>
+                        <div className="mb-4">
+                            <h3 className="text-lg font-medium">👨‍💻 Freelance</h3>
+                            <p className="text-gray-500"> <span className="text-sm">Now</span>
+                            </p>
+                        </div>
                         <div className="mb-4">
                             <h3 className="text-lg font-medium">👨‍💻 Corefy</h3>
                             <p className="text-gray-500">Backend Developer | <span className="text-sm">May 2023 - July 2023</span>
