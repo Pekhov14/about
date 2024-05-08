@@ -34,7 +34,7 @@ const Menu = () => {
         {name: 'Work', route: '/work'},
         {name: 'Resume', route: '/cv'},
         {name: 'F.A.Q', route: '/faq'},
-        {name: 'Chat', route: '/chat'},
+        // {name: 'Chat', route: '/chat'},
     ];
 
     return (
