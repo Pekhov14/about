@@ -4,6 +4,7 @@ import { BentoGrid, BentoGridItem } from "../ui/bento-grid";
 import { FaTelegram, FaLinkedin, FaFilePdf } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { IoMdMail } from "react-icons/io";
+import {DownloadCv} from "@/components/sections/cv/DownloadCv";
 
 const Contacts = () => {
     function BentoGridDemo() {
@@ -43,32 +44,31 @@ const Contacts = () => {
             icon: <FaSquareXTwitter />,
         },
         {
-            title: "Cv in pdf = 239kb",
+            title: "Resume",
             description:
-                <a href='https://anton-pekhov.vercel.app/assets/cv/cv_anton_pekhov_backend_developer.pdf'
-                   download
-                   className="font-medium text-indigo-600 hover:text-indigo-500"
-                >Download →</a>,
+                <>
+                    <DownloadCv />
+                </>,
             header: '',
-            icon: <FaFilePdf />,
+            icon: <FaFilePdf/>,
         },
         {
             title: "Email",
             description: "pehovanton21@gmail.com",
             header: '',
-            icon: <IoMdMail />,
+            icon: <IoMdMail/>,
         },
     ];
 
     return (
-        <section className="bg-black p-5 text-xl pb-20">
-                <div className="container mx-auto">
-                    <div className="text-light p-20">
-                        <h2 className="text-white text-5xl text-center">My contacts</h2>
-                    </div>
+        <section className="p-5 text-xl pb-20" style={{ background: '#101010' }}>
+            <div className="container mx-auto">
+                <div className="text-light p-20">
+                    <h2 className="text-white text-5xl text-center">Contacts</h2>
                 </div>
+            </div>
 
-            <BentoGridDemo />
+            <BentoGridDemo/>
         </section>
     )
 }

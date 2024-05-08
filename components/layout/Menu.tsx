@@ -35,13 +35,16 @@ const Menu = () => {
                         className="sm:hidden"
                     />
                     <NavbarBrand>
-                        {/*<Logo/>*/}
-                        <p className="font-bold text-inherit">Pekhov</p>
+                        <Logo/>
+                        <div>
+                            <p className="font-bold text-inherit">Anthony Pekhov</p>
+                            <p className="text-gray-500">Software developer</p>
+                        </div>
                     </NavbarBrand>
                 </NavbarContent>
 
                 <NavbarContent className="hidden sm:flex gap-4" justify="center">
-                    <NavbarItem>
+                <NavbarItem>
                         <Link color="foreground" href="/">
                             Home
                         </Link>

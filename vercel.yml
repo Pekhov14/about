@@ -1,0 +1,4 @@
+name: Pekhov
+builds:
+  - src: .
+    script: build.sh

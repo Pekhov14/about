@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --black-background: #101010;
+    --on-background: #f2f2f2;
+}
+
 *,
 *::after,
 *::before {
@@ -88,7 +93,7 @@
 
 .content__title-pre {
     display: block;
-    font-size: clamp(2rem,10vw,7rem);
+    font-size: clamp(2rem, 10vw, 7rem);
     font-weight: 400;
     font-style: normal;
 }
@@ -291,7 +296,7 @@ img {
 }
 
 .credits {
-    font-size: clamp(1rem,3vw,2rem);
+    font-size: clamp(1rem, 3vw, 2rem);
     font-weight: 400;
     font-family: scotch-display, serif;
     padding: 10vh 0;
@@ -312,13 +317,16 @@ img {
     .content__sides {
         grid-template-columns: 55% 1fr;
     }
+
     .content--grid {
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
-    .content--grid .content__img:nth-child(2){
+
+    .content--grid .content__img:nth-child(2) {
         margin-top: 50vh;
     }
-    .content--grid .content__img:nth-child(3){
+
+    .content--grid .content__img:nth-child(3) {
         margin-top: -50vh;
     }
 }
@@ -327,13 +335,16 @@ img {
     .content__sides {
         grid-template-columns: 55% 1fr;
     }
+
     .content--grid {
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
-    .content--grid .content__img:nth-child(2){
+
+    .content--grid .content__img:nth-child(2) {
         margin-top: 50vh;
     }
-    .content--grid .content__img:nth-child(3){
+
+    .content--grid .content__img:nth-child(3) {
         margin-top: -50vh;
     }
 }
@@ -350,75 +361,129 @@ img {
     border-bottom-color: #000; /* Черный цвет */
 }
 
-/*@layer base {*/
-/*  :root {*/
-/*    --background: 0 0% 100%;*/
-/*    --foreground: 222.2 84% 4.9%;*/
+/* TODO: Move to module css (https://nextjs.org/docs/app/building-your-application/styling/css-modules)*/
+/* Footer*/
+.section-footer {
+    border-top: 1px solid rgba(242, 242, 242, .1);
+    justify-content: center;
+    padding-top: 88px;
+    padding-bottom: 80px;
+    display: flex;
+    position: relative;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--black-background);
+    color: white;
+}
 
-/*    --card: 0 0% 100%;*/
-/*    --card-foreground: 222.2 84% 4.9%;*/
+.container-footer {
+    grid-row-gap: 64px;
+    flex-direction: column;
+    width: 882px;
+    display: flex;
+}
 
-/*    --popover: 0 0% 100%;*/
-/*    --popover-foreground: 222.2 84% 4.9%;*/
+.footer-top-wrapper {
+    justify-content: space-between;
+    display: flex;
 
-/*    --primary: 222.2 47.4% 11.2%;*/
-/*    --primary-foreground: 210 40% 98%;*/
+    .logomark-footer {
+        height: 80px;
+        vertical-align: middle;
+        max-width: 100%;
+        display: inline-block;
+    }
 
-/*    --secondary: 210 40% 96.1%;*/
-/*    --secondary-foreground: 222.2 47.4% 11.2%;*/
+    .footer-links-column-wrapper {
+        grid-column-gap: 48px;
+        display: flex;
 
-/*    --muted: 210 40% 96.1%;*/
-/*    --muted-foreground: 215.4 16.3% 46.9%;*/
+        .footer-links-column {
+            grid-row-gap: 16px;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 106px;
+            display: flex;
 
-/*    --accent: 210 40% 96.1%;*/
-/*    --accent-foreground: 222.2 47.4% 11.2%;*/
+            .text-footer-links-overline {
+                opacity: .5;
+                letter-spacing: 1.5px;
+                font-family: Neue Montreal, sans-serif;
+                font-size: 9px;
+                font-weight: 500;
+                line-height: 13px;
+            }
 
-/*    --destructive: 0 84.2% 60.2%;*/
-/*    --destructive-foreground: 210 40% 98%;*/
+            .footer-links-wrapper {
+                grid-row-gap: 8px;
+                flex-direction: column;
+                align-self: stretch;
+                display: flex;
 
-/*    --border: 214.3 31.8% 91.4%;*/
-/*    --input: 214.3 31.8% 91.4%;*/
-/*    --ring: 222.2 84% 4.9%;*/
+                .footer-link {
+                    grid-column-gap: 4px;
+                    color: white;
+                    align-self: stretch;
+                    align-items: center;
+                    height: 40px;
+                    text-decoration: none;
+                    display: flex;
+                }
+            }
+        }
+    }
+}
 
-/*    --radius: 0.5rem;*/
-/*  }*/
+.footer-bottom-wrapper {
+    grid-column-gap: 48px;
+    flex: 1;
+    justify-content: space-between;
+    align-self: stretch;
+    align-items: flex-end;
+    display: flex;
 
-/*  .dark {*/
-/*    --background: 222.2 84% 4.9%;*/
-/*    --foreground: 210 40% 98%;*/
+    .footer-bottom-left {
+        grid-row-gap: 4px;
+        flex-direction: column;
+        flex: 1;
+        align-self: stretch;
+        align-items: flex-start;
+        display: flex;
+    }
 
-/*    --card: 222.2 84% 4.9%;*/
-/*    --card-foreground: 210 40% 98%;*/
+    .text-footer-copyright {
+        letter-spacing: .2px;
+        font-family: Neue Montreal, sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+    }
 
-/*    --popover: 222.2 84% 4.9%;*/
-/*    --popover-foreground: 210 40% 98%;*/
+    .text-under-copyright {
+        opacity: .5;
+        letter-spacing: .2px;
+        text-transform: none;
+        font-family: Neue Montreal, sans-serif;
+    }
+}
 
-/*    --primary: 210 40% 98%;*/
-/*    --primary-foreground: 222.2 47.4% 11.2%;*/
+.footer-bottom-right {
+    flex-direction: column;
+    flex: 1;
+    justify-content: flex-end;
+    align-self: stretch;
+    align-items: flex-end;
+    display: flex;
 
-/*    --secondary: 217.2 32.6% 17.5%;*/
-/*    --secondary-foreground: 210 40% 98%;*/
 
-/*    --muted: 217.2 32.6% 17.5%;*/
-/*    --muted-foreground: 215 20.2% 65.1%;*/
-
-/*    --accent: 217.2 32.6% 17.5%;*/
-/*    --accent-foreground: 210 40% 98%;*/
-
-/*    --destructive: 0 62.8% 30.6%;*/
-/*    --destructive-foreground: 210 40% 98%;*/
-
-/*    --border: 217.2 32.6% 17.5%;*/
-/*    --input: 217.2 32.6% 17.5%;*/
-/*    --ring: 212.7 26.8% 83.9%;*/
-/*  }*/
-/*}*/
-
-/*@layer base {*/
-/*  * {*/
-/*    @apply border-border;*/
-/*  }*/
-/*  body {*/
-/*    @apply bg-background text-foreground;*/
-/*  }*/
-/*}*/
+    .text-last-updated {
+        opacity: .5;
+        letter-spacing: .2px;
+        font-family: Neue Montreal, sans-serif;
+        font-size: 12px;
+        font-weight: 300;
+        line-height: 20px;
+    }
+}

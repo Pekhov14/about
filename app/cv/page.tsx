@@ -29,7 +29,7 @@ export default function Cv() {
                             />
                         </div>
                         <h1 className="text-2xl font-bold">Anthony Pekhov</h1>
-                        <p className="text-gray-500">PHP Software developer</p>
+                        <p className="text-gray-500">Software developer</p>
                     </div>
 
                     <div>
@@ -49,7 +49,7 @@ export default function Cv() {
                     </div>
 
                     <div className="mt-8">
-                        <h2 className="text-xl font-semibold mb-2">Used tools</h2>
+                        <h2 className="text-xl font-semibold mb-2">Toolbox</h2>
                         <ul className="list-disc list-inside">
                             <li>PHP, JS, SQL, HTML, CSS</li>
                             <li>MySQL, PostgreSql, Redis, MongoDb</li>
