@@ -1,4 +1,0 @@
-name: about
-builds:
-  - src: .
-    script: anton-pekhov.sh
