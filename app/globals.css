@@ -364,109 +364,48 @@ img {
 /* TODO: Move to module css (https://nextjs.org/docs/app/building-your-application/styling/css-modules)*/
 /* Footer*/
 .section-footer {
-    border-top: 1px solid rgba(242, 242, 242, .1);
-    justify-content: center;
-    padding-top: 88px;
-    padding-bottom: 80px;
-    display: flex;
-    position: relative;
-    top: auto;
-    bottom: 0;
-    left: 0;
-    right: 0;
     background: var(--black-background);
     color: white;
 }
 
-.container-footer {
-    grid-row-gap: 64px;
-    flex-direction: column;
-    width: 882px;
-    display: flex;
+.text-footer-links-overline {
+    opacity: .5;
+    letter-spacing: 1.5px;
+    font-size: 9px;
+    font-weight: 500;
+    line-height: 13px;
 }
 
-.footer-top-wrapper {
-    justify-content: space-between;
-    display: flex;
-
-    .logomark-footer {
-        height: 80px;
-        vertical-align: middle;
-        max-width: 100%;
-        display: inline-block;
-    }
-
-    .footer-links-column-wrapper {
-        grid-column-gap: 48px;
-        display: flex;
-
-        .footer-links-column {
-            grid-row-gap: 16px;
-            flex-direction: column;
-            align-items: flex-start;
-            width: 106px;
-            display: flex;
-
-            .text-footer-links-overline {
-                opacity: .5;
-                letter-spacing: 1.5px;
-                font-family: Neue Montreal, sans-serif;
-                font-size: 9px;
-                font-weight: 500;
-                line-height: 13px;
-            }
-
-            .footer-links-wrapper {
-                grid-row-gap: 8px;
-                flex-direction: column;
-                align-self: stretch;
-                display: flex;
-
-                .footer-link {
-                    grid-column-gap: 4px;
-                    color: white;
-                    align-self: stretch;
-                    align-items: center;
-                    height: 40px;
-                    text-decoration: none;
-                    display: flex;
-                }
-            }
-        }
-    }
-}
-
-.footer-bottom-wrapper {
-    grid-column-gap: 48px;
-    flex: 1;
-    justify-content: space-between;
+.footer-link {
+    grid-column-gap: 4px;
+    color: white;
     align-self: stretch;
-    align-items: flex-end;
+    align-items: center;
+    height: 40px;
+    text-decoration: none;
     display: flex;
+}
 
-    .footer-bottom-left {
-        grid-row-gap: 4px;
-        flex-direction: column;
-        flex: 1;
-        align-self: stretch;
-        align-items: flex-start;
-        display: flex;
-    }
+.footer-bottom-left {
+    grid-row-gap: 4px;
+    flex-direction: column;
+    flex: 1;
+    align-self: stretch;
+    align-items: flex-start;
+    display: flex;
+}
 
-    .text-footer-copyright {
-        letter-spacing: .2px;
-        font-family: Neue Montreal, sans-serif;
-        font-size: 16px;
-        font-weight: 500;
-        line-height: 24px;
-    }
+.text-footer-copyright {
+    letter-spacing: .2px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+}
 
-    .text-under-copyright {
-        opacity: .5;
-        letter-spacing: .2px;
-        text-transform: none;
-        font-family: Neue Montreal, sans-serif;
-    }
+.text-under-copyright {
+    opacity: .5;
+    letter-spacing: .2px;
+    text-transform: none;
 }
 
 .footer-bottom-right {
@@ -476,14 +415,12 @@ img {
     align-self: stretch;
     align-items: flex-end;
     display: flex;
+}
 
-
-    .text-last-updated {
-        opacity: .5;
-        letter-spacing: .2px;
-        font-family: Neue Montreal, sans-serif;
-        font-size: 12px;
-        font-weight: 300;
-        line-height: 20px;
-    }
+.text-last-updated {
+    opacity: .5;
+    letter-spacing: .2px;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 20px;
 }

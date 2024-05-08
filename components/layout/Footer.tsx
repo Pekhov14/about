@@ -19,16 +19,16 @@ const Footer = () => {
 
     return (
         <section>
-            <div className="section-footer">
-                <div className="container-footer">
-                    <div className="footer-top-wrapper">
-                        <div className="logomark-footer">
+            <div className="section-footer border-t border-gray-100 border-opacity-10 justify-center pt-20 pb-20 flex">
+                <div className="flex flex-col w-full sm:w-3/5 pl-2 pr-2 gap-y-16">
+                    <div className="flex justify-between">
+                        <div className="h-20 inline-block align-middle max-w-full">
                             <Logo/>
                         </div>
-                        <div className="footer-links-column-wrapper">
-                            <div className="footer-links-column">
+                        <div className="grid grid-cols-2">
+                            <div className="grid grid-rows-1 gap-y-4">
                                 <div className="text-footer-links-overline">MAIN</div>
-                                <div className="footer-links-wrapper">
+                                <div className="grid grid-rows-1 gap-y-2">
                                     <Link href="work"
                                           aria-current="page"
                                           className="footer-link w-inline-block w--current"
@@ -43,9 +43,9 @@ const Footer = () => {
                                     </Link>
                                 </div>
                             </div>
-                            <div className="footer-links-column">
+                            <div className="grid grid-rows-1 gap-y-4">
                                 <div className="text-footer-links-overline">CONTACT</div>
-                                <div className="footer-links-wrapper">
+                                <div className="grid grid-rows-1 gap-y-2">
                                     {/* TODO: Change to Link*/}
                                     <a
                                         href="https://www.linkedin.com/in/anton-pekhov"
@@ -58,6 +58,8 @@ const Footer = () => {
                                             loading="lazy"
                                             alt=""
                                             className="icon-external"
+                                            width={15}
+                                            height={15}
                                         />
                                     </a>
                                     <a
@@ -69,24 +71,25 @@ const Footer = () => {
                                             src="/assets/svg/arrow.svg"
                                             loading="lazy"
                                             alt=""
-                                            className="icon-external"/>
+                                            className="icon-external"
+                                            width={15}
+                                            height={15}
+                                        />
                                     </a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    {/* TODO: Свой лого вставить за место версаль в иконку сайта */}
-                    <div className="footer-bottom-wrapper">
+                    <div className="flex justify-between">
                         <div className="footer-bottom-left">
-                            <div className="text-footer-copyright">© {currentYear} Anthony Pekhov. All Rights
-                                Reserved.
+                            <div className="text-footer-copyright">
+                                © {currentYear} Anthony Pekhov
                             </div>
                             <div className="text-under-copyright">Made with love and Green Teas</div>
                         </div>
                         <div className="footer-bottom-right">
                             <div id="last-updated" className="text-last-updated">
-                                {/* TODO: Last update*/}
-                                {/*April 15, 2024, 12:35 AM EST*/}
+                                {/* TODO: Last update fix bash script*/}
                                 Last updated by Pekhov on {lastUpdated} EEST
 
                             </div>
