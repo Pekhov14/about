@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect} from "react";
 import {Link} from "@nextui-org/react";
 import {Logo} from "@/components/ui/Logo";
 import moment from "moment";
@@ -78,7 +78,9 @@ const Footer = () => {
                     {/* TODO: Свой лого вставить за место версаль в иконку сайта */}
                     <div className="footer-bottom-wrapper">
                         <div className="footer-bottom-left">
-                            <div className="text-footer-copyright">© {currentYear} Anthony Pekhov. All Rights Reserved.</div>
+                            <div className="text-footer-copyright">© {currentYear} Anthony Pekhov. All Rights
+                                Reserved.
+                            </div>
                             <div className="text-under-copyright">Made with love and Green Teas</div>
                         </div>
                         <div className="footer-bottom-right">
