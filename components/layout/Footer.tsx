@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import {Link} from "@nextui-org/react";
 import {Logo} from "@/components/ui/Logo";
 import moment from "moment";
+import Image from 'next/image';
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
@@ -52,16 +53,19 @@ const Footer = () => {
                                         className="footer-link w-inline-block"
                                     >
                                         <div className="text-footer-link">LinkedIn</div>
-                                        <img
+                                        <Image
                                             src="/assets/svg/arrow.svg"
-                                            loading="lazy" alt="" className="icon-external"/>
+                                            loading="lazy"
+                                            alt=""
+                                            className="icon-external"
+                                        />
                                     </a>
                                     <a
                                         href="/cv"
                                         target="_blank"
                                         className="footer-link w-inline-block">
                                         <div className="text-footer-link">Resume</div>
-                                        <img
+                                        <Image
                                             src="/assets/svg/arrow.svg"
                                             loading="lazy"
                                             alt=""
