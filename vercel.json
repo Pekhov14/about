@@ -1,7 +1,0 @@
-{
-  "build": {
-    "scripts": {
-      "build": "bash build.sh && next build"
-    }
-  }
-}
