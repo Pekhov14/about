@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'About Anthony Pekhov',
-  description: 'Symfony software developer',
+  description: 'Software developer',
   keywords: 'backend, developer, symfony, opencart, php'
 }
 
