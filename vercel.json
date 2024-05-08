@@ -1,0 +1,8 @@
+{
+  "builds": [
+    {
+      "src": "anton-pekhov.sh",
+      "use": "@now/static-build"
+    }
+  ]
+}
