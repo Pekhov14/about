@@ -2,7 +2,7 @@
   "builds": [
     {
       "src": "anton-pekhov.sh",
-      "use": "@now/static-build"
+      "use": "@vercel/static-build"
     }
   ]
 }
