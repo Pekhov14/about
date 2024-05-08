@@ -1,7 +1,7 @@
 'use client'
 
 // import Link from 'next/link';
-import React from "react";
+import React, {useEffect} from "react";
 import {
     Navbar,
     NavbarBrand,
@@ -15,15 +15,26 @@ import {
 } from "@nextui-org/react";
 import {Logo} from "@/components/ui/Logo";
 import {NextUIProvider} from "@nextui-org/react";
+import {usePathname} from 'next/navigation'
 
 const Menu = () => {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+    const [activePage, setActivePage] = React.useState('');
+    const pathname = usePathname()
+
+    useEffect(() => {
+        if (pathname !== activePage) {
+            setActivePage(pathname);
+        }
+    }, [activePage, pathname]);
+
 
     const menuItems = [
-        "Home",
-        "Work",
-        "Resume",
-        "F.A.Q",
+        {name: 'Home', route: '/'},
+        {name: 'Work', route: '/work'},
+        {name: 'Resume', route: '/cv'},
+        {name: 'F.A.Q', route: '/faq'},
+        {name: 'Chat', route: '/chat'},
     ];
 
     return (
@@ -44,28 +55,19 @@ const Menu = () => {
                 </NavbarContent>
 
                 <NavbarContent className="hidden sm:flex gap-4" justify="center">
-                <NavbarItem>
-                        <Link color="foreground" href="/">
-                            Home
-                        </Link>
-                    </NavbarItem>
-                    <NavbarItem >
-                        {/* TODO: Add dynamic isActive*/}
-                        <Link href="work" aria-current="page">
-                            Work
-                        </Link>
-                    </NavbarItem>
-                    <NavbarItem>
-                        <Link href="cv" aria-current="page">
-                            Resume
-                        </Link>
-                    </NavbarItem>
-                    <NavbarItem>
-                        <Link color="foreground" href="faq">
-                            F.A.Q
-                        </Link>
-                    </NavbarItem>
+                    {menuItems.map((item) => (
+                        <NavbarMenuItem key={item.route}>
+                            <Link href={item.route}
+                                  aria-current={activePage === item.route ? 'page' : undefined}
+                                  color={activePage === item.route ? 'danger' : 'primary'}
+                            >
+                                {item.name}
+                            </Link>
+                        </NavbarMenuItem>
+                    ))}
                 </NavbarContent>
+
+                {/* TODO: Admin */}
                 {/*<NavbarContent justify="end">*/}
                 {/*    <NavbarItem className="hidden lg:flex">*/}
                 {/*        <Link href="#">Login</Link>*/}
@@ -76,41 +78,21 @@ const Menu = () => {
                 {/*        </Button>*/}
                 {/*    </NavbarItem>*/}
                 {/*</NavbarContent>*/}
+
                 <NavbarMenu>
-                    {/*{menuItems.map((item, index) => (*/}
-                    {/*    <NavbarMenuItem key={`${item}-${index}`}>*/}
-                    {/*        <Link*/}
-                    {/*            // color={*/}
-                    {/*            //     index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"*/}
-                    {/*            // }*/}
-                    {/*            className="w-full"*/}
-                    {/*            href="#"*/}
-                    {/*            size="lg"*/}
-                    {/*        >*/}
-                    {/*            {item}*/}
-                    {/*        </Link>*/}
-                    {/*    </NavbarMenuItem>*/}
-                    {/*))}*/}
-                    <NavbarMenuItem key='home'>
-                        <Link href="/" aria-current="page" className="text-7xl">
-                            Home
-                        </Link>
-                    </NavbarMenuItem>
-                    <NavbarMenuItem key='work'>
-                        <Link href="work" aria-current="page" className="text-7xl">
-                            Work
-                        </Link>
-                    </NavbarMenuItem>
-                    <NavbarMenuItem key='home'>
-                        <Link href="cv" aria-current="page" className="text-7xl">
-                            Resume
-                        </Link>
-                    </NavbarMenuItem>
-                    <NavbarMenuItem key='home'>
-                        <Link href="faq" aria-current="page" className="text-7xl">
-                            F.A.Q
-                        </Link>
-                    </NavbarMenuItem>
+                    {menuItems.map((item) => (
+                        <NavbarMenuItem
+                            key={item.route}
+                        >
+                            <Link href={item.route}
+                                  className="text-7xl"
+                                  aria-current={activePage === item.route ? 'page' : undefined}
+                                  color={activePage === item.route ? 'danger' : 'primary'}
+                            >
+                                {item.name}
+                            </Link>
+                        </NavbarMenuItem>
+                    ))}
                 </NavbarMenu>
             </Navbar>
         </NextUIProvider>
