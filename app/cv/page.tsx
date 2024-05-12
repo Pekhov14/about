@@ -98,9 +98,7 @@ export default function Cv() {
                                 <p className="text-gray-500">🔨 Software developer</p>
                                 <p><span
                                     className="text-sm text-gray-500">June 2022 - Apr. 2023 (~ 10 months)</span></p>
-                                <p>Was on the development team CRM system with technologies like Symfony 5 and
-                                    React. Frontend (React, TypeScript, Ant Design) Backend (PHP, Postgresql, Rest
-                                    API on Symfony 5 [DDD, Hexagonal architecture, CQRS])</p>
+                                <p>Was on the development team CRM system.</p>
                             </div>
                             <div className="mt-4">
                                 <p className="text-gray-500">🔨 Full Stack Developer</p>
