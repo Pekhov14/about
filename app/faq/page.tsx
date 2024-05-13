@@ -4,12 +4,18 @@ import {Accordion, AccordionContent, AccordionItem, AccordionTrigger} from "@/co
 import { FaCheckCircle } from "react-icons/fa";
 
 export default function Home() {
-    // TODO: Change font size
 
     const accordionData = [
         {
-            question: "How did you get into programming and why did you choose PHP?",
-            answer: "At school, I didn’t have enough grades in computer science and the teacher asked me to do an assignment for a competition to choose from a list, I decided to try to make a website. Then in 2 weeks I made my first website from HTML and CSS. The teacher said that it was a terrible job for the competition, but he gave a mark. I was interested in this and I began to slowly develop in this. The next year I took second place in the Kharkiv region in the same competition. Then the teacher advised me to continue learning PHP and JS. At university, I tried other languages, but my main one is still PHP.",
+            question: "How did you get into programming and why did you first choose PHP?",
+            answer: "In school, I lacked sufficient grades in computer science, " +
+                "so the teacher asked me to complete an assignment for a competition from a provided list. " +
+                "I opted to attempt creating a website. Within two weeks, I crafted my first website using HTML and CSS. " +
+                "While the teacher deemed it unsatisfactory for the competition, " +
+                "a grade was assigned. Intrigued, I began slowly advancing in this field. " +
+                "The following year, I secured second place in the Kharkiv region in the same competition. " +
+                "Subsequently, the teacher recommended I continue learning PHP and JS. Throughout university, " +
+                "I experimented with other languages, yet PHP remained my primary focus.\n"
         },
         {
             question: "Self education",
