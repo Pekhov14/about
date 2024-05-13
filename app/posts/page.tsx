@@ -5,10 +5,11 @@ import Image from "next/image";
 
 export default function Posts() {
 
-    // TODO:
-    // Тут мета теги еще нужно будет править
-    // Потом сделать что бы grid не повторялись постов и bento
-    // Все таки мультиязычность нужна тут будет
+    // TODO: Blog in markdown?
+    // slug
+    // Meta-tags
+    // Multilingual
+    // Switcher for theme
 
     const Skeleton = () => (
         <div
@@ -33,7 +34,6 @@ export default function Posts() {
                     <h1 className="content__title-page">Recent Posts</h1></div>
             </section>
 
-            {/*slug How to ask a question?*/}
             <BentoGrid className="max-w-4xl mx-auto">
                 {items.map((item, i) => (
                     <Link href={ item.link ? item.link : `/posts/slug-` + i}
