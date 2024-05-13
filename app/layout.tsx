@@ -6,7 +6,7 @@ import { Metadata } from 'next';
 const inter = Inter({ subsets: ['latin'] })
 
 const title = 'Anthony Pekhov - Software Developer';
-const description = 'Hello, I\'m Anthony. 👋 I An software developer specializing in backend I usually use PHP (OpenCart, Symfony, Laravel) and a little frontend in JS (React, Next).';
+const description = 'Hello, it\'s Anthony. 👋 I\'m a software developer specializing in backend. I usually use PHP (OpenCart, Symfony, Laravel) and do a bit of frontend work in JS (React, Next).';
 const siteUrl = 'https://anton-pekhov.vercel.app/';
 const imgAlt = 'Preview image for Anthony Pekhov'
 
