@@ -1,8 +1,70 @@
 'use client'
 
-import {DownloadCv} from "@/components/sections/cv/DownloadCv";
+import React from "react";
+import Link from 'next/link'
+import {DownloadCv} from "components/sections/cv/DownloadCv";
+import Autoplay from "embla-carousel-autoplay"
+
+import {Card, CardContent} from "@/components/ui/card"
+import {
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+    CarouselNext,
+    CarouselPrevious,
+} from "@/components/ui/carousel"
+import Image from "next/image";
 
 const About = () => {
+    const fastContacts = [
+        {
+            name: "LinkedIn",
+            url: "https://www.linkedin.com/in/anton-pekhov",
+            targetBlank: true,
+            icon: ''
+        },
+        {
+            name: "Telegram",
+            url: "https://t.me/anthony_1654",
+            targetBlank: true,
+            icon: ''
+        },
+        {
+            name: "Medium",
+            url: "https://medium.com/@pehov21",
+            targetBlank: true,
+            icon: ''
+        },
+        {
+            name: "GitHub",
+            url: "https://github.com/Pekhov14",
+            targetBlank: true,
+            icon: ''
+        },
+        {
+            name: "Email Us",
+            url: "mailto:pehovanton21@gmail.com",
+            targetBlank: false,
+            icon: ''
+        }
+    ];
+
+    const plugin = React.useRef(
+        Autoplay({delay: 2000, stopOnInteraction: true})
+    )
+
+    const CarouselImages = [
+        {
+            src: "/assets/img/pekhov_anton_php_developer.jpeg"
+        },
+        {
+            src: "/assets/img/1.jpeg"
+        },
+        {
+            src: "/assets/img/2.jpeg"
+        },
+    ];
+
     return (
         <section className="content">
             <div className="content__sides">
@@ -11,48 +73,57 @@ const About = () => {
                     <span className="pt-5 pb-5">Experienced in opencart & symfony</span>
 
                     <ul className="list-inline">
-                        <li className="list-inline-item">
-                            <a href="https://www.linkedin.com/in/anton-pekhov"
-                               target="_blank"
-                               className="hover:underline"> LinkedIn</a>
-                        </li>
-                        <li className="list-inline-item">
-                            <i className="bi bi-medium"></i>
-                            <a href="https://medium.com/@pehov21"
-                               target="_blank"
-                               className="hover:underline"> Medium</a>
-                        </li>
-                        <li className="list-inline-item">
-                            <a href="https://github.com/Pekhov14"
-                               target="_blank"
-                               className="hover:underline"> GitHub</a>
-                        </li>
-                        <li className="list-inline-item">
-                            <a href="mailto:pehovanton21@gmail.com"
-                               className="hover:underline"> Email Us</a>
-                        </li>
+                        {fastContacts.map((contact, i) => (
+                            <li className="list-inline-item font-light" key={i}>
+                                <Link href={contact.url}
+                                      className="hover:underline "
+                                      target={contact.targetBlank === true ? "_blank" : "_self"}
+                                >
+                                    {contact.name}
+                                </Link>
+                            </li>
+                        ))}
                     </ul>
 
                     <div className="text-center-1">
                         <div className="mt-10 flex items-center justify-center gap-x-6">
                             <div className="flex w-0 flex-1 items-center">
-                                <DownloadCv />
+                                <DownloadCv/>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <svg className="image-clip" width="600px" height="600px" viewBox="0 0 600 600">
-                    <defs>
-                        <clipPath id="shape11">
-                            <path className="path-anim"
-                                  data-path-to="M422.248 192.542c44.2 49.2 94.8 86.9 111.3 141.1 16.5 54.2-1.1 124.9-45.3 161.8-44.2 36.8-114.9 39.7-167.9 22.1-53.1-17.7-88.4-56-137.1-92.9-48.6-36.8-110.6-72.1-121.2-118.1-10.6-46 30.1-102.5 78.8-151.7 48.7-49.2 105.2-90.9 152.4-81.5 47.1 9.4 84.8 70 129 119.2"
-                                  d="M494.246 145.646c25 39 10.2 103.8-1.2 157.2-11.4 53.4-19.5 95.3-44.5 129.3-25 34-66.9 60.1-120.6 71.7-53.6 11.7-118.9 9-163.7-25-44.8-34-69.2-99.3-71.9-167.3-2.7-68 16.2-138.7 61-177.7 44.9-39 115.6-46.3 183.4-43.4 67.7 3 132.5 16.2 157.5 55.2"/>
-                        </clipPath>
-                    </defs>
-                    <image clipPath="url(#shape11)" xlinkHref="assets/img/pekhov_anton_php_developer.jpeg" x="0" y="0" width="600"
-                           height="600"/>
-                </svg>
+                <Carousel
+                    opts={{
+                        align: "start",
+                        loop: true,
+                    }}
+                    plugins={[plugin.current]}
+                    className="w-full max-w-xs"
+                    onMouseEnter={plugin.current.stop}
+                    onMouseLeave={plugin.current.reset}
+                >
+                    <CarouselContent>
+                        {CarouselImages.map((image, index) => (
+                            <CarouselItem key={index}>
+                                <Card>
+                                    <CardContent className="flex aspect-square items-center justify-center p-2">
+                                        <Image
+                                            src={image.src}
+                                            width="300"
+                                            height="300"
+                                            alt='Anton'
+                                        />
+                                    </CardContent>
+                                </Card>
+                            </CarouselItem>
+                        ))}
+                    </CarouselContent>
+                    <CarouselPrevious/>
+                    <CarouselNext/>
+                </Carousel>
+
             </div>
         </section>
     )

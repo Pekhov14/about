@@ -34,6 +34,7 @@ const Menu = () => {
         {name: 'Work', route: '/work'},
         {name: 'Resume', route: '/cv'},
         {name: 'F.A.Q', route: '/faq'},
+        {name: 'Posts', route: '/posts'},
         // {name: 'Chat', route: '/chat'},
     ];
 
@@ -45,13 +46,15 @@ const Menu = () => {
                         aria-label={isMenuOpen ? "Close menu" : "Open menu"}
                         className="sm:hidden"
                     />
-                    <NavbarBrand>
-                        <Logo/>
-                        <div>
-                            <p className="font-bold text-inherit">Anthony Pekhov</p>
-                            <p className="text-gray-500">Software developer</p>
-                        </div>
-                    </NavbarBrand>
+                    <Link href={`/`}>
+                        <NavbarBrand>
+                            <Logo/>
+                            <div>
+                                <p className="font-bold text-inherit">Anthony Pekhov</p>
+                                <p className="text-gray-500">Software developer</p>
+                            </div>
+                        </NavbarBrand>
+                    </Link>
                 </NavbarContent>
 
                 <NavbarContent className="hidden sm:flex gap-4" justify="center">
