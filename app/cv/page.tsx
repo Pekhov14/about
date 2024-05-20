@@ -34,7 +34,6 @@ export default function Cv() {
 
                     <div>
                         <h2 className="text-xl font-semibold mb-2">Contacts</h2>
-                        <p><a href="mailto:pehovanton21@gmail.com">Send Email:</a> pehovanton21@gmail.com</p>
                         <p><a href="https://t.me/Anthony_1654">Telegram:</a> @Anthony_1654</p>
                         <p><a href="https://anton-pekhov.vercel.app/">My site:</a> anton-pekhov.vercel.app</p>
                     </div>

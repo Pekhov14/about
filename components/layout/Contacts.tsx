@@ -3,7 +3,6 @@
 import { BentoGrid, BentoGridItem } from "../ui/bento-grid";
 import { FaTelegram, FaLinkedin, FaFilePdf } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
-import { IoMdMail } from "react-icons/io";
 import {DownloadCv} from "@/components/sections/cv/DownloadCv";
 
 const Contacts = () => {
@@ -51,12 +50,6 @@ const Contacts = () => {
                 </>,
             header: '',
             icon: <FaFilePdf/>,
-        },
-        {
-            title: "Email",
-            description: "pehovanton21@gmail.com",
-            header: '',
-            icon: <IoMdMail/>,
         },
     ];
 

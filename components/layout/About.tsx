@@ -41,12 +41,6 @@ const About = () => {
             targetBlank: true,
             icon: ''
         },
-        {
-            name: "Email Us",
-            url: "mailto:pehovanton21@gmail.com",
-            targetBlank: false,
-            icon: ''
-        }
     ];
 
     const plugin = React.useRef(
