@@ -17,7 +17,7 @@ export default function Cv() {
                 <div className="col-span-1">
                     <div className="text-center mb-8">
                         <div style={{display: 'inline-block'}}>
-                            <Image src="/assets/img/face.jpeg"
+                            <Image src="/assets/img/pekhov_anton.jpeg"
                                    alt="Pekhov Anton php developer"
                                    width={100}
                                    height={100}
