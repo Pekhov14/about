@@ -47,16 +47,13 @@ const UsedTools = () => {
                                        width={50}
                                        height={50}
                                 />
-                                <span>HTML</span>
-                            </li>
-                            <li className="flex items-center mb-2">
                                 <Image src="/assets/img/icons/css.png"
                                        alt="Icon"
                                        className="w-5 mr-2"
                                        width={50}
                                        height={50}
                                 />
-                                <span>CSS</span>
+                                <span>HTML/CSS</span>
                             </li>
                             <li className="flex items-center mb-2">
                                 <Image src="/assets/img/icons/twig.png"
@@ -146,15 +143,6 @@ const UsedTools = () => {
                                        height={50}
                                 />
                                 <span>Composer / Npm / Yarn</span>
-                            </li>
-                            <li className="flex items-center mb-2">
-                                <Image src="/assets/img/icons/webpack.png"
-                                       alt="Icon"
-                                       className="w-5 mr-2"
-                                       width={50}
-                                       height={50}
-                                />
-                                <span>Webpack</span>
                             </li>
                         </ul>
                     </div>

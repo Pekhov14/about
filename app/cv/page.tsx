@@ -54,7 +54,7 @@ export default function Cv() {
                             <li>MySQL, PostgreSql, Redis, MongoDb</li>
                             <li>Composer, Npm, Yarn, Webpack</li>
                             <li>Nginx, GIT, Docker</li>
-                            <li>Opencart, Symfony, Doctrine, Laravel, React</li>
+                            <li>Opencart, Symfony, Doctrine, React</li>
                         </ul>
                     </div>
 
