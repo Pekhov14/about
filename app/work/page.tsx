@@ -1,5 +1,7 @@
 "use client";
 
+import {Footer} from "@/components/layout/Footer";
+
 export default function Work() {
     const workData = [
         {
@@ -47,45 +49,48 @@ export default function Work() {
     ];
 
     return (
-        <section className="content p-2">
-            <div className="content__title content__stacked">
-                <h1 className="content__title-main">Experience</h1>
-            </div>
+        <>
+            <section className="content p-2">
+                <div className="content__title content__stacked">
+                    <h1 className="content__title-main">Experience</h1>
+                </div>
 
-            <div className="content--center pb-20 max-w-2xl mx-auto">
-                <ul className="space-y-6">
-                    {workData.map((work, workIndex) => (
-                        <li key={workIndex}
-                            className={`mb-4 ${workIndex !== workData.length - 1 ? 'pb-4 border-b' : ''}`}>
-                            <h2 className="text-2xl font-bold mb-2">{work.company}</h2>
-                            <div className="text-gray-600">
-                                {work.date}
-                            </div>
-                            <ul>
-                                {work.positions.map((position, positionIndex) => (
-                                    <li key={positionIndex} className="mt-2">
-                                        <div className="font-semibold">{position.title}</div>
+                <div className="content--center pb-20 max-w-2xl mx-auto">
+                    <ul className="space-y-6">
+                        {workData.map((work, workIndex) => (
+                            <li key={workIndex}
+                                className={`mb-4 ${workIndex !== workData.length - 1 ? 'pb-4 border-b' : ''}`}>
+                                <h2 className="text-2xl font-bold mb-2">{work.company}</h2>
+                                <div className="text-gray-600">
+                                    {work.date}
+                                </div>
+                                <ul>
+                                    {work.positions.map((position, positionIndex) => (
+                                        <li key={positionIndex} className="mt-2">
+                                            <div className="font-semibold">{position.title}</div>
 
-                                        <div className="text-gray-600">
-                                            {position.date}
-                                        </div>
+                                            <div className="text-gray-600">
+                                                {position.date}
+                                            </div>
 
-                                        <div className="text-gray-600">{position.description}</div>
-                                        <div className="mt-2">
-                                            {position.technologies.map((tech, techIndex) => (
-                                                <span key={techIndex}
-                                                      className="inline-block font-semibold mr-2 bg-black text-white rounded-full text-sm w-fit px-4 py-1 mb-4">
+                                            <div className="text-gray-600">{position.description}</div>
+                                            <div className="mt-2">
+                                                {position.technologies.map((tech, techIndex) => (
+                                                    <span key={techIndex}
+                                                          className="inline-block font-semibold mr-2 bg-black text-white rounded-full text-sm w-fit px-4 py-1 mb-4">
                                             {tech}
                                           </span>
-                                            ))}
-                                        </div>
-                                    </li>
-                                ))}
-                            </ul>
-                        </li>
-                    ))}
-                </ul>
-            </div>
-        </section>
+                                                ))}
+                                            </div>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            </section>
+            <Footer/>
+        </>
 );
 }

@@ -1,38 +1,31 @@
 'use client'
 
-import {Accordion, AccordionContent, AccordionItem, AccordionTrigger} from "@/components/ui/accordion";
+// import {Accordion, AccordionContent, AccordionItem, AccordionTrigger} from "@/components/ui/accordion";
 import { FaCheckCircle } from "react-icons/fa";
-
+import {Accordion, AccordionItem} from "@nextui-org/react";
+import {Footer} from "@/components/layout/Footer";
 export default function Home() {
 
     const accordionData = [
         {
             question: "How did you get into programming and why did you first choose PHP?",
-            answer: "In school, I lacked sufficient grades in computer science, " +
-                "so the teacher asked me to complete an assignment for a competition from a provided list. " +
-                "I opted to attempt creating a website. Within two weeks, I crafted my first website using HTML and CSS. " +
-                "While the teacher deemed it unsatisfactory for the competition, " +
-                "a grade was assigned. Intrigued, I began slowly advancing in this field. " +
-                "The following year, I secured second place in the Kharkiv region in the same competition. " +
-                "Subsequently, the teacher recommended I continue learning PHP and JS. Throughout university, " +
-                "I experimented with other languages, yet PHP remained my primary focus.\n"
+            answer: "In school, I didn’t excel in computer science, so my teacher asked me to complete an assignment from a provided list for a competition. I decided to create a website. Within two weeks, I built my first site using HTML and CSS. Although the teacher considered it unsatisfactory for the competition, I received a grade. This experience piqued my interest, and I gradually delved deeper into programming. The following year, I placed second in the Kharkiv region in the same competition. My teacher then suggested that I continue learning PHP and JavaScript. Throughout university, I explored various programming languages, but PHP remained my primary focus."
         },
         {
             question: "Self education",
-            answer: "I`m continue progress in symfony, my personal site I write in next.js, now i`m learning golang",
+            answer: "I`m continuing to advance as a backend developer, sharpening my skills in Symfony. I’m building my personal site using Next.js and exploring Go (Golang) as a new challenge.",
         },
         {
             question: "What do you not want to work with?",
-            answer: "I don't like doing a lot of HTML coding. Engage in web page parsing.\n" +
-                "I don’t like it when tasks need to be done yesterday.\n",
+            answer: "I don’t like working with large volumes of HTML coding or doing web scraping.",
         },
         {
             question: "In what direction would you like to develop?",
-            answer: "At the moment, I'm interested in developing in the Symfony and React stack and aiming to reach the position of a senior developer. I don't have anything against using tools like Golang, Node.js, Python, and others, as I believe that languages and frameworks are tools for solving problems. In the future, I would like my position to be called a senior software developer, not tied to a specific language.",
+            answer: "At the moment, I am focused on Symfony development. I am interested in exploring the combination of PHP and Golang. Generally, I am open to working with other languages and frameworks as well.",
         },
         {
             question: "What are your weaknesses?",
-            answer: "I can be overly positive and use too many emojis in text messages 😄.",
+            answer: "I can use too many emojis in text messages 😄.",
         },
         {
             question: "How do you develop and improve your knowledge?",
@@ -40,15 +33,15 @@ export default function Home() {
         },
         {
             question: "What is your level of English, can you speak fluently?",
-            answer: "I can engage in written communication, but my current conversational skills don't allow me to express my thoughts freely. 💂",
+            answer: "I am comfortable with written communication, but my current conversational skills don’t allow me to express my thoughts as freely as I’d like. 💂",
         },
         {
             question: "What kind of people do you dislike working with?",
-            answer: "I`m prefer not to discuss politics and religion in the workplace.",
+            answer: "I prefer not to discuss politics and religion in the workplace.",
         },
         {
             question: "What operating system are you using?",
-            answer: "Now I'm working on macOS 💻 with a m1 processor",
+            answer: "Now I'm working on macOS 💻 with a m1 processor and 16GB RAM",
         },
         {
             question: "Education 🎓",
@@ -64,18 +57,17 @@ export default function Home() {
                 <p className="text-lg text-center">To save you time ⏳ on typical questions, I collected them for you and
                     answered them.</p>
 
-                <Accordion type="single" collapsible className="w-full md:w-1/2 p-5">
-                    {accordionData.map(item => (
-                        <AccordionItem key={item.question} value={item.question}>
-                            <AccordionTrigger>{item.question}</AccordionTrigger>
-                            <AccordionContent className="text-base">{item.answer}</AccordionContent>
+                <Accordion variant="splitted" className="w-full md:w-1/2 p-5">
+                    {accordionData.map((item, index) => (
+                        <AccordionItem key={index} aria-label={item.question} title={item.question}>
+                            {item.answer}
                         </AccordionItem>
                     ))}
                 </Accordion>
             </section>
 
-            <section className="flex flex-col items-center justify-center">
-                <div className="card-body pt-10">
+            <section className="flex flex-col items-center justify-center pt-10 mb-10">
+                <div className="card-body">
                     <h2 className="pb-5 font-bold text-center">Courses</h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3">
@@ -113,6 +105,7 @@ export default function Home() {
                     </div>
                 </div>
             </section>
+            <Footer />
         </main>
     )
 }
