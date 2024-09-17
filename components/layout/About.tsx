@@ -1,6 +1,9 @@
 'use client'
 
-import React from "react";
+import React, { useRef, useState } from "react";
+import { motion } from "framer-motion";
+import { twMerge } from "tailwind-merge";
+
 import Link from 'next/link'
 import {DownloadCv} from "components/sections/cv/DownloadCv";
 import Autoplay from "embla-carousel-autoplay"
@@ -62,7 +65,7 @@ const About = () => {
     return (
         <section className="content">
             <div className="content__sides">
-                <div className="content__text">
+                <div className="content__text z-50">
                     <h2>PHP Software Developer</h2>
                     <span className="pt-5 pb-5">Experienced in opencart & symfony</span>
 
@@ -88,13 +91,15 @@ const About = () => {
                     </div>
                 </div>
 
+                <DragCards/>
+
                 <Carousel
                     opts={{
                         align: "start",
                         loop: true,
                     }}
                     plugins={[plugin.current]}
-                    className="w-full max-w-xs"
+                    className="w-full max-w-xs block lg:hidden"
                     onMouseEnter={plugin.current.stop}
                     onMouseLeave={plugin.current.reset}
                 >
@@ -122,5 +127,86 @@ const About = () => {
         </section>
     )
 }
+
+const DragCards = () => {
+    const containerRef = useRef(null);
+
+    return (
+        <div className="absolute inset-0 z-10 hidden lg:block" ref={containerRef}>
+            <DragCard
+                containerRef={containerRef}
+                src="/assets/img/pekhov_anton_php_developer.jpeg"
+                alt="Example image"
+                rotate="6deg"
+                top="0%"
+                left="55%"
+                className="w-36 md:w-56"
+            />
+            <DragCard
+                containerRef={containerRef}
+                src=" /assets/img/2.jpeg"
+                alt="Example image"
+                rotate="12deg"
+                top="45%"
+                left="60%"
+                className="w-24 md:w-48"
+            />
+            <DragCard
+                containerRef={containerRef}
+                src="/assets/img/1.jpeg"
+                alt="Example image"
+                rotate="-6deg"
+                top="20%"
+                left="75%"
+                className="w-52 md:w-80"
+            />
+        </div>
+    );
+};
+
+const DragCard = ({containerRef, src, alt, top, left, rotate, className}) => {
+    const [zIndex, setZIndex] = useState(0);
+
+    const updateZIndex = () => {
+        const els = document.querySelectorAll(".drag-elements");
+
+        let maxZIndex = -Infinity;
+
+        els.forEach((el) => {
+            let zIndex = parseInt(
+                window.getComputedStyle(el).getPropertyValue("z-index")
+            );
+
+            if (!isNaN(zIndex) && zIndex > maxZIndex) {
+                maxZIndex = zIndex;
+            }
+        });
+
+        setZIndex(maxZIndex + 1);
+    };
+
+    return (
+        <motion.img
+            onMouseDown={updateZIndex}
+            style={{
+                top,
+                left,
+                rotate,
+                zIndex,
+            }}
+            className={twMerge(
+                "drag-elements absolute w-48 bg-neutral-200 p-1 pb-4",
+                className
+            )}
+            src={src}
+            alt={alt}
+            drag
+            dragConstraints={containerRef}
+            // Uncomment below and remove dragElastic to remove movement after release
+            //   dragMomentum={false}
+            dragElastic={0.65}
+        />
+    );
+};
 
 export {About}
