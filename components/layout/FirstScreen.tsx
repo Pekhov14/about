@@ -9,7 +9,7 @@ const FirstScreen = () => {
                 Anthony <br /> Pekhov
             </h2>
             <p className="max-w-xl mx-auto text-sm md:text-lg text-neutral-700 dark:text-neutral-400 text-center">
-                I am a software developer with a focus on backend development, mostly using Symfony and Opencast, which makes up about 80% of my work. I also do some frontend work, using technologies like HTML and React, which accounts for about 20%.
+                I am a software developer with a focus on backend development, mostly using Symfony and Opencast.
             </p>
         </BackgroundLines>
     )
