@@ -1,13 +1,17 @@
 'use client';
 
+import {BackgroundLines} from "@/components/ui/background-lines";
+
 const FirstScreen = () => {
     return (
-        <section className="content content--centered content--full-h">
-            <div className="content__title">
-                <span className="content__title-pre content__title-pre--offset">Anthony</span>
-                <h1 className="content__title-main">Pekhov</h1>
-            </div>
-        </section>
+        <BackgroundLines className="flex items-center justify-center w-full flex-col px-4">
+            <h2 className="bg-clip-text text-transparent text-center bg-gradient-to-b from-neutral-900 to-neutral-700 dark:from-neutral-600 dark:to-white text-2xl md:text-4xl lg:text-7xl font-sans py-2 md:py-10 relative z-20 font-bold tracking-tight">
+                Anthony <br /> Pekhov
+            </h2>
+            <p className="max-w-xl mx-auto text-sm md:text-lg text-neutral-700 dark:text-neutral-400 text-center">
+                I am a software developer with a focus on backend development, mostly using Symfony and Opencast, which makes up about 80% of my work. I also do some frontend work, using technologies like HTML and React, which accounts for about 20%.
+            </p>
+        </BackgroundLines>
     )
 }
 
