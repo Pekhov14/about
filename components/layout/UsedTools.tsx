@@ -142,7 +142,7 @@ const UsedTools = () => {
                                        width={50}
                                        height={50}
                                 />
-                                <span>Composer / Npm / Yarn</span>
+                                <span>Composer / Npm</span>
                             </li>
                         </ul>
                     </div>
@@ -175,15 +175,15 @@ const UsedTools = () => {
                                 />
                                 <span>Redis</span>
                             </li>
-                            <li className="flex items-center mb-2">
-                                <Image src="/assets/img/icons/mongodb.png"
-                                       alt="Icon"
-                                       className="w-5 mr-2"
+                            {/*<li className="flex items-center mb-2">*/}
+                            {/*    <Image src="/assets/img/icons/mongodb.png"*/}
+                            {/*           alt="Icon"*/}
+                            {/*           className="w-5 mr-2"*/}
 
-                                       width={50}
-                                       height={50}/>
-                                <span>Mongodb</span>
-                            </li>
+                            {/*           width={50}*/}
+                            {/*           height={50}/>*/}
+                            {/*    <span>Mongodb</span>*/}
+                            {/*</li>*/}
                         </ul>
                     </div>
                 </div>
