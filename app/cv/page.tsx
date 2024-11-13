@@ -51,10 +51,10 @@ export default function Cv() {
                         <h2 className="text-xl font-semibold mb-2">Toolbox</h2>
                         <ul className="list-disc list-inside">
                             <li>PHP, JS, SQL, HTML, CSS</li>
-                            <li>MySQL, PostgreSql, Redis, MongoDb</li>
-                            <li>Composer, Npm, Yarn, Webpack</li>
+                            <li>MySQL, PostgreSql, Redis</li>
+                            <li>Composer, Npm</li>
                             <li>Nginx, GIT, Docker</li>
-                            <li>Opencart, Symfony, Doctrine, React</li>
+                            <li>Opencart, Symfony, Doctrine</li>
                         </ul>
                     </div>
 
