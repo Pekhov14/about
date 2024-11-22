@@ -1,9 +1,10 @@
 'use client'
 
-// import {Accordion, AccordionContent, AccordionItem, AccordionTrigger} from "@/components/ui/accordion";
 import { FaCheckCircle } from "react-icons/fa";
 import {Accordion, AccordionItem} from "@nextui-org/react";
 import {Footer} from "@/components/layout/Footer";
+import {OpenSource} from './open-source';
+
 export default function Home() {
 
     const accordionData = [
@@ -52,7 +53,7 @@ export default function Home() {
 
     return (
         <main>
-            <section className="flex flex-col items-center justify-center h-screen">
+            <section className="flex flex-col items-center justify-center pb-10">
                 <h1 className="text-4xl font-bold mb-4">F.A.Q</h1>
                 <p className="text-lg text-center">To save you time ⏳ on typical questions, I collected them for you and
                     answered them.</p>
@@ -66,7 +67,7 @@ export default function Home() {
                 </Accordion>
             </section>
 
-            <section className="flex flex-col items-center justify-center pt-10 mb-10">
+            <section className="flex flex-col items-center justify-center pt-20">
                 <div className="card-body">
                     <h2 className="pb-5 font-bold text-center">Courses</h2>
 
@@ -105,7 +106,10 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-            <Footer />
+
+            <OpenSource/>
+
+            <Footer/>
         </main>
     )
 }
