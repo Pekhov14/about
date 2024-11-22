@@ -55,7 +55,7 @@ export default function Home() {
         <main>
             <section className="flex flex-col items-center justify-center pb-10">
                 <h1 className="text-4xl font-bold mb-4">F.A.Q</h1>
-                <p className="text-lg text-center">To save you time ⏳ on typical questions, I collected them for you and
+                <p className="text-lg text-center p-5">To save you time ⏳ on typical questions, I collected them for you and
                     answered them.</p>
 
                 <Accordion variant="splitted" className="w-full md:w-1/2 p-5">
