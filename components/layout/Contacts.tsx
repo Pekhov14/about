@@ -1,7 +1,7 @@
 'use client'
 
 import { BentoGrid, BentoGridItem } from "../ui/bento-grid";
-import {FaTelegram, FaLinkedin, FaFilePdf, FaEnvelope} from "react-icons/fa";
+import {FaTelegram, FaLinkedin, FaFilePdf, FaMailchimp, FaRegEnvelope, FaEnvelope} from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import {DownloadCv} from "@/components/sections/cv/DownloadCv";
 
@@ -50,6 +50,12 @@ const Contacts = () => {
                 </>,
             header: '',
             icon: <FaFilePdf/>,
+        },
+        {
+            title: <a href='mailto:pehovanton21@gmail.com'>Email</a>,
+            description: "pehovanton21@gmail.com",
+            header: '',
+            icon: <FaEnvelope />,
         },
     ];
 
