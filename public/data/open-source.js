@@ -12,10 +12,16 @@ const projects = [
         status: "Merged",
     },
     {
-        id: 1,
+        id: 2,
         project: "thephp.foundation",
         link: "https://github.com/ThePHPF/thephp.foundation/pull/153",
         status: "Closed",
+    },
+    {
+        id: 3,
+        project: "Sculpin",
+        link: "https://github.com/sculpin/sculpin/pull/491",
+        status: "Open",
     },
 ];
 
