@@ -21,7 +21,7 @@ const projects = [
         id: 3,
         project: "Sculpin",
         link: "https://github.com/sculpin/sculpin/pull/491",
-        status: "Open",
+        status: "Merged",
     },
 ];
 
