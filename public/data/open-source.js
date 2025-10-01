@@ -23,6 +23,12 @@ const projects = [
         link: "https://github.com/sculpin/sculpin/pull/491",
         status: "Merged",
     },
+    {
+        id: 4,
+        project: "yiisoft\\cache",
+        link: "https://github.com/yiisoft/cache/pull/150",
+        status: "Merged",
+    },
 ];
 
 export {columns, projects};

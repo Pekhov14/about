@@ -67,46 +67,6 @@ export default function Home() {
                 </Accordion>
             </section>
 
-            <section className="flex flex-col items-center justify-center pt-20">
-                <div className="card-body">
-                    <h2 className="pb-5 font-bold text-center">Courses</h2>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3">
-                        <ul className="list-none">
-                            <li className="flex items-center space-x-2">
-                                <FaCheckCircle/>
-                                <a href="https://symfonycasts.com/certificates/B27F144BC131" target="_blank"
-                                   className="text-base font-light">Doctrine, Symfony &amp; the Database</a>
-                            </li>
-                            <li className="flex items-center space-x-2">
-                                <FaCheckCircle/>
-                                <a href="https://symfonycasts.com/certificates/2F51C994C127" target="_blank"
-                                   className="text-base font-light">Charming Development in Symfony5</a>
-                            </li>
-                        </ul>
-                        <ul className="list-none">
-                            <li className="flex items-center space-x-2">
-                                <FaCheckCircle/>
-                                <a href="https://www.datacamp.com/statement-of-accomplishment/course/7abaa3307319dfd44d6bdeb82985e18a2b642a5e"
-                                   target="_blank" className="text-base font-light">Introduction to Relational Databases
-                                    in
-                                    SQL</a>
-                            </li>
-                            <li className="flex items-center space-x-2">
-                                <FaCheckCircle/>
-                                <a href="https://www.datacamp.com/statement-of-accomplishment/course/08789943e5fd483ff2417c31aaaff459e9324ebd"
-                                   target="_blank" className="text-base font-light">Introduction to SQL</a>
-                            </li>
-                            <li className="flex items-center space-x-2">
-                                <FaCheckCircle/>
-                                <a href="https://www.datacamp.com/statement-of-accomplishment/course/34e445bcd770c810c7ad184068b852c5c3629412"
-                                   target="_blank" className="text-base font-light">Joining Data in SQL</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
             <OpenSource/>
 
             <Footer/>

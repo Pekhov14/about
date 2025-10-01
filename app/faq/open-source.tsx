@@ -17,7 +17,7 @@ const OpenSource = () => {
 
 return (
     <section className="flex flex-col items-center justify-center w-full pt-10 pb-10">
-        <h2 className="pb-5 font-bold text-center">Open Source</h2>
+        <h2 className="pb-5 font-bold text-center">Open source contribution</h2>
 
         <Table className="md:w-1/2">
             <TableHeader columns={columns}>
