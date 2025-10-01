@@ -1,9 +1,7 @@
 'use client'
 
-import { FaCheckCircle } from "react-icons/fa";
 import {Accordion, AccordionItem} from "@nextui-org/react";
 import {Footer} from "@/components/layout/Footer";
-import {OpenSource} from './open-source';
 
 export default function Home() {
 
@@ -66,8 +64,6 @@ export default function Home() {
                     ))}
                 </Accordion>
             </section>
-
-            <OpenSource/>
 
             <Footer/>
         </main>
