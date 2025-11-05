@@ -1,6 +1,5 @@
 'use client'
 
-// import Link from 'next/link';
 import React, {useEffect} from "react";
 import {
     Navbar,
@@ -28,7 +27,6 @@ const Menu = () => {
         }
     }, [activePage, pathname]);
 
-
     const menuItems = [
         {name: 'Home', route: '/'},
         {name: 'Work', route: '/work'},
@@ -47,27 +45,29 @@ const Menu = () => {
                         aria-label={isMenuOpen ? "Close menu" : "Open menu"}
                         className="sm:hidden"
                     />
-                    <Link href={`/`}>
-                        <NavbarBrand>
+                    <NavbarBrand>
+                        <Link href={`/`} className="flex items-center">
                             <Logo/>
                             <div>
                                 <p className="font-bold text-inherit">Anthony Pekhov</p>
                                 <p className="text-gray-500">Software developer</p>
                             </div>
-                        </NavbarBrand>
-                    </Link>
+                        </Link>
+                    </NavbarBrand>
                 </NavbarContent>
 
+                {/* Десктопное меню - используем NavbarItem вместо NavbarMenuItem */}
                 <NavbarContent className="hidden sm:flex gap-4" justify="center">
                     {menuItems.map((item) => (
-                        <NavbarMenuItem key={item.route}>
-                            <Link href={item.route}
-                                  aria-current={activePage === item.route ? 'page' : undefined}
-                                  color={activePage === item.route ? 'danger' : 'primary'}
+                        <NavbarItem key={item.route} isActive={activePage === item.route}>
+                            <Link
+                                href={item.route}
+                                aria-current={activePage === item.route ? 'page' : undefined}
+                                color={activePage === item.route ? 'danger' : 'foreground'}
                             >
                                 {item.name}
                             </Link>
-                        </NavbarMenuItem>
+                        </NavbarItem>
                     ))}
                 </NavbarContent>
 
@@ -83,15 +83,15 @@ const Menu = () => {
                 {/*    </NavbarItem>*/}
                 {/*</NavbarContent>*/}
 
+                {/* Мобильное меню - здесь используем NavbarMenuItem */}
                 <NavbarMenu>
                     {menuItems.map((item) => (
-                        <NavbarMenuItem
-                            key={item.route}
-                        >
-                            <Link href={item.route}
-                                  className="text-7xl"
-                                  aria-current={activePage === item.route ? 'page' : undefined}
-                                  color={activePage === item.route ? 'danger' : 'primary'}
+                        <NavbarMenuItem key={item.route}>
+                            <Link
+                                href={item.route}
+                                className="w-full text-2xl"
+                                aria-current={activePage === item.route ? 'page' : undefined}
+                                color={activePage === item.route ? 'danger' : 'foreground'}
                             >
                                 {item.name}
                             </Link>

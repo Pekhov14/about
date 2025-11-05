@@ -52,7 +52,7 @@ export default function Cv() {
                         <ul className="list-disc list-inside">
                             <li>PHP, JS, SQL, HTML, CSS</li>
                             <li>MySQL, PostgreSql, Redis</li>
-                            <li>Composer, Npm</li>
+                            <li>Composer, Npm, Vite</li>
                             <li>Nginx, GIT, Docker</li>
                             <li>Opencart, Symfony, Doctrine</li>
                         </ul>
@@ -78,6 +78,12 @@ export default function Cv() {
                             <h3 className="text-lg font-medium">👨‍💻 Freelance</h3>
                             <p className="text-gray-500"> <span className="text-sm">Now</span>
                             </p>
+                        </div>
+                        <div className="mb-4">
+                            <h3 className="text-lg font-medium">👨‍💻 Small price (one time project)</h3>
+                            <p className="text-gray-500">Full Stack Developer | <span className="text-sm">December 2024 - November 2025</span>
+                            </p>
+                            <p>Developed an analytical platform for marketing to monitor advertising effectiveness.</p>
                         </div>
                         <div className="mb-4">
                             <h3 className="text-lg font-medium">👨‍💻 Corefy</h3>

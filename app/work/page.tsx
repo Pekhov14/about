@@ -5,13 +5,27 @@ import {Footer} from "@/components/layout/Footer";
 export default function Work() {
     const workData = [
         {
+            company: 'Small price (one time project)',
+            date: 'December 2024 - November 2025 (11 months)',
+            positions: [
+                {
+                    title: 'Full Stack Developer (Symfony + React)',
+                    description: 'Analytical platform for marketing \n' +
+                        'Calculation of advertising effectiveness using custom formulas\n' +
+                        'Integration with Facebook Ads, Google Ads, TikTok, Tilda, WP/WooCommerce, Voiptime, Finmap\n' +
+                        'Aggregation of data into a single report, sending reports on advertising costs from CRM.',
+                    technologies: ['PHP 8.4', 'Symfony 7.2', 'API-Platform 4', 'React 18', 'React-admin 5', 'Redis 7 (cache & queue)', 'MariaDb 10', 'Docker', 'CI/CD'],
+                },
+            ],
+        },
+        {
             company: 'Corefy',
             date: 'May 2023 - July 2023 (3 months)',
             positions: [
                 {
                     title: 'Backend Developer',
                     description: 'Corefy is`s Payment orchestration platform. I managed to make a connector. Work with the ELK stack to fix bugs that come in sentry and small logic patches.',
-                    technologies: ['Symfony5', 'Postgresql', 'ELK', 'Ngrok'],
+                    technologies: ['Symfony5', 'Postgresql', 'ELK'],
                 },
             ],
         },
