@@ -81,45 +81,36 @@ export default function Cv() {
                         </div>
                         <div className="mb-4">
                             <h3 className="text-lg font-medium">👨‍💻 Small price (one time project)</h3>
-                            <p className="text-gray-500">Full Stack Developer | <span className="text-sm">December 2024 - November 2025</span>
-                            </p>
-                            <p>Developed an analytical platform for marketing to monitor advertising effectiveness.</p>
+                            <p className="text-gray-500">Full Stack Developer | <span className="text-sm">December 2024 - November 2025</span></p>
+                            <p>Created a centralized dashboard to replace manual spreadsheets and provide real-time marketing insights.</p>
+                            <div>
+                                <li className="text-gray-500 text-sm">Eliminated manual work with automated performance calculations</li>
+                                <li className="text-gray-500 text-sm">Connected entire marketing stack (ads, e-commerce, CRM, finance)</li>
+                                <li className="text-gray-500 text-sm">Provided executive-ready reports with automated expense tracking</li>
+                            </div>
                         </div>
                         <div className="mb-4">
                             <h3 className="text-lg font-medium">👨‍💻 Corefy</h3>
-                            <p className="text-gray-500">Backend Developer | <span className="text-sm">May 2023 - July 2023</span>
-                            </p>
-                            <p>Corefy is`s Payment orchestration platform. I managed to make a connector. Work with
-                                the ELK stack to fix bugs that come in sentry and small logic patches.</p>
+                            <p className="text-gray-500">Backend Developer | <span className="text-sm">May 2023 - July 2023</span></p>
+                            <p>Contributed to a payment orchestration platform.</p>
+                            <div>
+                                <li className="text-gray-500 text-sm">Integrated payment provider connectors</li>
+                                <li className="text-gray-500 text-sm">Resolved bugs and implemented logic patches using ELK stack for log analysis</li>
+                                <li className="text-gray-500 text-sm">Improved system stability by troubleshooting issues reported through Sentry</li>
+                            </div>
                         </div>
                         <div className="mb-4">
-                            <h3 className="text-lg font-medium">👨‍💻 Stellium <span
-                                className="text-xs text-gray-500">(Local Web Studio)</span></h3>
-                            <p><span
-                                className="text-sm text-gray-500">July 2020 - April 2023 (~2 years 10 months)</span>
-                            </p>
+                            <h3 className="text-lg font-medium">👨‍💻 Stellium <span className="text-xs text-gray-500">(Local Web Studio)</span></h3>
+                            <p className="text-gray-500">Full Stack Developer | July 2020 - April 2023 (~2 years 10 months)</p>
 
-                            <div className="mt-4">
-                                <p className="text-gray-500">🔨 Software developer</p>
-                                <p><span
-                                    className="text-sm text-gray-500">June 2022 - Apr. 2023 (~ 10 months)</span></p>
-                                <p>Was on the development team CRM system.</p>
+                            <p>Full-cycle web development with focus on e-commerce and business systems.</p>
+
+                            <div className="mt-2">
+                                <li className="text-gray-500 text-sm">E-commerce development on OpenCart: performance optimization, SEO, client features</li>
+                                <li className="text-gray-500 text-sm">CRM system development with Symfony 5 and React/TypeScript</li>
+                                <li className="text-gray-500 text-sm">Speed optimization (caching, asset compression, SQL tuning)</li>
+                                <li className="text-gray-500 text-sm">REST API development and system integrations</li>
                             </div>
-                            <div className="mt-4">
-                                <p className="text-gray-500">🔨 Full Stack Developer</p>
-                                <p><span className="text-sm text-gray-500">July 2020 - June 2022 (2 years)</span>
-                                </p>
-                                <p>I developed and maintained e-commerce websites on OpenCart, focusing on
-                                    optimizing site loading speed and improving Google PageSpeed Insights ratings
-                                    with consideration for SEO.</p>
-                            </div>
-                        </div>
-                        <div className="mb-4">
-                            <h3 className="text-lg font-medium">👨‍💻 StableFlow <span
-                                className="text-xs text-gray-500">(Local Web Studio)</span></h3>
-                            <p className="text-gray-500">PHP developer | <span className="text-sm">Feb. 2020 - Apr. 2020 (Covid19)</span>
-                            </p>
-                            <p>Worked with wordpress and custom application for orders.</p>
                         </div>
                     </div>
                 </div>
