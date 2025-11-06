@@ -101,7 +101,7 @@ export default function Cv() {
                         </div>
                         <div className="mb-4">
                             <h3 className="text-lg font-medium">👨‍💻 Stellium <span className="text-xs text-gray-500">(Local Web Studio)</span></h3>
-                            <p className="text-gray-500">Full Stack Developer | July 2020 - April 2023 (~2 years 10 months)</p>
+                            <p className="text-gray-500">Full Stack Developer | <span className="text-sm">July 2020 - April 2023 (~2 years 10 months)</span></p>
 
                             <p>Full-cycle web development with focus on e-commerce and business systems.</p>
 

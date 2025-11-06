@@ -6,7 +6,7 @@ export default function Work() {
     const workData = [
         {
             company: 'Small price (one time project)',
-            date: 'December 2024 - November 2025 (11 months)',
+            date: 'December 2024 - November 2025 (~11 months)',
             positions: [
                 {
                     title: 'Full Stack Developer (Symfony + React)',
@@ -58,7 +58,6 @@ export default function Work() {
             "positions": [
                 {
                     "title": "Full Stack Developer",
-                    "date": "July 2020 - April 2023 (~2 years 10 months)",
                     "description": "Full-cycle web development with focus on e-commerce and business systems. Developed CRM system using Symfony 5 and React/TypeScript. E-commerce development on OpenCart with performance optimization, SEO implementation, and client features.",
                     "technologies": ["PHP", "JavaScript", "Symfony5", "React", "TypeScript", "Opencart", "PostgreSQL", "Redis", "MySQL"]
                 }
@@ -86,11 +85,6 @@ export default function Work() {
                                     {work.positions.map((position, positionIndex) => (
                                         <li key={positionIndex} className="mt-2">
                                             <div className="font-semibold">{position.title}</div>
-
-                                            <div className="text-gray-600">
-                                                {position.date}
-                                            </div>
-
                                             <div className="text-gray-600">{position.description}</div>
                                             <div className="mt-2">
                                                 {position.technologies.map((tech, techIndex) => (
