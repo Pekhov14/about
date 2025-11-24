@@ -12,7 +12,7 @@ import {
     TableRow,
 } from "@nextui-org/react"
 import { columns, projects } from "@/public/data/open-source"
-import { GitPullRequest, GitMerge, XCircle, AlertCircle, Clock, CheckCircle } from "lucide-react"
+import { GitPullRequest, GitMerge, XCircle, AlertCircle, Clock, CheckCircle, Calendar } from "lucide-react"
 
 const statusColorMap: Record<string, ChipProps["color"]> = {
     merged: "success",
@@ -34,7 +34,6 @@ const statusIconMap: Record<string, React.ReactNode> = {
     approved: <CheckCircle className="w-3.5 h-3.5" />,
 }
 
-
 const myProjectsColumns = [
     { name: "Project", uid: "project" },
     { name: "Links", uid: "links" },
@@ -51,6 +50,23 @@ const myProjects = [
     },
 ]
 
+// Функция для парсинга даты (обрабатывает разные форматы)
+function parseDate(dateString: string): Date {
+    // Заменяем возможные варианты разделителей и приводим к стандартному формату
+    const normalizedDate = dateString
+        .replace(/(\w+) (\d+),? (\d+)/, '$1 $2, $3') // "Jun 29, 2024" -> "Jun 29, 2024"
+        .replace(/(\w+) (\d+) (\d+)/, '$1 $2, $3');  // "Oct 2 2025" -> "Oct 2, 2025"
+
+    return new Date(normalizedDate);
+}
+
+// Сортируем проекты по дате (от новых к старым)
+const sortedProjects = [...projects].sort((a, b) => {
+    const dateA = parseDate(a.date);
+    const dateB = parseDate(b.date);
+    return dateB.getTime() - dateA.getTime(); // Новые первыми
+});
+
 export default function OpenSourcePage() {
     return (
         <section className="flex flex-col items-center justify-center w-full min-h-screen px-4 py-16 bg-gradient-to-b from-background to-muted/20">
@@ -63,7 +79,7 @@ export default function OpenSourcePage() {
                 </p>
             </div>
 
-            <div className="w-full max-w-5xl bg-card rounded-xl shadow-lg border border-border overflow-hidden">
+            <div className="w-full max-w-6xl bg-card rounded-xl shadow-lg border border-border overflow-hidden">
                 <Table
                     aria-label="Open source contributions table"
                     classNames={{
@@ -75,7 +91,7 @@ export default function OpenSourcePage() {
                     <TableHeader columns={columns}>
                         {(column) => <TableColumn key={column.uid}>{column.name}</TableColumn>}
                     </TableHeader>
-                    <TableBody items={projects}>
+                    <TableBody items={sortedProjects}>
                         {(item) => (
                             <TableRow key={item.id} className="hover:bg-muted/30 transition-colors">
                                 <TableCell className="font-medium">{item.project}</TableCell>
@@ -100,15 +116,27 @@ export default function OpenSourcePage() {
                                         {item.status}
                                     </Chip>
                                 </TableCell>
+                                <TableCell>
+                                    <div className="flex items-center gap-2 text-muted-foreground">
+                                        <Calendar className="w-4 h-4" />
+                                        {item.date}
+                                    </div>
+                                </TableCell>
+                                <TableCell className="text-muted-foreground max-w-md">
+                                    {item.description}
+                                </TableCell>
                             </TableRow>
                         )}
                     </TableBody>
                 </Table>
             </div>
 
-            <div className="text-center mb-12 space-y-4 max-w-3xl pt-10">
-                <p className="text-muted-foreground text-lg md:text-xl">
-                    My personal open source projects.
+            <div className="text-center mt-16 mb-8 space-y-4 max-w-3xl">
+                <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-foreground via-foreground/80 to-foreground/60 bg-clip-text">
+                    Personal Projects
+                </h2>
+                <p className="text-muted-foreground text-lg">
+                    My own open source packages and tools
                 </p>
             </div>
 
