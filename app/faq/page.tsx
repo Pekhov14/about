@@ -225,7 +225,7 @@ export default function Home() {
                     <div className="bg-white/50 border border-black/5 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
                         <h3 className="text-2xl md:text-3xl font-bold text-black mb-4">Still have questions?</h3>
                         <p className="text-black/60 mb-6 leading-relaxed font-light">
-                            Feel free to reach out! I'm always happy to discuss opportunities and answer any additional questions you
+                            Feel free to reach out! I&apos;m always happy to discuss opportunities and answer any additional questions you
                             might have.
                         </p>
                         <div className="text-4xl">💬</div>
