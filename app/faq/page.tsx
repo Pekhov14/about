@@ -7,46 +7,74 @@ export default function Home() {
 
     const accordionData = [
         {
-            question: "How did you get into programming and why did you first choose PHP?",
-            answer: "In school, I didn’t excel in computer science, so my teacher asked me to complete an assignment from a provided list for a competition. I decided to create a website. Within two weeks, I built my first site using HTML and CSS. Although the teacher considered it unsatisfactory for the competition, I received a grade. This experience piqued my interest, and I gradually delved deeper into programming. The following year, I placed second in the Kharkiv region in the same competition. My teacher then suggested that I continue learning PHP and JavaScript. Throughout university, I explored various programming languages, but PHP remained my primary focus."
+            question: "What is your preferred process for scheduling an interview?",
+            answer: "To ensure we both have a smooth and productive conversation, " +
+                "I strongly prefer scheduling calls via a calendar 📅 invite. " +
+                "This way, the meeting is automatically added to both of our calendars with a reminder. " +
+                "When you send the invite, kindly include the meeting link in the description or email body. Thank you!"
         },
         {
-            question: "Self education",
-            answer: "I`m continuing to advance as a backend developer, sharpening my skills in Symfony. I’m building my personal site using Next.js and exploring Go (Golang) as a new challenge.",
+            question: "What work formats are you considering? (Office, hybrid, remote)",
+            answer: "I'm currently looking for remote positions only."
         },
         {
-            question: "What do you not want to work with?",
-            answer: "I don’t like working with large volumes of HTML coding or doing web scraping.",
+            question: "What is your policy on technical assignments?",
+            answer: "I'm open to reasonable-sized coding tasks, though I have mixed feelings about them. Sometimes assignments can be too abstract with insufficient requirements, where the lack of clear specifications is justified as 'wanting to see creative thinking.' Additionally, candidates join an existing team with established coding standards that they naturally aren't familiar with yet. Ideally, assignments should either include clear expectations for the solution or this aspect shouldn't be a critical evaluation factor."
         },
         {
-            question: "In what direction would you like to develop?",
-            answer: "At the moment, I am focused on Symfony development. I am interested in exploring the combination of PHP and Golang. Generally, I am open to working with other languages and frameworks as well.",
+            question: "What areas of development interest you most right now?",
+            answer: "I position myself as a Software Developer with a backend focus. My primary programming language is PHP, and I specialize in Symfony framework. However, identifying as a Software Developer rather than being framework-specific gives me flexibility to adapt to different project needs and technologies."
         },
         {
-            question: "What are your weaknesses?",
-            answer: "I can use too many emojis in text messages 😄.",
+            question: "What team environment brings out your best work?",
+            answer: "I thrive in collaborative teams where knowledge sharing is encouraged. I prefer environments with clear communication, constructive code reviews, and opportunities for professional growth. A supportive atmosphere where team members help each other succeed is ideal for me."
         },
         {
-            question: "How do you develop and improve your knowledge?",
-            answer: "There are enough sources of quality information that I use 🤓🧑‍💻. I watch technical channels on YouTube, read articles on Medium, and read books. I also take courses and listen to podcasts on special sites like DataCamp, Coursera, and SymfonyCasts, among others.",
+            question: "What do you value in a company beyond salary?",
+            answer: "The technology stack and interesting challenges are important, but I also prioritize professional growth opportunities, work-life balance, and a positive team culture. Having motivated colleagues and meaningful projects significantly impacts my job satisfaction."
         },
         {
-            question: "What is your level of English, can you speak fluently?",
-            answer: "I am comfortable with written communication, but my current conversational skills don’t allow me to express my thoughts as freely as I’d like. 💂",
+            question: "What is your stance on overtime work?",
+            answer: "I understand that occasional overtime might be necessary during critical periods, but I believe in sustainable work pace as a long-term approach. I'm available for short-term urgent situations when truly needed."
         },
         {
-            question: "What kind of people do you dislike working with?",
-            answer: "I prefer not to discuss politics and religion in the workplace.",
+            question: "Are there any technologies you prefer to avoid?",
+            answer: "I focus on backend development and prefer to avoid extensive HTML/CSS work or web scraping projects."
         },
         {
-            question: "What operating system are you using?",
-            answer: "Now I'm working on macOS 💻 with a m1 processor and 16GB RAM",
+            question: "What are your learning goals and career direction?",
+            answer: "I'm currently focused on deepening my Symfony expertise while expanding into Go and Rust through personal projects. " +
+                "This dual approach allows me to strengthen my core backend skills while gaining fresh perspectives from other languages. " +
+                "I'm particularly interested in exploring PHP-Go integrations and remain open to working with different technologies that solve real business problems."
         },
         {
-            question: "Education 🎓",
-            answer: "National Aerospace University - \"Kharkiv Aviation Institute\"\n" +
-                "Telecommunications and Radio Engineering 2017 - 2021",
+            question: "What would you consider your weaknesses?",
+            answer: "I tend to overuse emojis in casual written communication 😄. I'm also continuously working on improving my English speaking fluency to better express complex technical concepts."
         },
+        {
+            question: "How do you continuously improve your skills?",
+            answer: "I use multiple learning approaches: reading technical blogs and books, watching educational content on YouTube, taking courses on platforms like DataCamp and Coursera, and building personal projects. This combination helps me stay updated with industry trends and deepen my practical knowledge."
+        },
+        {
+            question: "What is your English proficiency level?",
+            answer: "I'm comfortable with written communication and technical documentation. While I can handle professional conversations, I'm actively working to improve my spoken fluency to express complex ideas more effortlessly. 💂"
+        },
+        {
+            question: "What work behaviors do you find challenging?",
+            answer: "I prefer to maintain professional boundaries and avoid discussions about politics or religion in workplace settings. I work best with colleagues who focus on constructive collaboration."
+        },
+        {
+            question: "What is your development environment?",
+            answer: "I currently work on macOS 💻 with an M1 processor and 16GB RAM, which provides excellent performance for my development needs."
+        },
+        {
+            question: "How did you start your programming journey?",
+            answer: "My programming journey began in school when a teacher asked me to create a website for a competition. Despite initial setbacks, building that first website with HTML and CSS sparked my interest in development. The following year, I won second place in a regional competition, which motivated me to continue learning. My teacher then recommended PHP and JavaScript, and through university, I explored various languages while primarily focusing on PHP."
+        },
+        {
+            question: "What is your educational background? 🎓",
+            answer: "I graduated from National Aerospace University - 'Kharkiv Aviation Institute' with a degree in Telecommunications and Radio Engineering (2017-2021)."
+        }
     ];
 
     return (
