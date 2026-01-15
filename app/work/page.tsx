@@ -6,7 +6,7 @@ export default function Work() {
     const workData = [
         {
             company: 'Small price (one time project)',
-            date: 'December 2024 - November 2025 (~11 months)',
+            date: 'December 2024 - December 2025 (1 year)',
             positions: [
                 {
                     title: 'Full Stack Developer (Symfony + React)',

@@ -33,13 +33,13 @@ export default function Cv() {
                     </div>
 
                     <div>
-                        <h2 className="text-xl font-semibold mb-2">Contacts</h2>
+                        <h3 className="text-xl font-medium mb-2">Contacts</h3>
                         <p><a href="https://t.me/Anthony_1654">Telegram:</a> @Anthony_1654</p>
                         <p><a href="https://anton-pekhov.vercel.app/">My site:</a> anton-pekhov.vercel.app</p>
                     </div>
 
                     <div className="mt-8">
-                        <h2 className="text-xl font-semibold mb-2">Languages</h2>
+                        <h3 className="text-xl font-medium mb-2">Languages</h3>
                         <ul className="list-disc list-inside">
                             <li><div style={{display: "inline-flex"}}>English (starbucks <CiCoffeeCup style={{fontSize: "larger"}} />)</div></li>
                             <li>Ukrainian</li>
@@ -48,8 +48,8 @@ export default function Cv() {
                     </div>
 
                     <div className="mt-8">
-                        <h2 className="text-xl font-semibold mb-2">Toolbox</h2>
-                        <ul className="list-disc list-inside">
+                        <h3 className="text-xl font-medium mb-2">Toolbox</h3>
+                        <ul className="list-disc list-inside text-sm">
                             <li>PHP, JS, SQL, HTML, CSS</li>
                             <li>MySQL, PostgreSql, Redis</li>
                             <li>Composer, Npm, Vite</li>
@@ -59,14 +59,13 @@ export default function Cv() {
                     </div>
 
                     <div className="mb-4 mt-4">
-                        <h2 className="text-xl font-semibold mb-2">Education</h2>
+                        <h3 className="text-xl font-medium mb-2">Education</h3>
                         <div className="mb-4">
                             {/* eslint-disable-next-line react/no-unescaped-entities */}
                             <h3 className="text-lg font-medium">National Aerospace University "KHAI"</h3>
-                            <p className="text-gray-500"></p>
-                            <span>Telecommunications and radio engineering.</span>
-                            <br/>
-                            <span>2017 - 2021</span>
+                            <p className="text-gray-500">National Aerospace University &#34;KHAI&#34;
+                            Telecommunications and radio engineering.</p>
+                            <span className="text-sm text-gray-500">2017 - 2021</span>
                         </div>
                     </div>
                 </div>
@@ -80,8 +79,8 @@ export default function Cv() {
                             </p>
                         </div>
                         <div className="mb-4">
-                            <h3 className="text-lg font-medium">👨‍💻 Small price (one time project)</h3>
-                            <p className="text-gray-500">Full Stack Developer | <span className="text-sm">December 2024 - November 2025</span></p>
+                            <h3 className="text-lg font-medium">👨‍💻 Small price</h3>
+                            <p className="text-gray-500">Full Stack Developer | <span className="text-sm">December 2024 - December 2025</span></p>
                             <p>Created a centralized dashboard to replace manual spreadsheets and provide real-time marketing insights.</p>
                             <div>
                                 <li className="text-gray-500 text-sm">Eliminated manual work with automated performance calculations</li>

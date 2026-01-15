@@ -47,7 +47,9 @@ export default function Home() {
                 {
                     question: "What is your policy on technical assignments?",
                     answer:
-                        "I'm open to reasonable-sized coding tasks, though I have mixed feelings about them. Sometimes assignments can be too abstract with insufficient requirements, where the lack of clear specifications is justified as 'wanting to see creative thinking.' Additionally, candidates join an existing team with established coding standards that they naturally aren't familiar with yet. Ideally, assignments should either include clear expectations for the solution or this aspect shouldn't be a critical evaluation factor.",
+                        "I consider them a valid assessment tool when they are well-scoped. I expect a clear problem statement, defined requirements, and an understanding that evaluation will be based on my approach and solution quality, not on familiarity with company-specific practices.\n" +
+                        "\n" +
+                        "I do not complete overly broad, abstract tasks or work that constitutes free development for a commercial project.",
                 },
                 {
                     question: "What areas of development interest you most right now?",
