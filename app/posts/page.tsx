@@ -1,9 +1,6 @@
 "use client"
 
 import React from "react";
-import {BentoGrid, BentoGridItem} from "components/ui/posts-grid";
-import Link from 'next/link'
-import Image from "next/image";
 import {Footer} from "@/components/layout/Footer";
 
 export default function Posts() {
@@ -19,25 +16,11 @@ export default function Posts() {
             className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100"></div>
     );
 
-
-    // const items = [
-    //     {
-    //         title: "",
-    //         slug: "",
-    //         header: '/assets/img/posts/how.jpeg',
-    //         link: '',
-    //         tags: ['php', 'backend']
-    //     },
-    // ];
-
     return (
         <>
-            <section className="content content--centered">
-                <div className="content__title">
-                    <h1 className="content__title-page">Recent Posts</h1></div>
-
-                <h3 className="mb-4">Coming soon</h3>
-            </section>
+            <h1 className="text-center p-20 text-4xl md:text-5xl font-bold bg-gradient-to-r from-foreground via-foreground/80 to-foreground/60 bg-clip-text">
+                Coming soon
+            </h1>
             <Footer />
 
             {/*<BentoGrid className="max-w-4xl mx-auto">*/}

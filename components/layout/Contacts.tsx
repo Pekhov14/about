@@ -61,7 +61,7 @@ const Contacts = () => {
     ];
 
     return (
-        <section className="p-5 text-xl pb-20" style={{ background: '#101010' }}>
+        <section id="contacts" className="p-5 text-xl pb-20" style={{ background: '#101010' }}>
             <div className="container mx-auto">
                 <div className="text-light p-20">
                     <h2 className="text-white text-5xl text-center">Contacts</h2>

@@ -28,12 +28,13 @@ const Menu = () => {
     }, [activePage, pathname]);
 
     const menuItems = [
-        {name: 'Home', route: '/'},
+        {name: 'About', route: '/'},
         {name: 'Work', route: '/work'},
         {name: 'Resume', route: '/cv'},
         {name: 'F.A.Q', route: '/faq'},
         {name: 'Open source', route: '/open-source'},
         {name: 'Posts', route: '/posts'},
+        {name: 'Contacts', route: '/#contacts'},
         // {name: 'Chat', route: '/chat'},
     ];
 

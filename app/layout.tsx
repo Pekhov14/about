@@ -47,7 +47,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" data-lt-installed="true" suppressHydrationWarning>
     <body className={inter.className}>
-    <Menu/>
+    <Menu />
     {children}
     <link rel="apple-touch-icon" href="/assets/img/og-card.png"/>
     <link rel="shortcut" href="/assets/img/og-card.png"/>

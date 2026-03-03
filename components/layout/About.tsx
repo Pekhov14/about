@@ -17,6 +17,28 @@ import {
     CarouselPrevious,
 } from "@/components/ui/carousel"
 import Image from "next/image";
+import {FlipWords} from "@/components/ui/flip-words";
+
+export function FlipWordsDescription() {
+    const words = ["PHP", "Backend", "Symfony", "eCommerce"];
+
+    return (
+        <div className="h-[10rem] flex justify-center items-center px-4">
+            <div
+                className="
+      text-5xl font-sans text-neutral-600 dark:text-neutral-400
+      text-center mx-auto
+      max-w-[95%]                         // страховка от переполнения
+      max-[550px]:text-4xl
+      max-[550px]:leading-[1.1]           // чуть плотнее строки
+    "
+            >
+                <FlipWords words={words} /> <br />
+                <span className="pl-2">Software Developer</span>
+            </div>
+        </div>
+    );
+}
 
 const About = () => {
     const fastContacts = [
@@ -33,9 +55,9 @@ const About = () => {
             icon: ''
         },
         {
-            name: "Medium",
-            url: "https://medium.com/@pehov21",
-            targetBlank: true,
+            name: "Email",
+            url: "pehovanton21@gmail.com",
+            targetBlank: false,
             icon: ''
         },
         {
@@ -66,28 +88,45 @@ const About = () => {
         <section className="content">
             <div className="content__sides">
                 <div className="content__text z-50">
-                    <h2>PHP Software Developer</h2>
-                    <span className="pt-5 pb-5">Experienced in opencart & symfony</span>
+                    <h2>{FlipWordsDescription()}</h2>
+                    <span
+                        className="
+                        text-center mx-auto font-sans text-neutral-400 dark:text-neutral-300
+                        pt-4 pb-4
+                        xs:pt-3 xs:pb-3
+                        max-[550px]:pt-6
+                        max-[550px]:pb-6
+                      "
+                                        >
+                      Experienced in opencart & symfony
+                    </span>
 
-                    <ul className="list-inline">
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
                         {fastContacts.map((contact, i) => (
-                            <li className="list-inline-item font-light" key={i}>
-                                <Link href={contact.url}
-                                      className="hover:underline "
-                                      target={contact.targetBlank === true ? "_blank" : "_self"}
-                                >
-                                    {contact.name}
-                                </Link>
+                            <li
+                                key={i}
+                                className="
+                                row-span-1 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-black  border justify-between flex flex-col space-y-4
+
+                                font-light bg-gray-50 dark:bg-gray-800/40 hover:bg-gray-100 dark:hover:bg-gray-700/50
+                 px-4 py-2.5 border-gray-200/60 dark:border-gray-700/50"
+                            >
+                                {contact.targetBlank ?
+                                    <Link
+                                        href={contact.url}
+                                        className="hover:underline hover:text-blue-600 dark:hover:text-blue-400 block"
+                                        target="_blank"
+                                    >
+                                        {contact.name}
+                                    </Link>
+                                    : contact.name + ': ' + contact.url
+                                }
                             </li>
                         ))}
                     </ul>
 
                     <div className="text-center-1">
-                        <div className="mt-10 flex items-center justify-center gap-x-6">
-                            <div className="flex w-0 flex-1 items-center">
-                                <DownloadCv/>
-                            </div>
-                        </div>
+                        <DownloadCv/>
                     </div>
                 </div>
 
@@ -99,7 +138,7 @@ const About = () => {
                         loop: true,
                     }}
                     plugins={[plugin.current]}
-                    className="w-full max-w-xs block lg:hidden"
+                    className="w-full max-w-xs mx-auto block lg:hidden"
                     onMouseEnter={plugin.current.stop}
                     onMouseLeave={plugin.current.reset}
                 >
