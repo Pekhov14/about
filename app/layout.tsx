@@ -45,7 +45,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" data-lt-installed="true" suppressHydrationWarning>
     <body className={inter.className}>
     <Menu/>
     {children}

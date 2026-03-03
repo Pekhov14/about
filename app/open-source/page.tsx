@@ -13,6 +13,7 @@ import {
 } from "@nextui-org/react"
 import { columns, projects } from "@/public/data/open-source"
 import { GitPullRequest, GitMerge, XCircle, AlertCircle, Clock, CheckCircle, Calendar } from "lucide-react"
+import {Footer} from "@/components/layout/Footer";
 
 const statusColorMap: Record<string, ChipProps["color"]> = {
     merged: "success",
@@ -69,7 +70,8 @@ const sortedProjects = [...projects].sort((a, b) => {
 
 export default function OpenSourcePage() {
     return (
-        <section className="flex flex-col items-center justify-center w-full min-h-screen px-4 py-16 bg-gradient-to-b from-background to-muted/20">
+        <>
+            <section className="flex flex-col items-center justify-center w-full min-h-screen px-4 py-16 bg-gradient-to-b from-background to-muted/20">
             <div className="text-center mb-12 space-y-4 max-w-3xl">
                 <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-foreground via-foreground/80 to-foreground/60 bg-clip-text">
                     Open Source Contributions
@@ -192,5 +194,7 @@ export default function OpenSourcePage() {
                 </Table>
             </div>
         </section>
+            <Footer/>
+        </>
     )
 }

@@ -1,7 +1,10 @@
+"use client"
+
 import React from "react";
 import {BentoGrid, BentoGridItem} from "components/ui/posts-grid";
 import Link from 'next/link'
 import Image from "next/image";
+import {Footer} from "@/components/layout/Footer";
 
 export default function Posts() {
 
@@ -28,14 +31,14 @@ export default function Posts() {
     // ];
 
     return (
-        <div className="h-dvh">
-
+        <>
             <section className="content content--centered">
                 <div className="content__title">
                     <h1 className="content__title-page">Recent Posts</h1></div>
 
-                <h3>Coming soon</h3>
+                <h3 className="mb-4">Coming soon</h3>
             </section>
+            <Footer />
 
             {/*<BentoGrid className="max-w-4xl mx-auto">*/}
             {/*    {items.map((item, i) => (*/}
@@ -55,6 +58,6 @@ export default function Posts() {
             {/*        </Link>*/}
             {/*    ))}*/}
             {/*</BentoGrid>*/}
-        </div>
+        </>
     );
 }
