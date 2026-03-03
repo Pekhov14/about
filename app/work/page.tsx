@@ -1,6 +1,9 @@
 "use client";
 
 import {Footer} from "@/components/layout/Footer";
+import {Spotlight} from "@/components/ui/spotlight-new";
+import {BackgroundRippleEffect} from "@/components/ui/background-ripple-effect";
+import { motion } from "framer-motion";
 
 export default function Work() {
     const workData = [
@@ -67,14 +70,37 @@ export default function Work() {
 
     return (
         <>
-            <section className="content p-2">
-                <div className="content__title content__stacked">
-                    <h1 className="content__title-main">Experience</h1>
+            <div
+                className="h-[15rem] md:h-[40rem] w-full rounded-md flex md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden"
+            >
+                <Spotlight />
+                <div className="p-4 max-w-7xl mx-auto relative z-10  w-full pt-20 md:pt-0">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}
+                        className="text-center mb-16 max-w-3xl mx-auto"
+                    >
+                        <h1 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
+                            Work experience
+                        </h1>
+                        <p className="mt-4 font-normal text-base text-neutral-300 max-w-lg text-center mx-auto">
+                            Companies and web studios I have worked with
+                        </p>
+                    </motion.div>
                 </div>
+            </div>
 
+            <section className="content p-5">
                 <div className="content--center pb-20 max-w-2xl mx-auto">
                     <ul className="space-y-6">
                         {workData.map((work, workIndex) => (
+                            <motion.div
+                                key={workIndex}
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.9, delay: workIndex * 0.1 }}
+                            >
                             <li key={workIndex}
                                 className={`mb-4 ${workIndex !== workData.length - 1 ? 'pb-4 border-b' : ''}`}>
                                 <h2 className="text-2xl font-bold mb-2">{work.company}</h2>
@@ -98,6 +124,7 @@ export default function Work() {
                                     ))}
                                 </ul>
                             </li>
+                            </motion.div>
                         ))}
                     </ul>
                 </div>
