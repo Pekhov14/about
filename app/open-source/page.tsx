@@ -43,10 +43,10 @@ const myProjectsColumns = [
 const myProjects = [
     {
         id: 1,
-        project: "elephant-php/vo-ttl",
-        github: "https://github.com/elephant-php/vo-ttl",
-        packagist: "https://packagist.org/packages/elephant-php/vo-ttl",
-        description: "Immutable Value Object for Time To Live (TTL). This code from PR to yii/cache but like, a lib for other frameworks.",
+        project: "elephant-php/ttl",
+        github: "https://github.com/elephant-php/ttl",
+        packagist: "https://packagist.org/packages/elephant-php/ttl",
+        description: "An immutable Time To Live value object for the cache and other places where you need to specify a time rather than a magic value. This my code from PR to yii/cache but like, a lib for other frameworks.",
     },
 ]
 
