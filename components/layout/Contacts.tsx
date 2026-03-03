@@ -4,6 +4,7 @@ import { BentoGrid, BentoGridItem } from "../ui/bento-grid";
 import {FaTelegram, FaLinkedin, FaFilePdf, FaEnvelope} from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import {DownloadCv} from "@/components/sections/cv/DownloadCv";
+import React from "react";
 
 const Contacts = () => {
     function BentoGridDemo() {
@@ -43,7 +44,7 @@ const Contacts = () => {
             icon: <FaSquareXTwitter />,
         },
         {
-            title: "Resume",
+            title: "Resume (pdf)",
             description:
                 <>
                     <DownloadCv />
