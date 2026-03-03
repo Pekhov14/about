@@ -2,7 +2,6 @@
 
 import {Footer} from "@/components/layout/Footer";
 import {Spotlight} from "@/components/ui/spotlight-new";
-import {BackgroundRippleEffect} from "@/components/ui/background-ripple-effect";
 import { motion } from "framer-motion";
 
 export default function Work() {
