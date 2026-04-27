@@ -12,8 +12,9 @@ import {
     TableRow,
 } from "@nextui-org/react"
 import { columns, projects } from "@/public/data/open-source"
-import { GitPullRequest, GitMerge, XCircle, AlertCircle, Clock, CheckCircle, Calendar } from "lucide-react"
+import { GitPullRequest, GitMerge, XCircle, AlertCircle, Clock, CheckCircle, Calendar, ArrowUpRight } from "lucide-react"
 import {Footer} from "@/components/layout/Footer";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const statusColorMap: Record<string, ChipProps["color"]> = {
     merged: "success",
@@ -35,19 +36,57 @@ const statusIconMap: Record<string, React.ReactNode> = {
     approved: <CheckCircle className="w-3.5 h-3.5" />,
 }
 
-const myProjectsColumns = [
-    { name: "Project", uid: "project" },
-    { name: "Links", uid: "links" },
-    { name: "Description", uid: "description" },
-]
-
 const myProjects = [
     {
         id: 1,
-        project: "elephant-php/ttl",
-        github: "https://github.com/elephant-php/ttl",
-        packagist: "https://packagist.org/packages/elephant-php/ttl",
+        name: "elephant-php/ttl",
+        projectUrl: "https://github.com/elephant-php/ttl",
+        links: [
+            {
+                label: "GitHub",
+                href: "https://github.com/elephant-php/ttl",
+            },
+            {
+                label: "Packagist",
+                href: "https://packagist.org/packages/elephant-php/ttl",
+            },
+        ],
+        tags: ["library", "php", "cache"],
         description: "An immutable Time To Live value object for the cache and other places where you need to specify a time rather than a magic value. This my code from PR to yii/cache but like, a lib for other frameworks.",
+    },
+    {
+        id: 2,
+        name: "elephant-php/byte-size",
+        projectUrl: "https://packagist.org/packages/elephant-php/byte-size",
+        links: [
+            {
+                    label: "GitHub",
+                    href: "https://github.com/elephant-php/byte-size",
+            },
+            {
+                label: "Packagist",
+                href: "https://packagist.org/packages/elephant-php/byte-size",
+            },
+        ],
+        tags: ["library", "php", "utility"],
+        description: "A small PHP library for byte size conversion and formatting.",
+    },
+    {
+        id: 3,
+        name: "elephant-php/duration",
+        projectUrl: "https://packagist.org/packages/elephant-php/duration",
+        links: [
+            {
+                    label: "GitHub",
+                    href: "https://github.com/elephant-php/duration",
+            },
+            {
+                label: "Packagist",
+                href: "https://packagist.org/packages/elephant-php/duration",
+            },
+        ],
+        tags: ["library", "php", "time"],
+        description: "A small PHP library for representing elapsed time.",
     },
 ]
 
@@ -138,60 +177,68 @@ export default function OpenSourcePage() {
                     Personal Projects
                 </h2>
                 <p className="text-muted-foreground text-lg">
-                    My own open source packages and tools
+                    A collection of open source packages and small tools I build and maintain.
                 </p>
             </div>
 
-            <div className="w-full max-w-5xl bg-card rounded-xl shadow-lg border border-border overflow-hidden">
-                <Table
-                    aria-label="My open source projects table"
-                    classNames={{
-                        wrapper: "shadow-none",
-                        th: "bg-muted/50 text-foreground font-semibold",
-                        td: "py-4",
-                    }}
-                >
-                    <TableHeader columns={myProjectsColumns}>
-                        {(column) => (
-                            <TableColumn key={column.uid}>{column.name}</TableColumn>
-                        )}
-                    </TableHeader>
-                    <TableBody items={myProjects}>
-                        {(item) => (
-                            <TableRow
-                                key={item.id}
-                                className="hover:bg-muted/30 transition-colors"
-                            >
-                                <TableCell className="font-medium" width="160">
-                                    {item.project}
-                                </TableCell>
-                                <TableCell>
-                                    <div className="flex flex-col space-y-1">
+            <div className="w-full max-w-5xl grid gap-6 md:grid-cols-2">
+                {myProjects.map((item) => (
+                    <Card
+                        key={item.id}
+                        className="border-border/70 bg-card/95 shadow-lg transition-transform duration-200 hover:-translate-y-1"
+                    >
+                        <CardHeader className="space-y-4">
+                            <div className="flex items-start justify-between gap-4">
+                                <CardTitle className="text-xl leading-snug">
+                                    {item.projectUrl ? (
                                         <a
-                                            href={item.github}
+                                            href={item.projectUrl}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="text-primary hover:text-primary/80 underline underline-offset-4 transition-colors font-medium"
+                                            className="inline-flex items-center gap-2 text-foreground transition-colors hover:text-primary"
                                         >
-                                            GitHub
+                                            {item.name}
+                                            <ArrowUpRight className="h-4 w-4 shrink-0" />
                                         </a>
+                                    ) : (
+                                        item.name
+                                    )}
+                                </CardTitle>
+                            </div>
+
+                            <div className="flex flex-wrap gap-2">
+                                {item.tags.map((tag) => (
+                                    <Chip key={tag} size="sm" variant="flat" className="capitalize">
+                                        {tag}
+                                    </Chip>
+                                ))}
+                            </div>
+                        </CardHeader>
+
+                        <CardContent className="space-y-5">
+                            <p className="text-sm leading-6 text-muted-foreground">
+                                {item.description}
+                            </p>
+
+                            {item.links.length > 0 && (
+                                <div className="flex flex-wrap gap-3">
+                                    {item.links.map((link) => (
                                         <a
-                                            href={item.packagist}
+                                            key={link.href}
+                                            href={link.href}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="text-primary hover:text-primary/80 underline underline-offset-4 transition-colors font-medium"
+                                            className="inline-flex items-center gap-1.5 text-sm font-medium text-primary underline underline-offset-4 transition-colors hover:text-primary/80"
                                         >
-                                            Packagist
+                                            {link.label}
+                                            <ArrowUpRight className="h-3.5 w-3.5" />
                                         </a>
-                                    </div>
-                                </TableCell>
-                                <TableCell className="text-muted-foreground">
-                                    {item.description}
-                                </TableCell>
-                            </TableRow>
-                        )}
-                    </TableBody>
-                </Table>
+                                    ))}
+                                </div>
+                            )}
+                        </CardContent>
+                    </Card>
+                ))}
             </div>
         </section>
             <Footer/>
