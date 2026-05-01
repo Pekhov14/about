@@ -88,6 +88,23 @@ const myProjects = [
         tags: ["library", "php", "time"],
         description: "A small PHP library for representing elapsed time.",
     },
+    {
+        id: 3,
+        name: "elephant-php/otp",
+        projectUrl: "https://packagist.org/packages/elephant-php/otp",
+        links: [
+            {
+                label: "GitHub",
+                href: "https://github.com/elephant-php/otp",
+            },
+            {
+                label: "Packagist",
+                href: "https://packagist.org/packages/elephant-php/otp",
+            },
+        ],
+        tags: ["code-generator", "otpone-time-password", "verification-code", "one-time-code", "random-code", "php"],
+        description: "A small PHP library for generating one-time passwords and random verification codes.",
+    },
 ]
 
 // Функция для парсинга даты (обрабатывает разные форматы)
