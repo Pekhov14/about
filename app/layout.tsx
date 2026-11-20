@@ -1,9 +1,6 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
 import {Menu} from '@/components/layout/Menu';
 import { Metadata } from 'next';
-
-const inter = Inter({ subsets: ['latin'] })
 
 const title = 'Anthony Pekhov - Software Developer';
 const description = 'Hello, it\'s Anthony. 👋 I\'m a software developer with a focus on backend development. I usually use PHP (OpenCart, Symfony) and do a bit of frontend work in JS (React).';
@@ -46,7 +43,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" data-lt-installed="true" suppressHydrationWarning>
-    <body className={inter.className}>
+    <body>
     <Menu />
     {children}
     <link rel="apple-touch-icon" href="/assets/img/og-card.png"/>

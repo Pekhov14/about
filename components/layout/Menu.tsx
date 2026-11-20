@@ -12,6 +12,7 @@ import {
     Link,
     Button
 } from "@nextui-org/react";
+import { Moon, Sun } from "lucide-react";
 import {Logo} from "@/components/ui/Logo";
 import {NextUIProvider} from "@nextui-org/react";
 import {usePathname} from 'next/navigation'
@@ -19,13 +20,35 @@ import {usePathname} from 'next/navigation'
 const Menu = () => {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
     const [activePage, setActivePage] = React.useState('');
+    const [theme, setTheme] = React.useState('dark');
     const pathname = usePathname()
+    const isHomePage = pathname === '/';
 
     useEffect(() => {
         if (pathname !== activePage) {
             setActivePage(pathname);
         }
     }, [activePage, pathname]);
+
+    useEffect(() => {
+        const savedTheme = window.localStorage.getItem('theme');
+        const preferredTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        const nextTheme = savedTheme || preferredTheme;
+
+        setTheme(nextTheme);
+    }, []);
+
+    useEffect(() => {
+        document.querySelector('.about-page')?.setAttribute('data-theme', theme);
+    }, [pathname, theme]);
+
+    const toggleTheme = () => {
+        const nextTheme = theme === 'dark' ? 'light' : 'dark';
+
+        setTheme(nextTheme);
+        window.localStorage.setItem('theme', nextTheme);
+        document.querySelector('.about-page')?.setAttribute('data-theme', nextTheme);
+    };
 
     const menuItems = [
         {name: 'About', route: '/'},
@@ -38,9 +61,18 @@ const Menu = () => {
         // {name: 'Chat', route: '/chat'},
     ];
 
+    const homeThemeVars = isHomePage ? {
+        '--site-text': theme === 'dark' ? '#E1E0CC' : '#151515',
+        '--site-muted': theme === 'dark' ? 'rgba(222, 219, 200, 0.62)' : 'rgba(21, 21, 21, 0.62)',
+    } as React.CSSProperties : undefined;
+
     return (
         <NextUIProvider>
-            <Navbar onMenuOpenChange={setIsMenuOpen}>
+            <Navbar
+                onMenuOpenChange={setIsMenuOpen}
+                className={isHomePage ? 'bg-transparent text-[var(--site-text)]' : undefined}
+                style={homeThemeVars}
+            >
                 <NavbarContent>
                     <NavbarMenuToggle
                         aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -50,8 +82,12 @@ const Menu = () => {
                         <Link href={`/`} className="flex items-center">
                             <Logo/>
                             <div>
-                                <p className="font-bold text-inherit">Anthony Pekhov</p>
-                                <p className="text-gray-500">Software developer</p>
+                                <p className={isHomePage ? 'font-bold text-[var(--site-text)]' : 'font-bold text-inherit'}>
+                                    Anthony Pekhov
+                                </p>
+                                <p className={isHomePage ? 'text-[var(--site-muted)]' : 'text-gray-500'}>
+                                    Software developer
+                                </p>
                             </div>
                         </Link>
                     </NavbarBrand>
@@ -73,16 +109,25 @@ const Menu = () => {
                 </NavbarContent>
 
                 {/* TODO: Admin */}
-                {/*<NavbarContent justify="end">*/}
-                {/*    <NavbarItem className="hidden lg:flex">*/}
-                {/*        <Link href="#">Login</Link>*/}
-                {/*    </NavbarItem>*/}
-                {/*    <NavbarItem>*/}
-                {/*        <Button as={Link} color="primary" href="#" variant="flat">*/}
-                {/*            Sign Up*/}
-                {/*        </Button>*/}
-                {/*    </NavbarItem>*/}
-                {/*</NavbarContent>*/}
+                {isHomePage && (
+                    <NavbarContent justify="end">
+                        <NavbarItem>
+                            <Button
+                                isIconOnly
+                                size="sm"
+                                variant="flat"
+                                onPress={toggleTheme}
+                                aria-label={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
+                            >
+                                {theme === 'dark' ? (
+                                    <Sun className="h-4 w-4" aria-hidden="true" />
+                                ) : (
+                                    <Moon className="h-4 w-4" aria-hidden="true" />
+                                )}
+                            </Button>
+                        </NavbarItem>
+                    </NavbarContent>
+                )}
 
                 {/* Мобильное меню - здесь используем NavbarMenuItem */}
                 <NavbarMenu>

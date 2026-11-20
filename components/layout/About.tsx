@@ -1,251 +1,183 @@
 'use client'
 
-import React, { useRef, useState } from "react";
-import { motion } from "framer-motion";
-import { twMerge } from "tailwind-merge";
+import {type RefObject, useRef, useState} from 'react'
+import Image from 'next/image'
+import {motion} from 'framer-motion'
+import {twMerge} from 'tailwind-merge'
 
-import Link from 'next/link'
-import {DownloadCv} from "components/sections/cv/DownloadCv";
-import Autoplay from "embla-carousel-autoplay"
-
-import {Card, CardContent} from "@/components/ui/card"
-import {
-    Carousel,
-    CarouselContent,
-    CarouselItem,
-    CarouselNext,
-    CarouselPrevious,
-} from "@/components/ui/carousel"
-import Image from "next/image";
-import {FlipWords} from "@/components/ui/flip-words";
-
-export function FlipWordsDescription() {
-    const words = ["PHP", "Backend", "Symfony", "eCommerce"];
-
-    return (
-        <div className="h-[10rem] flex justify-center items-center px-4">
-            <div
-                className="
-      text-5xl font-sans text-neutral-600 dark:text-neutral-400
-      text-center mx-auto
-      max-w-[95%]                         // страховка от переполнения
-      max-[550px]:text-4xl
-      max-[550px]:leading-[1.1]           // чуть плотнее строки
-    "
-            >
-                <FlipWords words={words} /> <br />
-                <span className="pl-2">Software Developer</span>
-            </div>
-        </div>
-    );
-}
+const photos = [
+    {
+        src: '/assets/img/pekhov_anton_php_developer.jpeg',
+        alt: 'Anthony Pekhov portrait',
+        rotate: '5deg',
+        top: '0%',
+        left: '50%',
+        className: 'w-44 md:w-56',
+    },
+    {
+        src: '/assets/img/2.jpeg',
+        alt: 'Anthony Pekhov photo',
+        rotate: '12deg',
+        top: '43%',
+        left: '55%',
+        className: 'w-32 md:w-48',
+    },
+    {
+        src: '/assets/img/1.jpeg',
+        alt: 'Anthony Pekhov photo',
+        rotate: '-7deg',
+        top: '18%',
+        left: '58%',
+        className: 'w-44 md:w-56',
+    },
+]
 
 const About = () => {
-    const fastContacts = [
-        {
-            name: "LinkedIn",
-            url: "https://www.linkedin.com/in/anton-pekhov",
-            targetBlank: true,
-            icon: ''
-        },
-        {
-            name: "Telegram",
-            url: "https://t.me/anthony_1654",
-            targetBlank: true,
-            icon: ''
-        },
-        {
-            name: "Email",
-            url: "pehovanton21@gmail.com",
-            targetBlank: false,
-            icon: ''
-        },
-        {
-            name: "GitHub",
-            url: "https://github.com/Pekhov14",
-            targetBlank: true,
-            icon: ''
-        },
-    ];
-
-    const plugin = React.useRef(
-        Autoplay({delay: 2000, stopOnInteraction: true})
-    )
-
-    const CarouselImages = [
-        {
-            src: "/assets/img/pekhov_anton_php_developer.jpeg"
-        },
-        {
-            src: "/assets/img/1.jpeg"
-        },
-        {
-            src: "/assets/img/2.jpeg"
-        },
-    ];
-
     return (
-        <section className="content">
-            <div className="content__sides">
-                <div className="content__text z-50">
-                    <h2>{FlipWordsDescription()}</h2>
-                    <span
-                        className="
-                        text-center mx-auto font-sans text-neutral-400 dark:text-neutral-300
-                        pt-4 pb-4
-                        xs:pt-3 xs:pb-3
-                        max-[550px]:pt-6
-                        max-[550px]:pb-6
-                      "
-                                        >
-                      Experienced in opencart & symfony
-                    </span>
+        <section id="about" className="relative overflow-hidden bg-[var(--site-bg)] px-4 py-20 text-[var(--site-text)] sm:px-6 lg:px-8">
+            <div className="ap-grid pointer-events-none absolute inset-0 opacity-[0.14]" />
 
-                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
-                        {fastContacts.map((contact, i) => (
-                            <li
-                                key={i}
-                                className="
-                                row-span-1 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-black  border justify-between flex flex-col space-y-4
+            <div className="relative mx-auto max-w-7xl">
+                <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-stretch">
+                    {/* Левый блок — в стиле "Заметки / Редактор кода" */}
+                    <motion.div
+                        initial={{opacity: 0, y: 22}}
+                        whileInView={{opacity: 1, y: 0}}
+                        viewport={{once: true, margin: '-100px'}}
+                        transition={{duration: 0.65, ease: [0.16, 1, 0.3, 1]}}
+                        className="relative min-h-[520px] overflow-hidden rounded-[1.75rem] border border-[var(--site-border)] bg-[var(--site-panel)] shadow-xl shadow-black/5"
+                    >
+                        {/* Три точки как у MacOS */}
+                        <div className="flex items-center gap-1.5 border-b border-[var(--site-border)] px-5 py-3 bg-[var(--site-bg)]/30">
+                            <div className="flex gap-1.5">
+                                <div className="h-3 w-3 rounded-full bg-red-500/70" />
+                                <div className="h-3 w-3 rounded-full bg-yellow-500/70" />
+                                <div className="h-3 w-3 rounded-full bg-green-500/70" />
+                            </div>
+                            <span className="mx-auto text-xs text-[var(--site-muted)]">📝 Notes / About.md</span>
+                            <div className="w-8" />
+                        </div>
 
-                                font-light bg-gray-50 dark:bg-gray-800/40 hover:bg-gray-100 dark:hover:bg-gray-700/50
-                 px-4 py-2.5 border-gray-200/60 dark:border-gray-700/50"
-                            >
-                                {contact.targetBlank ?
-                                    <Link
-                                        href={contact.url}
-                                        className="hover:underline hover:text-blue-600 dark:hover:text-blue-400 block"
-                                        target="_blank"
-                                    >
-                                        {contact.name}
-                                    </Link>
-                                    : contact.name + ': ' + contact.url
-                                }
-                            </li>
-                        ))}
-                    </ul>
+                        {/* Контент как заметки */}
+                        <div className="p-6 sm:p-8 lg:p-10">
+                            <h2 className="max-w-3xl text-4xl font-bold leading-[0.98] tracking-[-0.05em] sm:text-5xl md:text-6xl">
+                                Who is Anthony?
+                            </h2>
 
-                    <div className="text-center-1">
-                        <DownloadCv/>
-                    </div>
+                            <p className="mt-7 max-w-2xl text-base leading-7 text-[var(--site-muted)]">
+                                I`m a software developer focused mostly on backend work. I usually work with PHP, Symfony, OpenCart,
+                                with some React when the interface needs it.
+
+                                I build backend features, eCommerce flows, integrations, admin tools, data flows for analytics, fixes, and support for existing products.
+
+                                But sometimes I work with other frameworks (Laravel, Yii) and languages like Go.
+
+                                I like building useful things and making messy parts simpler.
+                            </p>
+                        </div>
+                    </motion.div>
+
+                    {/* Правый блок — в стиле "Просмотр папки / Галерея" */}
+                    <PhotoBoard />
                 </div>
-
-                <DragCards/>
-
-                <Carousel
-                    opts={{
-                        align: "start",
-                        loop: true,
-                    }}
-                    plugins={[plugin.current]}
-                    className="w-full max-w-xs mx-auto block lg:hidden"
-                    onMouseEnter={plugin.current.stop}
-                    onMouseLeave={plugin.current.reset}
-                >
-                    <CarouselContent>
-                        {CarouselImages.map((image, index) => (
-                            <CarouselItem key={index}>
-                                <Card>
-                                    <CardContent className="flex aspect-square items-center justify-center p-2">
-                                        <Image
-                                            src={image.src}
-                                            width="300"
-                                            height="300"
-                                            alt='Anton'
-                                        />
-                                    </CardContent>
-                                </Card>
-                            </CarouselItem>
-                        ))}
-                    </CarouselContent>
-                    <CarouselPrevious/>
-                    <CarouselNext/>
-                </Carousel>
-
             </div>
         </section>
     )
 }
 
-const DragCards = () => {
-    const containerRef = useRef(null);
+const PhotoBoard = () => {
+    const containerRef = useRef<HTMLDivElement | null>(null)
 
     return (
-        <div className="absolute inset-0 z-10 hidden lg:block" ref={containerRef}>
-            <DragCard
-                containerRef={containerRef}
-                src="/assets/img/pekhov_anton_php_developer.jpeg"
-                alt="Example image"
-                rotate="6deg"
-                top="0%"
-                left="55%"
-                className="w-36 md:w-56"
-            />
-            <DragCard
-                containerRef={containerRef}
-                src=" /assets/img/2.jpeg"
-                alt="Example image"
-                rotate="12deg"
-                top="45%"
-                left="60%"
-                className="w-24 md:w-48"
-            />
-            <DragCard
-                containerRef={containerRef}
-                src="/assets/img/1.jpeg"
-                alt="Example image"
-                rotate="-6deg"
-                top="20%"
-                left="75%"
-                className="w-52 md:w-80"
-            />
-        </div>
-    );
-};
+        <motion.div
+            initial={{opacity: 0, y: 22}}
+            whileInView={{opacity: 1, y: 0}}
+            viewport={{once: true, margin: '-100px'}}
+            transition={{duration: 0.65, delay: 0.08, ease: [0.16, 1, 0.3, 1]}}
+            className="relative min-h-[520px] overflow-hidden rounded-[1.75rem] border border-[var(--site-border)] bg-[var(--site-panel)] shadow-xl shadow-black/5"
+            ref={containerRef}
+        >
+            {/* Три точки как у MacOS */}
+            <div className="flex items-center gap-1.5 border-b border-[var(--site-border)] px-5 py-3 bg-[var(--site-bg)]/30">
+                <div className="flex gap-1.5">
+                    <div className="h-3 w-3 rounded-full bg-red-500/70" />
+                    <div className="h-3 w-3 rounded-full bg-yellow-500/70" />
+                    <div className="h-3 w-3 rounded-full bg-green-500/70" />
+                </div>
+                <span className="mx-auto text-xs text-[var(--site-muted)]">📁 Gallery / Photos</span>
+                <div className="w-8" />
+            </div>
 
-const DragCard = ({containerRef, src, alt, top, left, rotate, className}) => {
-    const [zIndex, setZIndex] = useState(0);
+            {/* Галерея с фото */}
+            <div className="relative hidden min-h-[360px] lg:block p-4">
+                {photos.map((photo) => (
+                    <DragPhoto key={photo.src} containerRef={containerRef} {...photo} />
+                ))}
+            </div>
+
+            <div className="grid gap-3 lg:hidden p-4">
+                {photos.map((photo) => (
+                    <Image
+                        key={photo.src}
+                        src={photo.src}
+                        alt={photo.alt}
+                        width={640}
+                        height={480}
+                        className="aspect-[4/3] w-full rounded-2xl border border-[var(--site-border)] object-cover"
+                    />
+                ))}
+            </div>
+        </motion.div>
+    )
+}
+
+type DragPhotoProps = {
+    containerRef: RefObject<HTMLDivElement>
+    src: string
+    alt: string
+    top: string
+    left: string
+    rotate: string
+    className: string
+}
+
+const DragPhoto = ({containerRef, src, alt, top, left, rotate, className}: DragPhotoProps) => {
+    const [zIndex, setZIndex] = useState(1)
 
     const updateZIndex = () => {
-        const els = document.querySelectorAll(".drag-elements");
+        const elements = document.querySelectorAll('.about-drag-photo')
+        let maxZIndex = 1
 
-        let maxZIndex = -Infinity;
+        elements.forEach((element) => {
+            const value = parseInt(window.getComputedStyle(element).getPropertyValue('z-index'))
 
-        els.forEach((el) => {
-            let zIndex = parseInt(
-                window.getComputedStyle(el).getPropertyValue("z-index")
-            );
-
-            if (!isNaN(zIndex) && zIndex > maxZIndex) {
-                maxZIndex = zIndex;
+            if (!Number.isNaN(value) && value > maxZIndex) {
+                maxZIndex = value
             }
-        });
+        })
 
-        setZIndex(maxZIndex + 1);
-    };
+        setZIndex(maxZIndex + 1)
+    }
 
     return (
         <motion.img
             onMouseDown={updateZIndex}
-            style={{
-                top,
-                left,
-                rotate,
-                zIndex,
-            }}
+            style={{zIndex}}
+            initial={{opacity: 0, top: '34%', left: '55%', rotate: '0deg', scale: 0.94}}
+            whileInView={{opacity: 1, top, left, rotate, scale: 1}}
+            viewport={{once: true, margin: '-80px'}}
+            transition={{duration: 0.8, ease: [0.16, 1, 0.3, 1]}}
             className={twMerge(
-                "drag-elements absolute w-48 bg-neutral-200 p-1 pb-4",
+                'about-drag-photo absolute -translate-x-1/2 rounded-2xl border border-[var(--site-border)] bg-[var(--site-bg)] p-2 shadow-2xl shadow-black/20',
                 className
             )}
             src={src}
             alt={alt}
             drag
             dragConstraints={containerRef}
-            // Uncomment below and remove dragElastic to remove movement after release
-            //   dragMomentum={false}
-            dragElastic={0.65}
+            dragElastic={0.35}
         />
-    );
-};
+    )
+}
 
 export {About}

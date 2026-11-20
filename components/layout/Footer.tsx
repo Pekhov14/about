@@ -85,7 +85,7 @@ const Footer = () => {
                             <div className="text-footer-copyright">
                                 © {currentYear} Anthony Pekhov
                             </div>
-                            <div className="text-under-copyright">Made with love and Green Teas</div>
+                            <div className="text-under-copyright">Made with love and Green Teas ❤️</div>
                         </div>
                         <div className="footer-bottom-right">
                             <div id="last-updated" className="text-last-updated">
