@@ -1,191 +1,135 @@
 'use client'
 
-import Image from "next/image";
+import Image from 'next/image'
+import {motion} from 'framer-motion'
+import {Braces, Database, ShoppingCart} from 'lucide-react'
+
+type Tool = {
+    name: string
+    icon?: string
+    devicon?: string
+    lucide?: 'database' | 'braces' | 'shopping-cart'
+}
+
+const groups: {title: string; note: string; tools: Tool[]}[] = [
+    {
+        title: 'Languages',
+        note: 'The basics I use most often.',
+        tools: [
+            {name: 'PHP', devicon: 'devicon-php-plain colored'},
+            {name: 'JavaScript', devicon: 'devicon-javascript-plain colored'},
+            {name: 'SQL', lucide: 'database'},
+            {name: 'HTML / CSS / Twig', devicon: 'devicon-html5-plain colored'},
+        ],
+    },
+    {
+        title: 'Frameworks',
+        note: 'Project structure, commerce, and UI work.',
+        tools: [
+            {name: 'Symfony', devicon: 'devicon-symfony-original'},
+            {name: 'OpenCart', lucide: 'shopping-cart'},
+            {name: 'Doctrine', devicon: 'devicon-doctrine-plain colored'},
+            {name: 'React', devicon: 'devicon-react-original colored'},
+        ],
+    },
+    {
+        title: 'Infrastructure',
+        note: 'Local setup, deployment, and server pieces.',
+        tools: [
+            {name: 'Git', devicon: 'devicon-git-plain colored'},
+            {name: 'Docker', devicon: 'devicon-docker-plain colored'},
+            {name: 'Nginx', devicon: 'devicon-nginx-original colored'},
+            {name: 'Composer / NPM', devicon: 'devicon-composer-line colored'},
+            {name: 'CI/CD (Deployer / Github actions)', devicon: 'devicon-githubactions-plain colored'},
+            {name: 'AWS (Lambda / S3)', devicon: 'devicon-amazonwebservices-plain-wordmark colored'},
+        ],
+    },
+    {
+        title: 'Data',
+        note: 'Storage, queries, cache, and practical data fixes.',
+        tools: [
+            {name: 'MySQL / MariaDB', devicon: 'devicon-mariadb-original colored'},
+            {name: 'PostgreSQL', devicon: 'devicon-postgresql-plain colored'},
+            {name: 'Redis (cache / queue / lock)', devicon: 'devicon-redis-plain colored'},
+            {name: 'ElasticSearch', devicon: 'devicon-elasticsearch-plain colored'},
+        ],
+    },
+]
+
+const ToolIcon = ({tool}: {tool: Tool}) => {
+    if (tool.devicon) {
+        return <i className={`${tool.devicon} text-[20px] leading-none`} aria-hidden="true" />
+    }
+
+    if (tool.lucide === 'database') {
+        return <Database className="h-5 w-5 text-[var(--site-muted)]" aria-hidden="true" />
+    }
+
+    if (tool.lucide === 'braces') {
+        return <Braces className="h-5 w-5 text-[var(--site-muted)]" aria-hidden="true" />
+    }
+
+    if (tool.lucide === 'shopping-cart') {
+        return <ShoppingCart className="h-5 w-5 text-[var(--site-muted)]" aria-hidden="true" />
+    }
+
+    if (tool.icon) {
+        return <Image src={tool.icon} alt="" width={28} height={28} className="h-5 w-5 object-contain" />
+    }
+
+    return null
+}
 
 const UsedTools = () => {
     return (
-        <section id="promotionFooter" className="bg-gray-100 py-8 px-8">
-            <div className="container mx-auto">
-                <div className="text-light p-20">
-                    <h3 className="text-5xl text-center">Toolbox</h3>
+        <section id="toolbox" className="relative overflow-hidden bg-[var(--site-bg)] px-4 py-20 text-[var(--site-text)] sm:px-6 lg:px-8">
+            <div className="ap-noise pointer-events-none absolute inset-0 opacity-[0.1]" />
+
+            <div className="relative mx-auto max-w-7xl">
+                <div className="mb-12 text-center">
+                    <h2 className="text-4xl font-bold leading-[0.95] tracking-[-0.05em] sm:text-5xl md:text-6xl">
+                        Tools I use
+                    </h2>
+                    <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-[var(--site-muted)] sm:text-base">
+                        Nothing exotic here
+                    </p>
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-4">
-                    <div>
-                        <ul className="list-none">
-                            <li className="flex items-center mb-2">
-                                <Image src="/assets/img/icons/php.png"
-                                       alt="Icon"
-                                       className="w-5 mr-2"
-                                       width={50}
-                                       height={50}
-                                />
-                                <span>PHP</span>
-                            </li>
-                            <li className="flex items-center mb-2">
-                                <Image src="/assets/img/icons/js.png"
-                                       alt="Icon"
-                                       className="w-5 mr-2"
-                                       width={50}
-                                       height={50}
-                                />
-                                <span>JS</span>
-                            </li>
-                            <li className="flex items-center mb-2">
-                                <Image src="/assets/img/icons/sql.png"
-                                       alt="Icon"
-                                       className="w-5 mr-2"
-                                       width={50}
-                                       height={50}
-                                />
-                                <span>SQL</span>
-                            </li>
-                            <li className="flex items-center mb-2">
-                                <Image src="/assets/img/icons/html.png"
-                                       alt="Icon"
-                                       className="w-5 mr-2"
-                                       width={50}
-                                       height={50}
-                                />
-                                <Image src="/assets/img/icons/css.png"
-                                       alt="Icon"
-                                       className="w-5 mr-2"
-                                       width={50}
-                                       height={50}
-                                />
-                                <span>HTML/CSS</span>
-                            </li>
-                            <li className="flex items-center mb-2">
-                                <Image src="/assets/img/icons/twig.png"
-                                       alt="Icon"
-                                       className="w-5 mr-2"
-                                       width={50}
-                                       height={50}
-                                />
-                                <span>TWiG</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div>
-                        <ul className=" list-none">
-                            <li className="flex items-center mb-2">
-                                <Image src="/assets/img/icons/opencart.png"
-                                       alt="Icon"
-                                       className="w-5 mr-2"
-                                       width={50}
-                                       height={50}
-                                />
-                                <span>Opencart</span>
-                            </li>
-                            <li className="flex items-center mb-2">
-                                <Image src="/assets/img/icons/symfony.png"
-                                       alt="Icon"
-                                       className="w-5 mr-2"
-                                       width={50}
-                                       height={50}
-                                />
-                                <span>Symfony</span>
-                            </li>
-                            <li className="flex items-center mb-2">
-                                <Image src="/assets/img/icons/doctrine.png"
-                                       alt="Icon"
-                                       className="w-5 mr-2"
+                <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+                    {groups.map((group, groupIndex) => (
+                        <motion.article
+                            key={group.title}
+                            className="rounded-3xl border border-[var(--site-border)] bg-[var(--site-card)] p-5"
+                            initial={{opacity: 0, scale: 0.96}}
+                            whileInView={{opacity: 1, scale: 1}}
+                            viewport={{once: true, margin: '-80px'}}
+                            transition={{duration: 0.55, delay: groupIndex * 0.08, ease: [0.22, 1, 0.36, 1]}}
+                        >
+                            <div className="mb-8">
+                                <h3 className="text-2xl font-bold tracking-[-0.04em]">{group.title}</h3>
+                                <p className="mt-2 min-h-12 text-sm leading-6 text-[var(--site-muted)]">{group.note}</p>
+                            </div>
 
-                                       width={50}
-                                       height={50}/>
-                                <span>Doctrine</span>
-                            </li>
-                            <li className="flex items-center mb-2">
-                                <Image src="/assets/img/icons/react.png"
-                                       alt="Icon"
-                                       className="w-5 mr-2"
-                                       width={50}
-                                       height={50}
-                                />
-                                <span>React</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div>
-                        <ul className="list-none">
-                            <li className="flex items-center mb-2">
-                                <Image src="/assets/img/icons/git.png"
-                                       alt="Icon"
-                                       className="w-5 mr-2"
-                                       width={50}
-                                       height={50}
-                                />
-                                <span>GIT</span>
-                            </li>
-                            <li className="flex items-center mb-2">
-                                <Image src="/assets/img/icons/docker.png"
-                                       alt="Icon"
-                                       className="w-5 mr-2"
-                                       width={50}
-                                       height={50}
-                                />
-                                Docker
-                            </li>
-                            <li className="flex items-center mb-2">
-                                <Image src="/assets/img/icons/nginx.png"
-                                       alt="Icon"
-                                       className="w-5 mr-2"
-                                       width={50}
-                                       height={50}
-                                />
-                                <span>Nginx</span>
-                            </li>
-                            <li className="flex items-center mb-2">
-                                <Image src="/assets/img/icons/composer.png"
-                                       alt="Icon"
-                                       className="w-5 mr-2"
-                                       width={50}
-                                       height={50}
-                                />
-                                <span>Composer / Npm</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div>
-                        <ul className="list-none">
-                            <li className="flex items-center mb-2">
-                                <Image src="/assets/img/icons/mariadb.png"
-                                       alt="Icon"
-                                       className="w-5 mr-2"
-
-                                       width={50}
-                                       height={50}/>
-                                <span>Mysql/Mariadb</span>
-                            </li>
-                            <li className="flex items-center mb-2">
-                                <Image src="/assets/img/icons/postgresql.png"
-                                       alt="Icon"
-                                       className="w-5 mr-2"
-
-                                       width={50}
-                                       height={50}/>
-                                <span>Postgresql</span>
-                            </li>
-                            <li className="flex items-center mb-2">
-                                <Image src="/assets/img/icons/redis.png"
-                                       alt="Icon"
-                                       className="w-5 mr-2"
-                                       width={50}
-                                       height={50}
-                                />
-                                <span>Redis</span>
-                            </li>
-                            {/*<li className="flex items-center mb-2">*/}
-                            {/*    <Image src="/assets/img/icons/mongodb.png"*/}
-                            {/*           alt="Icon"*/}
-                            {/*           className="w-5 mr-2"*/}
-
-                            {/*           width={50}*/}
-                            {/*           height={50}/>*/}
-                            {/*    <span>Mongodb</span>*/}
-                            {/*</li>*/}
-                        </ul>
-                    </div>
+                            <div className="space-y-2">
+                                {group.tools.map((tool) => (
+                                    <div
+                                        key={tool.name}
+                                        className="group flex items-center justify-between rounded-2xl border border-[var(--site-border)] bg-[var(--site-panel)] px-3 py-3 transition-colors hover:border-[var(--site-accent)]"
+                                    >
+                                        <div className="flex items-center gap-3">
+                                            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[var(--site-bg)] text-[var(--site-text)]">
+                                                <ToolIcon tool={tool} />
+                                            </span>
+                                            <span className="text-sm font-medium text-[var(--site-muted)] group-hover:text-[var(--site-text)]">
+                                                {tool.name}
+                                            </span>
+                                        </div>
+                                        <span className="h-1.5 w-1.5 rounded-full bg-[var(--site-accent)] opacity-45" />
+                                    </div>
+                                ))}
+                            </div>
+                        </motion.article>
+                    ))}
                 </div>
             </div>
         </section>

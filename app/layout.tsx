@@ -1,9 +1,8 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
+import 'devicon/devicon.min.css';
 import {Menu} from '@/components/layout/Menu';
+import {Providers} from '@/components/Providers';
 import { Metadata } from 'next';
-
-const inter = Inter({ subsets: ['latin'] })
 
 const title = 'Anthony Pekhov - Software Developer';
 const description = 'Hello, it\'s Anthony. 👋 I\'m a software developer with a focus on backend development. I usually use PHP (OpenCart, Symfony) and do a bit of frontend work in JS (React).';
@@ -46,9 +45,18 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" data-lt-installed="true" suppressHydrationWarning>
-    <body className={inter.className}>
-    <Menu />
-    {children}
+    <body className="min-h-screen bg-[var(--site-bg)] text-[var(--site-text)] antialiased">
+    <script
+      dangerouslySetInnerHTML={{
+        __html: `(function(){try{var t=localStorage.getItem('theme');var d=(t==='light'||t==='dark')?t:(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.dataset.theme=d;if(d==='dark'){document.documentElement.classList.add('dark')}else{document.documentElement.classList.remove('dark')}var l=localStorage.getItem('locale');if(l==='en'||l==='ru'||l==='uk'){document.documentElement.lang=l}}catch(e){}})();`,
+      }}
+    />
+    <Providers>
+      <Menu />
+      <div className="pb-20 lg:pb-0">
+        {children}
+      </div>
+    </Providers>
     <link rel="apple-touch-icon" href="/assets/img/og-card.png"/>
     <link rel="shortcut" href="/assets/img/og-card.png"/>
     <link rel="msapplication-TileImage" href="/assets/img/og-card.png"/>

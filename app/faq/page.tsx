@@ -2,31 +2,29 @@
 
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { ChevronDown } from "lucide-react"
-import {Footer} from "@/components/layout/Footer";
+import { Plus } from "lucide-react"
+import { Footer } from "@/components/layout/Footer"
 
-export default function Home() {
-    const [openIndex, setOpenIndex] = useState<number | null>(null)
+export default function FAQPage() {
+    const [openIndex, setOpenIndex] = useState<string | null>("0-0")
 
     const accordionData = [
         {
             category: "Interview Process",
-            icon: "📅",
             questions: [
                 {
                     question: "What is your preferred process for scheduling an interview?",
                     answer:
-                        "To ensure we both have a smooth and productive conversation, I strongly prefer scheduling calls via a calendar 📅 invite. This way, the meeting is automatically added to both of our calendars with a reminder. When you send the invite, kindly include the meeting link in the description or email body. Thank you!",
+                        "A calendar invite works best for me, it helps both of us keep track of the meeting and avoid confusion. If possible, please include the meeting link in the invite description or email body. Thank you!",
                 },
             ],
         },
         {
             category: "Work Preferences",
-            icon: "💼",
             questions: [
                 {
-                    question: "What work formats are you considering? (Office, hybrid, remote)",
-                    answer: "I'm currently looking for remote positions only.",
+                    question: "What work format works best for you right now?",
+                    answer: "Given my current circumstances, I'm considering remote positions only. I hope this will change in the future.",
                 },
                 {
                     question: "What is your stance on overtime work?",
@@ -38,23 +36,32 @@ export default function Home() {
                     answer:
                         "The technology stack and interesting challenges are important, but I also prioritize professional growth opportunities, work-life balance, and a positive team culture. Having motivated colleagues and meaningful projects significantly impacts my job satisfaction.",
                 },
+                {
+                    question: "What is your time zone and working hours overlap?",
+                    answer:
+                        "My time zone is UTC+2. I'm flexible with working hours and can adjust my schedule for reasonable overlap with the team when needed.",
+                },
+                {
+                    question: "What are your salary/rate expectations?",
+                    answer:
+                        "It depends on the role, project, and responsibilities. I'm happy to discuss expectations after learning more details.",
+                },
             ],
         },
         {
             category: "Technical Skills",
-            icon: "⚙️",
             questions: [
                 {
                     question: "What is your policy on technical assignments?",
                     answer:
-                        "I consider them a valid assessment tool when they are well-scoped. I expect a clear problem statement, defined requirements, and an understanding that evaluation will be based on my approach and solution quality, not on familiarity with company-specific practices.\n" +
+                        "I'm fine with technical assignments when they are well-scoped and meaningful. A good task has a clear problem statement, defined requirements, a reasonable time limit, and doesn't look like unpaid work for a real product.\n" +
                         "\n" +
-                        "I do not complete overly broad, abstract tasks or work that constitutes free development for a commercial project.",
+                        "I prefer assignments where the evaluation focuses on my approach and solution quality, not on familiarity with company-specific internals. I avoid overly broad or abstract tasks that effectively amount to free development.",
                 },
                 {
                     question: "What areas of development interest you most right now?",
                     answer:
-                        "I position myself as a Software Developer with a backend focus. My primary programming language is PHP, and I specialize in Symfony framework. However, identifying as a Software Developer rather than being framework-specific gives me flexibility to adapt to different project needs and technologies.",
+                        "I'm most interested in backend development: building APIs, integrations, data flows, and reliable product features. I enjoy working with familiar tools, but I'm also comfortable adapting to different stacks when the project needs it.",
                 },
                 {
                     question: "Are there any technologies you prefer to avoid?",
@@ -64,18 +71,17 @@ export default function Home() {
                 {
                     question: "What is your development environment?",
                     answer:
-                        "I currently work on macOS 💻 with an M1 processor and 16GB RAM, which provides excellent performance for my development needs.",
+                        "I currently work on macOS with an M1 processor and 16GB RAM, which provides excellent performance for my development needs.",
                 },
             ],
         },
         {
             category: "Growth & Learning",
-            icon: "📚",
             questions: [
                 {
                     question: "What are your learning goals and career direction?",
                     answer:
-                        "I'm currently focused on deepening my Symfony expertise while expanding into Go and Rust through personal projects. This dual approach allows me to strengthen my core backend skills while gaining fresh perspectives from other languages. I'm particularly interested in exploring PHP-Go integrations and remain open to working with different technologies that solve real business problems.",
+                        "I'm focused on deepening my backend expertise while exploring Go and Rust through personal projects. This helps me strengthen my core skills and get fresh perspectives from other languages. I'm especially interested in practical integrations and solving real business problems with the right tools.",
                 },
                 {
                     question: "How do you continuously improve your skills?",
@@ -86,7 +92,6 @@ export default function Home() {
         },
         {
             category: "Team & Culture",
-            icon: "👥",
             questions: [
                 {
                     question: "What team environment brings out your best work?",
@@ -102,28 +107,26 @@ export default function Home() {
         },
         {
             category: "Personal",
-            icon: "🙋",
             questions: [
                 {
                     question: "What would you consider your weaknesses?",
                     answer:
-                        "I tend to overuse emojis in casual written communication 😄. I'm also continuously working on improving my English speaking fluency to better express complex technical concepts.",
+                        "I can sometimes spend too much time polishing a solution when a simpler version would already solve the problem. I'm working on balancing quality with pragmatism by defining scope earlier and validating the approach before going too deep.",
                 },
                 {
                     question: "What is your English proficiency level?",
                     answer:
-                        "I'm comfortable with written communication and technical documentation. While I can handle professional conversations, I'm actively working to improve my spoken fluency to express complex ideas more effortlessly. 💂",
+                        "I'm comfortable reading documentation, writing in chat, and handling simple work calls like dailies (what I did, what I'm doing, what I'll do next). I can also work with technical documentation in English. Spoken fluency is still something I'm actively improving, especially for more complex discussions.",
                 },
             ],
         },
         {
             category: "Background",
-            icon: "🎓",
             questions: [
                 {
                     question: "How did you start your programming journey?",
                     answer:
-                        "My programming journey began in school when a teacher asked me to create a website for a competition. Despite initial setbacks, building that first website with HTML and CSS sparked my interest in development. The following year, I won second place in a regional competition, which motivated me to continue learning. My teacher then recommended PHP and JavaScript, and through university, I explored various languages while primarily focusing on PHP.",
+                        "It started in school when a teacher asked me to create a website for a competition. The first attempt wasn't easy, but building that site with HTML and CSS got me genuinely interested in development.\n\nThe next year I won second place in a regional competition, which gave me a strong push to keep learning. My teacher suggested PHP and JavaScript, and later at university I explored different languages while mostly focusing on PHP.",
                 },
                 {
                     question: "What is your educational background?",
@@ -135,103 +138,94 @@ export default function Home() {
     ]
 
     return (
-        <main className="min-h-screen bg-gradient-to-br from-gray-50 via-stone-50 to-gray-100">
-            <div className="container mx-auto px-4 py-16 md:py-24">
-                {/* Header Section */}
+        <main className="min-h-screen bg-[var(--site-bg)] text-[var(--site-text)]">
+            <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                    className="text-center mb-16 max-w-3xl mx-auto"
+                    transition={{ duration: 0.55 }}
+                    className="mb-14 max-w-3xl"
                 >
-                    <h1 className="text-5xl md:text-6xl font-bold mb-6 text-black">Frequently Asked Questions</h1>
-                    <p className="text-lg md:text-xl text-black/60 leading-relaxed font-light">
-                        To save you time ⏳ on typical questions, I collected them for you and answered them honestly and
-                        comprehensively.
+                    <h1 className="text-4xl font-bold leading-[0.95] tracking-[-0.05em] sm:text-5xl md:text-6xl">
+                        Questions, answered plainly.
+                    </h1>
+                    <p className="mt-5 max-w-2xl text-sm leading-7 text-[var(--site-muted)] sm:text-base">
+                        A few things people usually ask before an interview or collaboration.
                     </p>
                 </motion.div>
 
-                {/* Categories Grid */}
-                <div className="grid gap-6 md:gap-8 max-w-5xl mx-auto">
+                <div className="space-y-12">
                     {accordionData.map((category, categoryIndex) => (
-                        <motion.div
-                            key={categoryIndex}
-                            initial={{ opacity: 0, y: 20 }}
+                        <motion.section
+                            key={category.category}
+                            initial={{ opacity: 0, y: 18 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.4, delay: categoryIndex * 0.1 }}
+                            transition={{ duration: 0.45, delay: categoryIndex * 0.04 }}
+                            className="grid gap-4 border-t border-[var(--site-border)] pt-8 md:grid-cols-[220px_minmax(0,1fr)] md:gap-10"
                         >
-                            <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-6 md:p-8 border border-black/5">
-                                <div className="flex items-center gap-3 mb-6">
-                                    <span className="text-3xl">{category.icon}</span>
-                                    <h2 className="text-2xl md:text-3xl font-bold text-black">{category.category}</h2>
-                                </div>
-
-                                <div className="space-y-4">
-                                    {category.questions.map((item, qIndex) => {
-                                        const globalIndex = categoryIndex * 100 + qIndex
-                                        const isOpen = openIndex === globalIndex
-
-                                        return (
-                                            <motion.div
-                                                key={qIndex}
-                                                layout
-                                                className="border border-black/10 rounded-xl overflow-hidden bg-white hover:shadow-lg transition-shadow duration-300"
-                                            >
-                                                <button
-                                                    onClick={() => setOpenIndex(isOpen ? null : globalIndex)}
-                                                    className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-black/5 transition-colors duration-200 group"
-                                                >
-                          <span className="font-semibold text-black pr-4 leading-relaxed group-hover:text-black/70 transition-colors">
-                            {item.question}
-                          </span>
-                                                    <motion.div
-                                                        animate={{ rotate: isOpen ? 180 : 0 }}
-                                                        transition={{ duration: 0.3 }}
-                                                        className="flex-shrink-0"
-                                                    >
-                                                        <ChevronDown className="w-5 h-5 text-black/50" />
-                                                    </motion.div>
-                                                </button>
-
-                                                <AnimatePresence>
-                                                    {isOpen && (
-                                                        <motion.div
-                                                            initial={{ height: 0, opacity: 0 }}
-                                                            animate={{ height: "auto", opacity: 1 }}
-                                                            exit={{ height: 0, opacity: 0 }}
-                                                            transition={{ duration: 0.3 }}
-                                                        >
-                                                            <div className="px-6 pb-5 pt-2">
-                                                                <div className="w-12 h-1 bg-black/20 rounded-full mb-4"></div>
-                                                                <p className="text-black/70 leading-relaxed font-light">{item.answer}</p>
-                                                            </div>
-                                                        </motion.div>
-                                                    )}
-                                                </AnimatePresence>
-                                            </motion.div>
-                                        )
-                                    })}
-                                </div>
+                            <div>
+                                <p className="text-sm font-semibold tracking-[-0.01em] text-[var(--site-text)]">{category.category}</p>
+                                <p className="mt-1 text-sm text-[var(--site-muted)]">
+                                    {category.questions.length} {category.questions.length === 1 ? "question" : "questions"}
+                                </p>
                             </div>
-                        </motion.div>
+
+                            <div className="divide-y divide-[var(--site-border)] border-y border-[var(--site-border)]">
+                                {category.questions.map((item, qIndex) => {
+                                    const id = `${categoryIndex}-${qIndex}`
+                                    const isOpen = openIndex === id
+
+                                    return (
+                                        <div key={id}>
+                                            <button
+                                                type="button"
+                                                onClick={() => setOpenIndex(isOpen ? null : id)}
+                                                className="flex w-full items-start justify-between gap-6 py-5 text-left"
+                                                aria-expanded={isOpen}
+                                            >
+                                                <span className="text-base font-medium leading-7 text-[var(--site-text)] sm:text-lg">
+                                                    {item.question}
+                                                </span>
+                                                <span
+                                                    className={`mt-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-[var(--site-border)] text-[var(--site-muted)] transition-transform duration-200 ${isOpen ? "rotate-45" : ""}`}
+                                                >
+                                                    <Plus className="h-4 w-4" aria-hidden="true" />
+                                                </span>
+                                            </button>
+
+                                            <AnimatePresence initial={false}>
+                                                {isOpen && (
+                                                    <motion.div
+                                                        initial={{ height: 0, opacity: 0 }}
+                                                        animate={{ height: "auto", opacity: 1 }}
+                                                        exit={{ height: 0, opacity: 0 }}
+                                                        transition={{ duration: 0.22 }}
+                                                        className="overflow-hidden"
+                                                    >
+                                                        <p className="max-w-3xl pb-6 text-sm leading-7 text-[var(--site-muted)] sm:text-base whitespace-pre-line">
+                                                            {item.answer}
+                                                        </p>
+                                                    </motion.div>
+                                                )}
+                                            </AnimatePresence>
+                                        </div>
+                                    )
+                                })}
+                            </div>
+                        </motion.section>
                     ))}
                 </div>
 
-                {/* Footer Call-to-Action */}
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 0.8 }}
-                    className="text-center mt-16 max-w-2xl mx-auto"
+                    transition={{ delay: 0.3 }}
+                    className="mt-14 border-t border-[var(--site-border)] pt-8"
                 >
-                    <div className="bg-white/50 border border-black/5 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
-                        <h3 className="text-2xl md:text-3xl font-bold text-black mb-4">Still have questions?</h3>
-                        <p className="text-black/60 mb-6 leading-relaxed font-light">
-                            Feel free to reach out! I&apos;m always happy to discuss opportunities and answer any additional questions you
-                            might have.
-                        </p>
-                        <div className="text-4xl">💬</div>
-                    </div>
+                    <p className="text-base font-medium text-[var(--site-text)]">Still have a question?</p>
+                    <p className="mt-2 max-w-2xl text-sm leading-7 text-[var(--site-muted)] sm:text-base">
+                        Send me a message — I&apos;m happy to clarify anything about my experience, process, or availability.
+                    </p>
                 </motion.div>
             </div>
             <Footer />

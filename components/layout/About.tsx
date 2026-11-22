@@ -1,251 +1,80 @@
 'use client'
 
-import React, { useRef, useState } from "react";
-import { motion } from "framer-motion";
-import { twMerge } from "tailwind-merge";
-
-import Link from 'next/link'
-import {DownloadCv} from "components/sections/cv/DownloadCv";
-import Autoplay from "embla-carousel-autoplay"
-
-import {Card, CardContent} from "@/components/ui/card"
-import {
-    Carousel,
-    CarouselContent,
-    CarouselItem,
-    CarouselNext,
-    CarouselPrevious,
-} from "@/components/ui/carousel"
-import Image from "next/image";
-import {FlipWords} from "@/components/ui/flip-words";
-
-export function FlipWordsDescription() {
-    const words = ["PHP", "Backend", "Symfony", "eCommerce"];
-
-    return (
-        <div className="h-[10rem] flex justify-center items-center px-4">
-            <div
-                className="
-      text-5xl font-sans text-neutral-600 dark:text-neutral-400
-      text-center mx-auto
-      max-w-[95%]                         // страховка от переполнения
-      max-[550px]:text-4xl
-      max-[550px]:leading-[1.1]           // чуть плотнее строки
-    "
-            >
-                <FlipWords words={words} /> <br />
-                <span className="pl-2">Software Developer</span>
-            </div>
-        </div>
-    );
-}
+import Image from 'next/image'
+import {motion} from 'framer-motion'
 
 const About = () => {
-    const fastContacts = [
-        {
-            name: "LinkedIn",
-            url: "https://www.linkedin.com/in/anton-pekhov",
-            targetBlank: true,
-            icon: ''
-        },
-        {
-            name: "Telegram",
-            url: "https://t.me/anthony_1654",
-            targetBlank: true,
-            icon: ''
-        },
-        {
-            name: "Email",
-            url: "pehovanton21@gmail.com",
-            targetBlank: false,
-            icon: ''
-        },
-        {
-            name: "GitHub",
-            url: "https://github.com/Pekhov14",
-            targetBlank: true,
-            icon: ''
-        },
-    ];
-
-    const plugin = React.useRef(
-        Autoplay({delay: 2000, stopOnInteraction: true})
-    )
-
-    const CarouselImages = [
-        {
-            src: "/assets/img/pekhov_anton_php_developer.jpeg"
-        },
-        {
-            src: "/assets/img/1.jpeg"
-        },
-        {
-            src: "/assets/img/2.jpeg"
-        },
-    ];
-
     return (
-        <section className="content">
-            <div className="content__sides">
-                <div className="content__text z-50">
-                    <h2>{FlipWordsDescription()}</h2>
-                    <span
-                        className="
-                        text-center mx-auto font-sans text-neutral-400 dark:text-neutral-300
-                        pt-4 pb-4
-                        xs:pt-3 xs:pb-3
-                        max-[550px]:pt-6
-                        max-[550px]:pb-6
-                      "
-                                        >
-                      Experienced in opencart & symfony
-                    </span>
+        <section id="about" className="relative overflow-hidden bg-[var(--site-bg)] px-4 py-20 text-[var(--site-text)] sm:px-6 lg:px-8">
+            <div className="ap-grid pointer-events-none absolute inset-0 opacity-[0.12]" />
 
-                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
-                        {fastContacts.map((contact, i) => (
-                            <li
-                                key={i}
-                                className="
-                                row-span-1 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-black  border justify-between flex flex-col space-y-4
-
-                                font-light bg-gray-50 dark:bg-gray-800/40 hover:bg-gray-100 dark:hover:bg-gray-700/50
-                 px-4 py-2.5 border-gray-200/60 dark:border-gray-700/50"
-                            >
-                                {contact.targetBlank ?
-                                    <Link
-                                        href={contact.url}
-                                        className="hover:underline hover:text-blue-600 dark:hover:text-blue-400 block"
-                                        target="_blank"
-                                    >
-                                        {contact.name}
-                                    </Link>
-                                    : contact.name + ': ' + contact.url
-                                }
-                            </li>
-                        ))}
-                    </ul>
-
-                    <div className="text-center-1">
-                        <DownloadCv/>
-                    </div>
-                </div>
-
-                <DragCards/>
-
-                <Carousel
-                    opts={{
-                        align: "start",
-                        loop: true,
-                    }}
-                    plugins={[plugin.current]}
-                    className="w-full max-w-xs mx-auto block lg:hidden"
-                    onMouseEnter={plugin.current.stop}
-                    onMouseLeave={plugin.current.reset}
+            <div className="relative mx-auto max-w-7xl">
+                <motion.div
+                    initial={{opacity: 0, y: 20}}
+                    whileInView={{opacity: 1, y: 0}}
+                    viewport={{once: true, margin: '-100px'}}
+                    transition={{duration: 0.6, ease: [0.16, 1, 0.3, 1]}}
+                    className="mb-10"
                 >
-                    <CarouselContent>
-                        {CarouselImages.map((image, index) => (
-                            <CarouselItem key={index}>
-                                <Card>
-                                    <CardContent className="flex aspect-square items-center justify-center p-2">
-                                        <Image
-                                            src={image.src}
-                                            width="300"
-                                            height="300"
-                                            alt='Anton'
-                                        />
-                                    </CardContent>
-                                </Card>
-                            </CarouselItem>
-                        ))}
-                    </CarouselContent>
-                    <CarouselPrevious/>
-                    <CarouselNext/>
-                </Carousel>
+                    <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-[var(--site-muted)]">About</p>
+                    <h2 className="max-w-4xl text-4xl font-bold leading-[0.95] tracking-[-0.05em] sm:text-5xl md:text-6xl">
+                        Who is Anthony?
+                    </h2>
+                </motion.div>
 
+                <div className="grid gap-5 lg:grid-cols-[1.05fr_0.95fr] lg:items-stretch">
+                    <motion.div
+                        initial={{opacity: 0, y: 22}}
+                        whileInView={{opacity: 1, y: 0}}
+                        viewport={{once: true, margin: '-100px'}}
+                        transition={{duration: 0.65, ease: [0.16, 1, 0.3, 1]}}
+                        className="relative overflow-hidden rounded-[2rem] border border-[var(--site-border)] bg-[var(--site-panel)] p-7 sm:p-9 lg:p-10 shadow-sm"
+                    >
+                        <p className="max-w-2xl text-lg leading-8 text-[var(--site-text)] sm:text-xl sm:leading-9">
+                            I&apos;m a software developer focused mostly on backend work. I build practical products, integrations,
+                            and systems that feel simple on the outside.
+                        </p>
+
+                        <div className="mt-8 space-y-4 text-sm leading-7 text-[var(--site-muted)] sm:text-base">
+                            <p>
+                                I usually work with PHP, Symfony, and OpenCart, with some React when the interface needs it.
+                                My day-to-day includes backend features, eCommerce flows, admin tools, integrations, and analytics data flows.
+                            </p>
+                            <p>
+                                Sometimes I also work with other frameworks like Laravel or Yii, and languages like Go.
+                                I like taking messy parts of a product and making them clearer, faster, and easier to maintain.
+                            </p>
+                        </div>
+                    </motion.div>
+
+                    <motion.div
+                        initial={{opacity: 0, y: 22}}
+                        whileInView={{opacity: 1, y: 0}}
+                        viewport={{once: true, margin: '-100px'}}
+                        transition={{duration: 0.65, delay: 0.08, ease: [0.16, 1, 0.3, 1]}}
+                        className="flex min-h-[360px] flex-col overflow-hidden rounded-[2rem] border border-[var(--site-border)] bg-[var(--site-panel)] shadow-sm sm:min-h-[440px] lg:min-h-full"
+                    >
+                        <div className="flex items-center gap-2 border-b border-[var(--site-border)] bg-[var(--site-card)]/70 px-5 py-4">
+                            <span className="h-3 w-3 rounded-full bg-[#ff5f57]" />
+                            <span className="h-3 w-3 rounded-full bg-[#febc2e]" />
+                            <span className="h-3 w-3 rounded-full bg-[#28c840]" />
+                            <span className="ml-3 text-xs font-medium tracking-[0.08em] text-[var(--site-muted)]">anthony.jpeg</span>
+                        </div>
+
+                        <div className="relative flex-1 min-h-[320px] p-4 sm:min-h-[400px] sm:p-6">
+                            <Image
+                                src="/assets/img/1.jpeg"
+                                alt="Anthony Pekhov photo"
+                                fill
+                                sizes="(max-width: 1024px) 100vw, 45vw"
+                                className="object-contain object-center"
+                            />
+                        </div>
+                    </motion.div>
+                </div>
             </div>
         </section>
     )
 }
-
-const DragCards = () => {
-    const containerRef = useRef(null);
-
-    return (
-        <div className="absolute inset-0 z-10 hidden lg:block" ref={containerRef}>
-            <DragCard
-                containerRef={containerRef}
-                src="/assets/img/pekhov_anton_php_developer.jpeg"
-                alt="Example image"
-                rotate="6deg"
-                top="0%"
-                left="55%"
-                className="w-36 md:w-56"
-            />
-            <DragCard
-                containerRef={containerRef}
-                src=" /assets/img/2.jpeg"
-                alt="Example image"
-                rotate="12deg"
-                top="45%"
-                left="60%"
-                className="w-24 md:w-48"
-            />
-            <DragCard
-                containerRef={containerRef}
-                src="/assets/img/1.jpeg"
-                alt="Example image"
-                rotate="-6deg"
-                top="20%"
-                left="75%"
-                className="w-52 md:w-80"
-            />
-        </div>
-    );
-};
-
-const DragCard = ({containerRef, src, alt, top, left, rotate, className}) => {
-    const [zIndex, setZIndex] = useState(0);
-
-    const updateZIndex = () => {
-        const els = document.querySelectorAll(".drag-elements");
-
-        let maxZIndex = -Infinity;
-
-        els.forEach((el) => {
-            let zIndex = parseInt(
-                window.getComputedStyle(el).getPropertyValue("z-index")
-            );
-
-            if (!isNaN(zIndex) && zIndex > maxZIndex) {
-                maxZIndex = zIndex;
-            }
-        });
-
-        setZIndex(maxZIndex + 1);
-    };
-
-    return (
-        <motion.img
-            onMouseDown={updateZIndex}
-            style={{
-                top,
-                left,
-                rotate,
-                zIndex,
-            }}
-            className={twMerge(
-                "drag-elements absolute w-48 bg-neutral-200 p-1 pb-4",
-                className
-            )}
-            src={src}
-            alt={alt}
-            drag
-            dragConstraints={containerRef}
-            // Uncomment below and remove dragElastic to remove movement after release
-            //   dragMomentum={false}
-            dragElastic={0.65}
-        />
-    );
-};
 
 export {About}

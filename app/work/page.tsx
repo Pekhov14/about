@@ -1,14 +1,13 @@
 "use client";
 
-import {Footer} from "@/components/layout/Footer";
-import {Spotlight} from "@/components/ui/spotlight-new";
+import { Footer } from "@/components/layout/Footer";
 import { motion } from "framer-motion";
 
 export default function Work() {
     const workData = [
         {
-            company: 'Small price (one time project)',
-            date: 'December 2024 - December 2025 (1 year)',
+            company: 'Small price (project)',
+            date: 'December 2024 - December 2025 (1 year + support)',
             positions: [
                 {
                     title: 'Full Stack Developer (Symfony + React)',
@@ -69,66 +68,62 @@ export default function Work() {
 
     return (
         <>
-            <div
-                className="h-[15rem] md:h-[40rem] w-full rounded-md flex md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden"
-            >
-                <Spotlight />
-                <div className="p-4 max-w-7xl mx-auto relative z-10  w-full pt-20 md:pt-0">
+            <main className="min-h-screen bg-[var(--site-bg)] text-[var(--site-text)] px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+                <div className="mx-auto max-w-5xl">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
-                        className="text-center mb-16 max-w-3xl mx-auto"
+                        className="mb-12"
                     >
-                        <h1 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
+                        <h1 className="text-4xl font-bold leading-[0.95] tracking-[-0.05em] sm:text-5xl md:text-6xl">
                             Work experience
                         </h1>
-                        <p className="mt-4 font-normal text-base text-neutral-300 max-w-lg text-center mx-auto">
+                        <p className="mt-4 max-w-2xl text-sm leading-7 text-[var(--site-muted)] sm:text-base">
                             Companies and web studios I have worked with
                         </p>
                     </motion.div>
-                </div>
-            </div>
 
-            <section className="content p-5">
-                <div className="content--center pb-20 max-w-2xl mx-auto">
-                    <ul className="space-y-6">
+                    <div className="space-y-6">
                         {workData.map((work, workIndex) => (
-                            <motion.div
+                            <motion.article
                                 key={workIndex}
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.9, delay: workIndex * 0.1 }}
+                                transition={{ duration: 0.5, delay: workIndex * 0.08 }}
+                                className="rounded-2xl border border-[var(--site-border)] bg-[var(--site-panel)] p-6 sm:p-8 shadow-sm"
                             >
-                            <li key={workIndex}
-                                className={`mb-4 ${workIndex !== workData.length - 1 ? 'pb-4 border-b' : ''}`}>
-                                <h2 className="text-2xl font-bold mb-2">{work.company}</h2>
-                                <div className="text-gray-600">
-                                    {work.date}
+                                <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+                                    <h2 className="text-2xl font-bold tracking-[-0.03em] text-[var(--site-text)]">{work.company}</h2>
+                                    <div className="text-sm text-[var(--site-muted)] sm:text-right sm:whitespace-nowrap">{work.date}</div>
                                 </div>
-                                <ul>
+
+                                <div className="mt-5 space-y-6">
                                     {work.positions.map((position, positionIndex) => (
-                                        <li key={positionIndex} className="mt-2">
-                                            <div className="font-semibold">{position.title}</div>
-                                            <div className="text-gray-600">{position.description}</div>
-                                            <div className="mt-2">
+                                        <div key={positionIndex}>
+                                            <div className="text-lg font-semibold text-[var(--site-text)]">{position.title}</div>
+                                            <p className="mt-3 whitespace-pre-line text-sm leading-7 text-[var(--site-muted)] sm:text-base">
+                                                {position.description}
+                                            </p>
+                                            <div className="mt-4 flex flex-wrap gap-2">
                                                 {position.technologies.map((tech, techIndex) => (
-                                                    <span key={techIndex}
-                                                          className="inline-block font-semibold mr-2 bg-black text-white rounded-full text-sm w-fit px-4 py-1 mb-4">
-                                            {tech}
-                                          </span>
+                                                    <span
+                                                        key={techIndex}
+                                                        className="inline-flex items-center rounded-full border border-[var(--site-border)] bg-[var(--site-card)] px-3 py-1 text-xs font-medium text-[var(--site-text)] sm:text-sm"
+                                                    >
+                                                        {tech}
+                                                    </span>
                                                 ))}
                                             </div>
-                                        </li>
+                                        </div>
                                     ))}
-                                </ul>
-                            </li>
-                            </motion.div>
+                                </div>
+                            </motion.article>
                         ))}
-                    </ul>
+                    </div>
                 </div>
-            </section>
-            <Footer/>
+            </main>
+            <Footer />
         </>
-);
+    );
 }

@@ -89,7 +89,7 @@ const myProjects = [
         description: "A small PHP library for representing elapsed time.",
     },
     {
-        id: 3,
+        id: 4,
         name: "elephant-php/otp",
         projectUrl: "https://packagist.org/packages/elephant-php/otp",
         links: [
@@ -102,162 +102,162 @@ const myProjects = [
                 href: "https://packagist.org/packages/elephant-php/otp",
             },
         ],
-        tags: ["code-generator", "otpone-time-password", "verification-code", "one-time-code", "random-code", "php"],
+        tags: ["code-generator", "otp", "php"],
         description: "A small PHP library for generating one-time passwords and random verification codes.",
     },
 ]
 
 // Функция для парсинга даты (обрабатывает разные форматы)
 function parseDate(dateString: string): Date {
-    // Заменяем возможные варианты разделителей и приводим к стандартному формату
     const normalizedDate = dateString
-        .replace(/(\w+) (\d+),? (\d+)/, '$1 $2, $3') // "Jun 29, 2024" -> "Jun 29, 2024"
-        .replace(/(\w+) (\d+) (\d+)/, '$1 $2, $3');  // "Oct 2 2025" -> "Oct 2, 2025"
+        .replace(/(\w+) (\d+),? (\d+)/, '$1 $2, $3')
+        .replace(/(\w+) (\d+) (\d+)/, '$1 $2, $3');
 
     return new Date(normalizedDate);
 }
 
-// Сортируем проекты по дате (от новых к старым)
 const sortedProjects = [...projects].sort((a, b) => {
     const dateA = parseDate(a.date);
     const dateB = parseDate(b.date);
-    return dateB.getTime() - dateA.getTime(); // Новые первыми
+    return dateB.getTime() - dateA.getTime();
 });
 
 export default function OpenSourcePage() {
     return (
         <>
-            <section className="flex flex-col items-center justify-center w-full min-h-screen px-4 py-16 bg-gradient-to-b from-background to-muted/20">
-            <div className="text-center mb-12 space-y-4 max-w-3xl">
-                <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-foreground via-foreground/80 to-foreground/60 bg-clip-text">
-                    Open Source Contributions
-                </h1>
-                <p className="text-muted-foreground text-lg md:text-xl">
-                    My journey in contributing to the open source community
-                </p>
-            </div>
+            <main className="min-h-screen bg-[var(--site-bg)] text-[var(--site-text)] px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+                <div className="mx-auto max-w-6xl">
+                    <div className="mb-12">
+                        <h1 className="text-4xl font-bold leading-[0.95] tracking-[-0.05em] sm:text-5xl md:text-6xl">
+                            Open Source Contributions
+                        </h1>
+                        <p className="mt-4 max-w-2xl text-sm leading-7 text-[var(--site-muted)] sm:text-base">
+                            My journey in contributing to the open source community
+                        </p>
+                    </div>
 
-            <div className="w-full max-w-6xl bg-card rounded-xl shadow-lg border border-border overflow-hidden">
-                <Table
-                    aria-label="Open source contributions table"
-                    classNames={{
-                        wrapper: "shadow-none",
-                        th: "bg-muted/50 text-foreground font-semibold",
-                        td: "py-4",
-                    }}
-                >
-                    <TableHeader columns={columns}>
-                        {(column) => <TableColumn key={column.uid}>{column.name}</TableColumn>}
-                    </TableHeader>
-                    <TableBody items={sortedProjects}>
-                        {(item) => (
-                            <TableRow key={item.id} className="hover:bg-muted/30 transition-colors">
-                                <TableCell className="font-medium">{item.project}</TableCell>
-                                <TableCell>
-                                    <a
-                                        href={item.link}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="text-primary hover:text-primary/80 underline underline-offset-4 transition-colors font-medium"
-                                    >
-                                        View PR
-                                    </a>
-                                </TableCell>
-                                <TableCell>
-                                    <Chip
-                                        color={statusColorMap[item.status.toLowerCase()]}
-                                        variant="flat"
-                                        startContent={statusIconMap[item.status.toLowerCase()]}
-                                        className="font-medium"
-                                        size="lg"
-                                    >
-                                        {item.status}
-                                    </Chip>
-                                </TableCell>
-                                <TableCell>
-                                    <div className="flex items-center gap-2 text-muted-foreground">
-                                        <Calendar className="w-4 h-4" />
-                                        {item.date}
+                    <div className="w-full rounded-2xl border border-[var(--site-border)] bg-[var(--site-panel)] shadow-sm overflow-hidden">
+                        <Table
+                            aria-label="Open source contributions table"
+                            removeWrapper
+                            classNames={{
+                                base: "overflow-x-auto",
+                                th: "bg-[var(--site-card)] text-[var(--site-text)] font-semibold border-b border-[var(--site-border)]",
+                                td: "py-4 text-[var(--site-text)] border-b border-[var(--site-border)]",
+                                tr: "hover:bg-[var(--site-card)]/50 transition-colors",
+                            }}
+                        >
+                            <TableHeader columns={columns}>
+                                {(column) => <TableColumn key={column.uid}>{column.name}</TableColumn>}
+                            </TableHeader>
+                            <TableBody items={sortedProjects}>
+                                {(item) => (
+                                    <TableRow key={item.id}>
+                                        <TableCell className="font-medium text-[var(--site-text)]">{item.project}</TableCell>
+                                        <TableCell>
+                                            <a
+                                                href={item.link}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="text-[var(--site-accent)] hover:opacity-80 underline underline-offset-4 transition-opacity font-medium"
+                                            >
+                                                View PR
+                                            </a>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Chip
+                                                color={statusColorMap[item.status.toLowerCase()]}
+                                                variant="flat"
+                                                startContent={statusIconMap[item.status.toLowerCase()]}
+                                                className="font-medium"
+                                                size="sm"
+                                            >
+                                                {item.status}
+                                            </Chip>
+                                        </TableCell>
+                                        <TableCell>
+                                            <div className="flex items-center gap-2 text-[var(--site-muted)] whitespace-nowrap">
+                                                <Calendar className="w-4 h-4" />
+                                                {item.date}
+                                            </div>
+                                        </TableCell>
+                                        <TableCell className="text-[var(--site-muted)] max-w-md min-w-[220px]">
+                                            {item.description}
+                                        </TableCell>
+                                    </TableRow>
+                                )}
+                            </TableBody>
+                        </Table>
+                    </div>
+
+                    <div className="mt-16 mb-8">
+                        <h2 className="text-3xl font-bold leading-[0.95] tracking-[-0.04em] sm:text-4xl text-[var(--site-text)]">
+                            Personal Projects
+                        </h2>
+                        <p className="mt-3 max-w-2xl text-sm leading-7 text-[var(--site-muted)] sm:text-base">
+                            A collection of open source packages and small tools I build and maintain.
+                        </p>
+                    </div>
+
+                    <div className="w-full grid gap-4 md:grid-cols-2">
+                        {myProjects.map((item) => (
+                            <Card
+                                key={`${item.name}-${item.id}`}
+                                className="border-[var(--site-border)] bg-[var(--site-panel)] shadow-sm transition-transform duration-200 hover:-translate-y-0.5"
+                            >
+                                <CardHeader className="space-y-3">
+                                    <CardTitle className="text-xl leading-snug text-[var(--site-text)]">
+                                        {item.projectUrl ? (
+                                            <a
+                                                href={item.projectUrl}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="inline-flex items-center gap-2 hover:text-[var(--site-accent)] transition-colors"
+                                            >
+                                                {item.name}
+                                                <ArrowUpRight className="h-4 w-4 shrink-0" />
+                                            </a>
+                                        ) : (
+                                            item.name
+                                        )}
+                                    </CardTitle>
+
+                                    <div className="flex flex-wrap gap-2">
+                                        {item.tags.map((tag) => (
+                                            <span key={tag} className="inline-flex items-center rounded-full border border-[var(--site-border)] bg-[var(--site-card)] px-2.5 py-1 text-xs font-medium text-[var(--site-text)] capitalize">
+                                                {tag}
+                                            </span>
+                                        ))}
                                     </div>
-                                </TableCell>
-                                <TableCell className="text-muted-foreground max-w-md">
-                                    {item.description}
-                                </TableCell>
-                            </TableRow>
-                        )}
-                    </TableBody>
-                </Table>
-            </div>
+                                </CardHeader>
 
-            <div className="text-center mt-16 mb-8 space-y-4 max-w-3xl">
-                <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-foreground via-foreground/80 to-foreground/60 bg-clip-text">
-                    Personal Projects
-                </h2>
-                <p className="text-muted-foreground text-lg">
-                    A collection of open source packages and small tools I build and maintain.
-                </p>
-            </div>
+                                <CardContent className="space-y-4">
+                                    <p className="text-sm leading-7 text-[var(--site-muted)]">
+                                        {item.description}
+                                    </p>
 
-            <div className="w-full max-w-5xl grid gap-6 md:grid-cols-2">
-                {myProjects.map((item) => (
-                    <Card
-                        key={item.id}
-                        className="border-border/70 bg-card/95 shadow-lg transition-transform duration-200 hover:-translate-y-1"
-                    >
-                        <CardHeader className="space-y-4">
-                            <div className="flex items-start justify-between gap-4">
-                                <CardTitle className="text-xl leading-snug">
-                                    {item.projectUrl ? (
-                                        <a
-                                            href={item.projectUrl}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="inline-flex items-center gap-2 text-foreground transition-colors hover:text-primary"
-                                        >
-                                            {item.name}
-                                            <ArrowUpRight className="h-4 w-4 shrink-0" />
-                                        </a>
-                                    ) : (
-                                        item.name
+                                    {item.links.length > 0 && (
+                                        <div className="flex flex-wrap gap-3">
+                                            {item.links.map((link) => (
+                                                <a
+                                                    key={link.href}
+                                                    href={link.href}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="inline-flex items-center gap-1.5 text-sm font-medium text-[var(--site-accent)] underline underline-offset-4 hover:opacity-80 transition-opacity"
+                                                >
+                                                    {link.label}
+                                                    <ArrowUpRight className="h-3.5 w-3.5" />
+                                                </a>
+                                            ))}
+                                        </div>
                                     )}
-                                </CardTitle>
-                            </div>
-
-                            <div className="flex flex-wrap gap-2">
-                                {item.tags.map((tag) => (
-                                    <Chip key={tag} size="sm" variant="flat" className="capitalize">
-                                        {tag}
-                                    </Chip>
-                                ))}
-                            </div>
-                        </CardHeader>
-
-                        <CardContent className="space-y-5">
-                            <p className="text-sm leading-6 text-muted-foreground">
-                                {item.description}
-                            </p>
-
-                            {item.links.length > 0 && (
-                                <div className="flex flex-wrap gap-3">
-                                    {item.links.map((link) => (
-                                        <a
-                                            key={link.href}
-                                            href={link.href}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="inline-flex items-center gap-1.5 text-sm font-medium text-primary underline underline-offset-4 transition-colors hover:text-primary/80"
-                                        >
-                                            {link.label}
-                                            <ArrowUpRight className="h-3.5 w-3.5" />
-                                        </a>
-                                    ))}
-                                </div>
-                            )}
-                        </CardContent>
-                    </Card>
-                ))}
-            </div>
-        </section>
+                                </CardContent>
+                            </Card>
+                        ))}
+                    </div>
+                </div>
+            </main>
             <Footer/>
         </>
     )
