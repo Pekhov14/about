@@ -23,7 +23,7 @@ const Menu = () => {
         {name: t.nav.resume, route: '/cv'},
         {name: t.nav.faq, route: '/faq'},
         {name: t.nav.openSource, route: '/open-source'},
-        {name: t.nav.posts, route: '/posts'},
+        // {name: t.nav.posts, route: '/posts'},
         {name: t.nav.contacts, route: '/#contacts'},
     ];
 
