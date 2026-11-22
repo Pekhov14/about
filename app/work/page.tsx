@@ -6,8 +6,8 @@ import { motion } from "framer-motion";
 export default function Work() {
     const workData = [
         {
-            company: 'Small price (one time project)',
-            date: 'December 2024 - December 2025 (1 year)',
+            company: 'Small price (project)',
+            date: 'December 2024 - December 2025 (1 year + support)',
             positions: [
                 {
                     title: 'Full Stack Developer (Symfony + React)',
@@ -76,7 +76,6 @@ export default function Work() {
                         transition={{ duration: 0.6 }}
                         className="mb-12"
                     >
-                        <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-[var(--site-muted)]">Experience</p>
                         <h1 className="text-4xl font-bold leading-[0.95] tracking-[-0.05em] sm:text-5xl md:text-6xl">
                             Work experience
                         </h1>

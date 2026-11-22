@@ -128,7 +128,6 @@ export default function OpenSourcePage() {
             <main className="min-h-screen bg-[var(--site-bg)] text-[var(--site-text)] px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
                 <div className="mx-auto max-w-6xl">
                     <div className="mb-12">
-                        <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-[var(--site-muted)]">Open source</p>
                         <h1 className="text-4xl font-bold leading-[0.95] tracking-[-0.05em] sm:text-5xl md:text-6xl">
                             Open Source Contributions
                         </h1>
@@ -192,7 +191,6 @@ export default function OpenSourcePage() {
                     </div>
 
                     <div className="mt-16 mb-8">
-                        <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-[var(--site-muted)]">Projects</p>
                         <h2 className="text-3xl font-bold leading-[0.95] tracking-[-0.04em] sm:text-4xl text-[var(--site-text)]">
                             Personal Projects
                         </h2>
