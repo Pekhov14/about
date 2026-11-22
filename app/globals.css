@@ -1,31 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Instrument+Serif:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Instrument+Serif:ital@0;1&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-    --black-background: #101010;
-    --on-background: #f2f2f2;
-    --font-display: 'Instrument Serif', serif;
-    --font-body: 'Almarai', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    --background: 0 0% 100%;
-    --foreground: 0 0% 4%;
-    --muted-foreground: 240 4% 46%;
-    --primary: 52 26% 83%;
-    --primary-foreground: 0 0% 4%;
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 4%;
-    --muted: 0 0% 96%;
-    --accent: 0 0% 96%;
-    --accent-foreground: 0 0% 4%;
-    --border: 52 26% 83%;
-    --input: 52 26% 83%;
-    --ring: 52 26% 83%;
-    --radius: 0.75rem;
-}
-
-.about-page {
+    /* Site theme tokens (light) */
     --site-bg: #f4f1e8;
     --site-panel: #fffaf0;
     --site-card: #eee7d8;
@@ -33,9 +13,31 @@
     --site-muted: rgba(21, 21, 21, 0.62);
     --site-border: rgba(21, 21, 21, 0.12);
     --site-accent: #4d3f2a;
+
+    /* Legacy aliases */
+    --black-background: #101010;
+    --on-background: #f2f2f2;
+    --font-display: 'Instrument Serif', serif;
+    --font-body: 'Almarai', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+    /* shadcn/ui compatible tokens */
+    --background: 42 33% 93%;
+    --foreground: 0 0% 8%;
+    --muted-foreground: 30 7% 40%;
+    --primary: 34 29% 23%;
+    --primary-foreground: 42 33% 93%;
+    --secondary: 40 45% 97%;
+    --secondary-foreground: 0 0% 8%;
+    --muted: 40 30% 89%;
+    --accent: 40 30% 89%;
+    --accent-foreground: 0 0% 8%;
+    --border: 30 18% 82%;
+    --input: 30 18% 82%;
+    --ring: 34 29% 23%;
+    --radius: 0.75rem;
 }
 
-.about-page[data-theme='dark'] {
+:root[data-theme='dark'] {
     --site-bg: #050504;
     --site-panel: #101010;
     --site-card: #171717;
@@ -43,13 +45,26 @@
     --site-muted: rgba(222, 219, 200, 0.62);
     --site-border: rgba(222, 219, 200, 0.12);
     --site-accent: #DEDBC8;
+
+    --background: 60 9% 2%;
+    --foreground: 57 27% 84%;
+    --muted-foreground: 57 14% 65%;
+    --primary: 57 27% 84%;
+    --primary-foreground: 60 9% 2%;
+    --secondary: 0 0% 6%;
+    --secondary-foreground: 57 27% 84%;
+    --muted: 0 0% 9%;
+    --accent: 0 0% 9%;
+    --accent-foreground: 57 27% 84%;
+    --border: 57 10% 18%;
+    --input: 57 10% 18%;
+    --ring: 57 27% 84%;
 }
 
 *,
 *::after,
 *::before {
     box-sizing: border-box;
-    font-family: 'Almarai', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
 }
 
 html {
@@ -58,6 +73,9 @@ html {
 
 body {
     font-family: var(--font-body);
+    background: var(--site-bg);
+    color: var(--site-text);
+    transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 .ap-noise {
@@ -68,8 +86,8 @@ body {
 
 .ap-grid {
     background-image:
-        linear-gradient(rgba(222, 219, 200, 0.06) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(222, 219, 200, 0.06) 1px, transparent 1px);
+        linear-gradient(var(--site-border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--site-border) 1px, transparent 1px);
     background-size: 64px 64px;
 }
 
@@ -434,32 +452,38 @@ img {
 }
 
 .border-b {
-    border-bottom-color: #000; /* Черный цвет */
+    border-bottom-color: var(--site-border);
 }
 
 /* TODO: Move to module css (https://nextjs.org/docs/app/building-your-application/styling/css-modules)*/
 /* Footer*/
 .section-footer {
-    background: var(--black-background);
-    color: white;
+    background: var(--site-panel);
+    color: var(--site-text);
+    border-top: 1px solid var(--site-border);
 }
 
 .text-footer-links-overline {
-    opacity: .5;
+    color: var(--site-muted);
     letter-spacing: 1.5px;
-    font-size: 9px;
-    font-weight: 500;
+    font-size: 11px;
+    font-weight: 700;
     line-height: 13px;
 }
 
 .footer-link {
-    grid-column-gap: 4px;
-    color: white;
+    gap: 4px;
+    color: var(--site-text);
     align-self: stretch;
     align-items: center;
     height: 40px;
     text-decoration: none;
     display: flex;
+    transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+    color: var(--site-accent);
 }
 
 .footer-bottom-left {

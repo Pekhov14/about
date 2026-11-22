@@ -2,52 +2,83 @@
 
 import Image from 'next/image'
 import {motion} from 'framer-motion'
+import {Braces, Database, ShoppingCart} from 'lucide-react'
 
-const groups = [
+type Tool = {
+    name: string
+    icon?: string
+    devicon?: string
+    lucide?: 'database' | 'braces' | 'shopping-cart'
+}
+
+const groups: {title: string; note: string; tools: Tool[]}[] = [
     {
         title: 'Languages',
         note: 'The basics I use most often.',
         tools: [
-            {name: 'PHP', icon: '/assets/img/icons/php.png'},
-            {name: 'JavaScript', icon: '/assets/img/icons/js.png'},
-            {name: 'SQL', icon: '/assets/img/icons/sql.png'},
-            {name: 'HTML / CSS', icon: '/assets/img/icons/html.png'},
-            {name: 'Twig', icon: '/assets/img/icons/twig.png'},
+            {name: 'PHP', devicon: 'devicon-php-plain colored'},
+            {name: 'JavaScript', devicon: 'devicon-javascript-plain colored'},
+            {name: 'SQL', lucide: 'database'},
+            {name: 'HTML / CSS / Twig', devicon: 'devicon-html5-plain colored'},
         ],
     },
     {
         title: 'Frameworks',
         note: 'Project structure, commerce, and UI work.',
         tools: [
-            {name: 'Symfony', icon: '/assets/img/icons/symfony.png'},
-            {name: 'OpenCart', icon: '/assets/img/icons/opencart.png'},
-            {name: 'Doctrine', icon: '/assets/img/icons/doctrine.png'},
-            {name: 'React', icon: '/assets/img/icons/react.png'},
+            {name: 'Symfony', devicon: 'devicon-symfony-original'},
+            {name: 'OpenCart', lucide: 'shopping-cart'},
+            {name: 'Doctrine', devicon: 'devicon-doctrine-plain colored'},
+            {name: 'React', devicon: 'devicon-react-original colored'},
         ],
     },
     {
         title: 'Infrastructure',
         note: 'Local setup, deployment, and server pieces.',
         tools: [
-            {name: 'Git', icon: '/assets/img/icons/git.png'},
-            {name: 'Docker', icon: '/assets/img/icons/docker.png'},
-            {name: 'Nginx', icon: '/assets/img/icons/nginx.png'},
-            {name: 'Composer / NPM', icon: '/assets/img/icons/composer.png'},
-            {name: 'CI/CD (Deployer / github actions)', icon: '/assets/img/icons/composer.png'},
-            {name: 'AWS (Lambda / S3)', icon: '/assets/img/icons/composer.png'},
+            {name: 'Git', devicon: 'devicon-git-plain colored'},
+            {name: 'Docker', devicon: 'devicon-docker-plain colored'},
+            {name: 'Nginx', devicon: 'devicon-nginx-original colored'},
+            {name: 'Composer / NPM', devicon: 'devicon-composer-line colored'},
+            {name: 'CI/CD (Deployer / Github actions)', devicon: 'devicon-githubactions-plain colored'},
+            {name: 'AWS (Lambda / S3)', devicon: 'devicon-amazonwebservices-plain-wordmark colored'},
         ],
     },
     {
         title: 'Data',
         note: 'Storage, queries, cache, and practical data fixes.',
         tools: [
-            {name: 'MySQL / MariaDB', icon: '/assets/img/icons/mariadb.png'},
-            {name: 'PostgreSQL', icon: '/assets/img/icons/postgresql.png'},
-            {name: 'Redis (cache / queue / lock)', icon: '/assets/img/icons/redis.png'},
-            {name: 'ElasticSearch', icon: '/assets/img/icons/redis.png'},
+            {name: 'MySQL / MariaDB', devicon: 'devicon-mariadb-original colored'},
+            {name: 'PostgreSQL', devicon: 'devicon-postgresql-plain colored'},
+            {name: 'Redis (cache / queue / lock)', devicon: 'devicon-redis-plain colored'},
+            {name: 'ElasticSearch', devicon: 'devicon-elasticsearch-plain colored'},
         ],
     },
 ]
+
+const ToolIcon = ({tool}: {tool: Tool}) => {
+    if (tool.devicon) {
+        return <i className={`${tool.devicon} text-[20px] leading-none`} aria-hidden="true" />
+    }
+
+    if (tool.lucide === 'database') {
+        return <Database className="h-5 w-5 text-[var(--site-muted)]" aria-hidden="true" />
+    }
+
+    if (tool.lucide === 'braces') {
+        return <Braces className="h-5 w-5 text-[var(--site-muted)]" aria-hidden="true" />
+    }
+
+    if (tool.lucide === 'shopping-cart') {
+        return <ShoppingCart className="h-5 w-5 text-[var(--site-muted)]" aria-hidden="true" />
+    }
+
+    if (tool.icon) {
+        return <Image src={tool.icon} alt="" width={28} height={28} className="h-5 w-5 object-contain" />
+    }
+
+    return null
+}
 
 const UsedTools = () => {
     return (
@@ -55,14 +86,11 @@ const UsedTools = () => {
             <div className="ap-noise pointer-events-none absolute inset-0 opacity-[0.1]" />
 
             <div className="relative mx-auto max-w-7xl">
-                <div className="mb-12 grid gap-5 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
-                    <div>
-                        {/*<p className="mb-4 text-xs font-bold uppercase tracking-[0.28em] text-[var(--site-muted)]">Toolbox</p>*/}
-                        <h2 className="text-4xl font-bold leading-[0.95] tracking-[-0.05em] sm:text-5xl md:text-6xl">
-                            Tools I use
-                        </h2>
-                    </div>
-                    <p className="max-w-2xl text-sm leading-7 text-[var(--site-muted)] sm:text-base lg:justify-self-end">
+                <div className="mb-12 text-center">
+                    <h2 className="text-4xl font-bold leading-[0.95] tracking-[-0.05em] sm:text-5xl md:text-6xl">
+                        Tools I use
+                    </h2>
+                    <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-[var(--site-muted)] sm:text-base">
                         Nothing exotic here
                     </p>
                 </div>
@@ -89,14 +117,8 @@ const UsedTools = () => {
                                         className="group flex items-center justify-between rounded-2xl border border-[var(--site-border)] bg-[var(--site-panel)] px-3 py-3 transition-colors hover:border-[var(--site-accent)]"
                                     >
                                         <div className="flex items-center gap-3">
-                                            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[var(--site-bg)]">
-                                                <Image
-                                                    src={tool.icon}
-                                                    alt=""
-                                                    width={28}
-                                                    height={28}
-                                                    className="h-5 w-5 object-contain"
-                                                />
+                                            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[var(--site-bg)] text-[var(--site-text)]">
+                                                <ToolIcon tool={tool} />
                                             </span>
                                             <span className="text-sm font-medium text-[var(--site-muted)] group-hover:text-[var(--site-text)]">
                                                 {tool.name}

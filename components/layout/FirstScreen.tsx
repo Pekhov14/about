@@ -1,20 +1,20 @@
 'use client'
 
 import {motion} from 'framer-motion'
-import {ArrowRight, Download, Github} from 'lucide-react'
+import {Download, Github} from 'lucide-react'
 import Image from 'next/image'
 
 const FirstScreen = () => {
     const tags = ['PHP', 'Symfony', 'OpenCart', 'React', 'SQL']
 
     return (
-        <section className="relative overflow-hidden bg-[var(--site-bg)] px-4 py-16 text-[var(--site-text)] sm:px-6 lg:px-8">
+        <section className="relative overflow-x-clip bg-[var(--site-bg)] px-4 pt-16 pb-24 text-[var(--site-text)] sm:px-6 sm:pb-28 lg:px-8 lg:pb-[1.6rem]">
             <div className="ap-noise pointer-events-none absolute inset-0 opacity-[0.1]" />
 
-            <div className="relative mx-auto grid min-h-[calc(100vh-96px)] max-w-7xl items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
-                <div>
+            <div className="relative mx-auto grid min-h-[calc(100svh-11rem)] max-w-7xl items-center gap-10 lg:min-h-[calc(100svh-7.5rem)] lg:grid-cols-[1.05fr_0.95fr]">
+                <div className="text-center lg:text-left">
                     <motion.div
-                        className="mb-7 flex flex-wrap gap-2"
+                        className="mb-7 flex flex-wrap justify-center gap-2 lg:justify-start"
                         initial={{opacity: 0, y: 16}}
                         animate={{opacity: 1, y: 0}}
                         transition={{duration: 0.55, ease: [0.16, 1, 0.3, 1]}}
@@ -38,37 +38,19 @@ const FirstScreen = () => {
                         Anthony Pekhov
                     </motion.h1>
 
-                    {/*<motion.p*/}
-                    {/*    className="mt-7 max-w-2xl text-base leading-7 text-[var(--site-muted)] sm:text-lg"*/}
-                    {/*    initial={{opacity: 0, y: 18}}*/}
-                    {/*    animate={{opacity: 1, y: 0}}*/}
-                    {/*    transition={{duration: 0.65, delay: 0.22, ease: [0.16, 1, 0.3, 1]}}*/}
-                    {/*>*/}
-                    {/*    I build backend features, eCommerce flows, integrations, and admin tools. Most of my work is*/}
-                    {/*    PHP, Symfony and OpenCart, with some React when the interface needs it.*/}
-                    {/*</motion.p>*/}
-
                     <motion.div
-                        className="mt-9 flex flex-wrap gap-3"
+                        className="mt-9 flex flex-wrap justify-center gap-3 lg:justify-start"
                         initial={{opacity: 0, y: 18}}
                         animate={{opacity: 1, y: 0}}
                         transition={{duration: 0.65, delay: 0.3, ease: [0.16, 1, 0.3, 1]}}
                     >
                         <a
-                            href="/work"
-                            className="group inline-flex items-center gap-2 rounded-full bg-[var(--site-text)] py-1.5 pl-5 pr-1.5 text-sm font-bold text-[var(--site-bg)] transition-[gap] duration-300 hover:gap-3 sm:text-base"
-                        >
-                            View work
-                            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[var(--site-bg)] text-[var(--site-text)]">
-                                <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                            </span>
-                        </a>
-                        <a
                             href="/assets/cv/cv_anton_pekhov_backend_developer.pdf"
+                            download
                             className="inline-flex items-center gap-2 rounded-full border border-[var(--site-border)] px-5 py-3 text-sm font-bold text-[var(--site-text)] transition-colors hover:bg-[var(--site-panel)]"
                         >
                             <Download className="h-4 w-4" aria-hidden="true" />
-                            CV
+                            Download CV
                         </a>
                         <a
                             href="https://github.com/Pekhov14"
@@ -82,58 +64,29 @@ const FirstScreen = () => {
                     </motion.div>
                 </div>
 
-                {/*<motion.div*/}
-                {/*    className="relative flex min-h-[440px] items-center justify-center rounded-[2rem] border border-[var(--site-border)] bg-[var(--site-panel)] p-8 shadow-2xl shadow-black/10 "*/}
-                {/*    initial={{opacity: 0, scale: 0.97}}*/}
-                {/*    animate={{opacity: 1, scale: 1}}*/}
-                {/*    transition={{duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1]}}*/}
-                {/*>*/}
-                {/*    <div className="flex items-center justify-center">*/}
-                {/*        <Image*/}
-                {/*            src="/assets/img/face.jpeg"*/}
-                {/*            alt="Anthony Pekhov"*/}
-                {/*            width={400}*/}
-                {/*            height={400}*/}
-                {/*            className="rounded-full"*/}
-                {/*            priority*/}
-                {/*        />*/}
-                {/*    </div>*/}
-                {/*</motion.div>*/}
-
-
                 <motion.div
-                    className="relative flex min-h-[440px] flex-col rounded-[1.5rem] border border-[var(--site-border)] bg-[var(--site-panel)] shadow-2xl shadow-black/10 overflow-hidden"
-                    initial={{opacity: 0, scale: 0.97}}
-                    animate={{opacity: 1, scale: 1}}
+                    className="relative mx-auto hidden w-full max-w-[34rem] lg:block lg:max-w-none"
+                    initial={{opacity: 0, scale: 0.97, y: 12}}
+                    animate={{opacity: 1, scale: 1, y: 0}}
                     transition={{duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1]}}
                 >
-                    {/* Панель с тремя точками как у MacOS */}
-                    <div className="flex items-center gap-2 border-b border-[var(--site-border)] px-5 py-3 bg-[var(--site-bg)]/50">
-                        <div className="flex gap-1.5">
-                            <div className="h-3 w-3 rounded-full bg-red-500/80 hover:bg-red-500 transition-colors" />
-                            <div className="h-3 w-3 rounded-full bg-yellow-500/80 hover:bg-yellow-500 transition-colors" />
-                            <div className="h-3 w-3 rounded-full bg-green-500/80 hover:bg-green-500 transition-colors" />
-                        </div>
+                    <div
+                        aria-hidden="true"
+                        className="pointer-events-none absolute left-1/2 top-[42%] h-[72%] w-[72%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,color-mix(in_srgb,var(--site-accent)_32%,transparent)_0%,color-mix(in_srgb,var(--site-accent)_14%,transparent)_38%,transparent_72%)] blur-3xl opacity-90"
+                    />
+                    <div
+                        aria-hidden="true"
+                        className="pointer-events-none absolute inset-x-[18%] bottom-[8%] h-[18%] rounded-full bg-[color-mix(in_srgb,var(--site-accent)_20%,transparent)] blur-3xl opacity-70"
+                    />
 
-                        {/* Адресная строка (опционально) */}
-                        <div className="mx-auto flex flex-1 max-w-[200px] rounded-md bg-[var(--site-panel)] px-3 py-1">
-                            <span className="mx-auto text-xs text-[var(--site-muted)]">🖼 anthony_pekhov.webp</span>
-                        </div>
-
-                        {/* Иконка для красоты */}
-                        <div className="w-8" />
-                    </div>
-
-                    {/* Контент — картинка */}
-                    <div className="flex flex-1 items-center justify-center p-6">
+                    <div className="relative aspect-[4/5] w-full translate-y-2 sm:translate-y-4 lg:translate-y-6">
                         <Image
-                            // src="/assets/img/face.jpeg"
-                            src="/assets/img/1.jpeg"
-                            alt="Anthony Pekhov"
-                            width={380}
-                            height={380}
-                            // className="rounded-full border-2 border-[var(--site-border)] shadow-xl"
+                            src="/assets/img/tony.webp"
+                            alt="Illustration of Anthony Pekhov"
+                            fill
                             priority
+                            sizes="(max-width: 1024px) 100vw, 45vw"
+                            className="object-contain object-bottom drop-shadow-[0_20px_50px_color-mix(in_srgb,var(--site-accent)_18%,transparent)]"
                         />
                     </div>
                 </motion.div>

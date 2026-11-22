@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { ChevronDown } from "lucide-react"
 import {Footer} from "@/components/layout/Footer";
 
-export default function Home() {
+export default function FAQPage() {
     const [openIndex, setOpenIndex] = useState<number | null>(null)
 
     const accordionData = [
@@ -135,102 +135,97 @@ export default function Home() {
     ]
 
     return (
-        <main className="min-h-screen bg-gradient-to-br from-gray-50 via-stone-50 to-gray-100">
-            <div className="container mx-auto px-4 py-16 md:py-24">
-                {/* Header Section */}
+        <main className="min-h-screen bg-[var(--site-bg)] text-[var(--site-text)]">
+            <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
-                    className="text-center mb-16 max-w-3xl mx-auto"
+                    className="mb-12"
                 >
-                    <h1 className="text-5xl md:text-6xl font-bold mb-6 text-black">Frequently Asked Questions</h1>
-                    <p className="text-lg md:text-xl text-black/60 leading-relaxed font-light">
-                        To save you time ⏳ on typical questions, I collected them for you and answered them honestly and
-                        comprehensively.
+                    <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-[var(--site-muted)]">FAQ</p>
+                    <h1 className="text-4xl font-bold leading-[0.95] tracking-[-0.05em] sm:text-5xl md:text-6xl">
+                        Frequently Asked Questions
+                    </h1>
+                    <p className="mt-4 max-w-2xl text-sm leading-7 text-[var(--site-muted)] sm:text-base">
+                        To save you time on typical questions, I collected them for you and answered them honestly and comprehensively.
                     </p>
                 </motion.div>
 
-                {/* Categories Grid */}
-                <div className="grid gap-6 md:gap-8 max-w-5xl mx-auto">
+                <div className="grid gap-6">
                     {accordionData.map((category, categoryIndex) => (
-                        <motion.div
+                        <motion.section
                             key={categoryIndex}
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.4, delay: categoryIndex * 0.1 }}
+                            transition={{ duration: 0.4, delay: categoryIndex * 0.06 }}
+                            className="rounded-2xl border border-[var(--site-border)] bg-[var(--site-panel)] p-5 sm:p-7 shadow-sm"
                         >
-                            <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-6 md:p-8 border border-black/5">
-                                <div className="flex items-center gap-3 mb-6">
-                                    <span className="text-3xl">{category.icon}</span>
-                                    <h2 className="text-2xl md:text-3xl font-bold text-black">{category.category}</h2>
-                                </div>
-
-                                <div className="space-y-4">
-                                    {category.questions.map((item, qIndex) => {
-                                        const globalIndex = categoryIndex * 100 + qIndex
-                                        const isOpen = openIndex === globalIndex
-
-                                        return (
-                                            <motion.div
-                                                key={qIndex}
-                                                layout
-                                                className="border border-black/10 rounded-xl overflow-hidden bg-white hover:shadow-lg transition-shadow duration-300"
-                                            >
-                                                <button
-                                                    onClick={() => setOpenIndex(isOpen ? null : globalIndex)}
-                                                    className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-black/5 transition-colors duration-200 group"
-                                                >
-                          <span className="font-semibold text-black pr-4 leading-relaxed group-hover:text-black/70 transition-colors">
-                            {item.question}
-                          </span>
-                                                    <motion.div
-                                                        animate={{ rotate: isOpen ? 180 : 0 }}
-                                                        transition={{ duration: 0.3 }}
-                                                        className="flex-shrink-0"
-                                                    >
-                                                        <ChevronDown className="w-5 h-5 text-black/50" />
-                                                    </motion.div>
-                                                </button>
-
-                                                <AnimatePresence>
-                                                    {isOpen && (
-                                                        <motion.div
-                                                            initial={{ height: 0, opacity: 0 }}
-                                                            animate={{ height: "auto", opacity: 1 }}
-                                                            exit={{ height: 0, opacity: 0 }}
-                                                            transition={{ duration: 0.3 }}
-                                                        >
-                                                            <div className="px-6 pb-5 pt-2">
-                                                                <div className="w-12 h-1 bg-black/20 rounded-full mb-4"></div>
-                                                                <p className="text-black/70 leading-relaxed font-light">{item.answer}</p>
-                                                            </div>
-                                                        </motion.div>
-                                                    )}
-                                                </AnimatePresence>
-                                            </motion.div>
-                                        )
-                                    })}
-                                </div>
+                            <div className="flex items-center gap-3 mb-5">
+                                <span className="text-2xl sm:text-3xl">{category.icon}</span>
+                                <h2 className="text-xl sm:text-2xl font-bold tracking-[-0.03em] text-[var(--site-text)]">{category.category}</h2>
                             </div>
-                        </motion.div>
+
+                            <div className="space-y-3">
+                                {category.questions.map((item, qIndex) => {
+                                    const globalIndex = categoryIndex * 100 + qIndex
+                                    const isOpen = openIndex === globalIndex
+
+                                    return (
+                                        <motion.div
+                                            key={qIndex}
+                                            layout
+                                            className="border border-[var(--site-border)] rounded-xl overflow-hidden bg-[var(--site-card)]/50"
+                                        >
+                                            <button
+                                                onClick={() => setOpenIndex(isOpen ? null : globalIndex)}
+                                                className="w-full px-4 sm:px-5 py-4 flex items-center justify-between text-left hover:bg-[var(--site-card)] transition-colors duration-200"
+                                            >
+                                                <span className="font-semibold text-[var(--site-text)] pr-4 leading-relaxed text-sm sm:text-base">
+                                                    {item.question}
+                                                </span>
+                                                <motion.div
+                                                    animate={{ rotate: isOpen ? 180 : 0 }}
+                                                    transition={{ duration: 0.25 }}
+                                                    className="flex-shrink-0 text-[var(--site-muted)]"
+                                                >
+                                                    <ChevronDown className="w-5 h-5" />
+                                                </motion.div>
+                                            </button>
+
+                                            <AnimatePresence>
+                                                {isOpen && (
+                                                    <motion.div
+                                                        initial={{ height: 0, opacity: 0 }}
+                                                        animate={{ height: "auto", opacity: 1 }}
+                                                        exit={{ height: 0, opacity: 0 }}
+                                                        transition={{ duration: 0.25 }}
+                                                    >
+                                                        <div className="px-4 sm:px-5 pb-5 pt-1 border-t border-[var(--site-border)]">
+                                                            <p className="text-[var(--site-muted)] leading-7 text-sm sm:text-base whitespace-pre-line">{item.answer}</p>
+                                                        </div>
+                                                    </motion.div>
+                                                )}
+                                            </AnimatePresence>
+                                        </motion.div>
+                                    )
+                                })}
+                            </div>
+                        </motion.section>
                     ))}
                 </div>
 
-                {/* Footer Call-to-Action */}
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 0.8 }}
-                    className="text-center mt-16 max-w-2xl mx-auto"
+                    transition={{ delay: 0.5 }}
+                    className="text-center mt-12"
                 >
-                    <div className="bg-white/50 border border-black/5 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
-                        <h3 className="text-2xl md:text-3xl font-bold text-black mb-4">Still have questions?</h3>
-                        <p className="text-black/60 mb-6 leading-relaxed font-light">
-                            Feel free to reach out! I&apos;m always happy to discuss opportunities and answer any additional questions you
-                            might have.
+                    <div className="rounded-2xl border border-[var(--site-border)] bg-[var(--site-panel)] p-6 sm:p-8 shadow-sm max-w-2xl mx-auto">
+                        <h3 className="text-xl sm:text-2xl font-bold text-[var(--site-text)] mb-3">Still have questions?</h3>
+                        <p className="text-[var(--site-muted)] leading-7 text-sm sm:text-base">
+                            Feel free to reach out! I&apos;m always happy to discuss opportunities and answer any additional questions you might have.
                         </p>
-                        <div className="text-4xl">💬</div>
                     </div>
                 </motion.div>
             </div>
