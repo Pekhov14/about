@@ -107,6 +107,28 @@ const myProjects = [
     },
 ]
 
+const jffProjects = [
+    {
+        id: 1,
+        name: "fmt",
+        projectUrl: "https://github.com/Pekhov14/fmt",
+        links: [
+            {
+                label: "GitHub",
+                href: "https://github.com/Pekhov14/fmt",
+            },
+            {
+                label: "Release v1.0.0",
+                href: "https://github.com/Pekhov14/fmt/releases/tag/v1.0.0",
+            },
+        ],
+        tags: ["macos", "swift", "utility", "just-for-fun"],
+        description: "A small macOS menu bar app that adds configurable actions to the Finder\n" +
+            "context menu: create a file, copy path, name or extension, and open a folder\n" +
+            "in Terminal.",
+    },
+]
+
 // Функция для парсинга даты (обрабатывает разные форматы)
 function parseDate(dateString: string): Date {
     const normalizedDate = dateString
@@ -123,6 +145,66 @@ const sortedProjects = [...projects].sort((a, b) => {
 });
 
 export default function OpenSourcePage() {
+    const renderProjects = (items: typeof myProjects) => (
+        <div className="w-full grid gap-4 md:grid-cols-2">
+            {items.map((item) => (
+                <Card
+                    key={`${item.name}-${item.id}`}
+                    className="border-[var(--site-border)] bg-[var(--site-panel)] shadow-sm transition-transform duration-200 hover:-translate-y-0.5"
+                >
+                    <CardHeader className="space-y-3">
+                        <CardTitle className="text-xl leading-snug text-[var(--site-text)]">
+                            {item.projectUrl ? (
+                                <a
+                                    href={item.projectUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-2 hover:text-[var(--site-accent)] transition-colors"
+                                >
+                                    {item.name}
+                                    <ArrowUpRight className="h-4 w-4 shrink-0" />
+                                </a>
+                            ) : (
+                                item.name
+                            )}
+                        </CardTitle>
+
+                        <div className="flex flex-wrap gap-2">
+                            {item.tags.map((tag) => (
+                                <span key={tag} className="inline-flex items-center rounded-full border border-[var(--site-border)] bg-[var(--site-card)] px-2.5 py-1 text-xs font-medium text-[var(--site-text)] capitalize">
+                                    {tag}
+                                </span>
+                            ))}
+                        </div>
+                    </CardHeader>
+
+                    <CardContent className="space-y-4">
+                        <p className="text-sm leading-7 text-[var(--site-muted)]">
+                            {item.description}
+                        </p>
+
+                        {item.links.length > 0 && (
+                            <div className="flex flex-wrap gap-3">
+                                {item.links.map((link) => (
+                                    <a
+                                        key={link.href}
+                                        href={link.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-1.5 text-sm font-medium text-[var(--site-accent)] underline underline-offset-4 hover:opacity-80 transition-opacity"
+                                    >
+                                        {link.label}
+                                        <ArrowUpRight className="h-3.5 w-3.5" />
+                                    </a>
+                                ))}
+                            </div>
+                        )}
+                    </CardContent>
+                </Card>
+            ))}
+        </div>
+    )
+
     return (
         <>
             <main className="min-h-screen bg-[var(--site-bg)] text-[var(--site-text)] px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
@@ -199,63 +281,18 @@ export default function OpenSourcePage() {
                         </p>
                     </div>
 
-                    <div className="w-full grid gap-4 md:grid-cols-2">
-                        {myProjects.map((item) => (
-                            <Card
-                                key={`${item.name}-${item.id}`}
-                                className="border-[var(--site-border)] bg-[var(--site-panel)] shadow-sm transition-transform duration-200 hover:-translate-y-0.5"
-                            >
-                                <CardHeader className="space-y-3">
-                                    <CardTitle className="text-xl leading-snug text-[var(--site-text)]">
-                                        {item.projectUrl ? (
-                                            <a
-                                                href={item.projectUrl}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="inline-flex items-center gap-2 hover:text-[var(--site-accent)] transition-colors"
-                                            >
-                                                {item.name}
-                                                <ArrowUpRight className="h-4 w-4 shrink-0" />
-                                            </a>
-                                        ) : (
-                                            item.name
-                                        )}
-                                    </CardTitle>
+                    {renderProjects(myProjects)}
 
-                                    <div className="flex flex-wrap gap-2">
-                                        {item.tags.map((tag) => (
-                                            <span key={tag} className="inline-flex items-center rounded-full border border-[var(--site-border)] bg-[var(--site-card)] px-2.5 py-1 text-xs font-medium text-[var(--site-text)] capitalize">
-                                                {tag}
-                                            </span>
-                                        ))}
-                                    </div>
-                                </CardHeader>
-
-                                <CardContent className="space-y-4">
-                                    <p className="text-sm leading-7 text-[var(--site-muted)]">
-                                        {item.description}
-                                    </p>
-
-                                    {item.links.length > 0 && (
-                                        <div className="flex flex-wrap gap-3">
-                                            {item.links.map((link) => (
-                                                <a
-                                                    key={link.href}
-                                                    href={link.href}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="inline-flex items-center gap-1.5 text-sm font-medium text-[var(--site-accent)] underline underline-offset-4 hover:opacity-80 transition-opacity"
-                                                >
-                                                    {link.label}
-                                                    <ArrowUpRight className="h-3.5 w-3.5" />
-                                                </a>
-                                            ))}
-                                        </div>
-                                    )}
-                                </CardContent>
-                            </Card>
-                        ))}
+                    <div className="mt-16 mb-8">
+                        <h2 className="text-3xl font-bold leading-[0.95] tracking-[-0.04em] sm:text-4xl text-[var(--site-text)]">
+                            Just for fun
+                        </h2>
+                        <p className="mt-3 max-w-2xl text-sm leading-7 text-[var(--site-muted)] sm:text-base">
+                            Small utilities I made mostly for myself.
+                        </p>
                     </div>
+
+                    {renderProjects(jffProjects)}
                 </div>
             </main>
             <Footer/>
